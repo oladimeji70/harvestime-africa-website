@@ -1,254 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HIBIAFRICA – Harvestime International Bible Institute (African Directorate)</title>
-  <meta name="description" content="Harvestime International Bible Institute – African Directorate: training and equipping labourers for worldwide spiritual harvest across Anglophone and Francophone Africa." />
+  <meta name="description" content="Harvestime International Bible Institute – African Directorate official homepage." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root{
-      --brand:#0b3d91;        /* deep blue */
-      --brand-2:#f6b70a;      /* gold accent */
-      --ink:#0f172a;
-      --muted:#64748b;
-      --bg:#ffffff;
-      --panel:#ffffff;
-      --radius:14px;
-      --shadow:0 2px 14px rgba(0,0,0,.06);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    header.hero{
-      background:linear-gradient(120deg,var(--brand) 0%, #163b73 60%, #0b3d91 100%);
-      color:#fff; padding:26px 16px 18px;
-    }
-    .wrap{max-width:1100px;margin:auto;padding:0 16px}
-    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    .logo{display:flex;align-items:center;gap:12px}
-    .logo h1{font-size:18px;margin:0;line-height:1.2}
-    .motto{font-size:13px;opacity:.9;margin:2px 0 0}
-    nav a{display:inline-block;margin:6px 10px;padding:8px 12px;border-radius:999px;color:#fff;border:1px solid rgba(255,255,255,.25)}
-    nav a:hover{background:rgba(255,255,255,.08)}
-    .hero-main{padding:18px 0 14px}
-    .hero-main h2{font-size:28px;margin:8px 0}
-    .hero-main p{margin:6px 0 0;opacity:.95}
-    .cta{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;background:#fff;color:var(--brand);font-weight:600;border:1px solid #e5e7eb;box-shadow:var(--shadow)}
-    .grid{display:grid;gap:16px}
-    @media(min-width:860px){ .grid-2{grid-template-columns:1fr 1fr} .hero-main h2{font-size:34px} }
-    section{scroll-margin-top:84px}
-    .card{background:var(--panel);border:1px solid #e5e7eb;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    h3.section-title{margin:0 0 10px;font-size:22px;position:relative}
-    h3.section-title:after{content:"";display:block;width:64px;height:3px;background:var(--brand-2);border-radius:3px;margin-top:6px}
-    .muted{color:var(--muted)}
-    table{width:100%;border-collapse:collapse}
-    th,td{border:1px solid #e5e7eb;padding:10px 12px;text-align:left;vertical-align:top}
-    th{background:#f8fafc}
-    footer{padding:28px 16px;text-align:center;color:var(--muted);border-top:1px solid #e5e7eb;margin-top:26px}
-    .flex{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid var(--brand);font-weight:600}
-    .btn.gold{background:var(--brand-2);border-color:#e5a800;color:#1f2937}
-    .btn.ghost{background:#fff;color:var(--brand)}
-    .note{font-size:13px;color:var(--muted)}
-    .callouts{display:grid;gap:12px}
-    @media(min-width:720px){ .callouts{grid-template-columns:repeat(3,1fr)} }
-    .call{background:#f8fafc;border:1px dashed #dbeafe;border-radius:12px;padding:12px}
-    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;background:#f1f5f9;border:1px solid #e2e8f0;padding:2px 6px;border-radius:6px}
-    .pill{display:inline-block;font-size:12px;border:1px solid #e5e7eb;border-radius:999px;padding:2px 8px;margin-right:6px;background:#f8fafc}
+    :root{--brand-green:#0f5132;--brand-gold:#d4af37;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+    .brand{background:linear-gradient(135deg,var(--brand-green),#0c3f28);}
+    .container-tight{max-width:960px;}
   </style>
 </head>
-<body>
-
-  <!-- HEADER -->
-  <header class="hero">
-    <div class="wrap">
-      <div class="topbar">
-        <div class="logo">
-          <!-- Replace with your logo image if desired -->
-          <div style="width:38px;height:38px;border-radius:10px;background:#fff;color:var(--brand);display:grid;place-items:center;font-weight:800">HI</div>
-          <div>
-            <h1>HARVESTIME INTERNATIONAL BIBLE INSTITUTE – AFRICAN DIRECTORATE (HIBIAFRICA)</h1>
-            <p class="motto">“Training and Equipping Labourers for Worldwide Spiritual Harvest” (Matt. 9:37–38)</p>
-          </div>
-        </div>
-        <nav aria-label="Primary">
-          <a href="/#about">About</a>
-          <a href="/#founders">Founders</a>
-          <a href="/#doctrine">Doctrinal Faith</a>
-          <a href="/#vision">Vision & Mission</a>
-          <a href="/#cardinal">Eight Cardinal Visions</a>
-          <a href="/#other-visions">Other Core Visions</a>
-          <a href="/#directors">Directors</a>
-          <a href="/#admissions">Admissions</a>
-          <a href="mailto:hibiafrica@gmail.com">Contact</a>
-        </nav>
-      </div>
-
-      <div class="hero-main">
-        <h2>Continental Headquarters for Biblical & Ministerial Training across Africa</h2>
-        <p>Coordinating Anglophone and Francophone national chapters from our headquarters in Osogbo, Nigeria — under one vision and divine mandate.</p>
-        <div class="flex">
-          <a class="cta" href="/#admissions">Apply / Enquire</a>
-          <a class="btn ghost" href="https://hibiafrica.org" target="_blank" rel="noopener">Visit Main Site</a>
-        </div>
+<body class="bg-gray-50 text-slate-800">
+  <header class="brand text-white">
+    <div class="mx-auto container-tight px-4 py-4 flex items-center gap-4">
+      <img src="/logo.png" alt="HIBIAFRICA Logo" class="h-10 w-auto" />
+      <div class="leading-tight">
+        <h1 class="font-extrabold text-xl">Harvestime International Bible Institute (HIBI) – African Directorate</h1>
+        <p class="text-sm opacity-90">“Training and Equipping Labourers for Worldwide Spiritual Harvest” (Matthew 9:37–38)</p>
       </div>
     </div>
   </header>
 
-  <main class="wrap" role="main">
+  <main class="mx-auto container-tight px-4 py-10">
+    <h2 class="text-3xl font-extrabold">Welcome to HIBIAFRICA</h2>
+    <p class="mt-3 text-lg">Official continental headquarters of Harvestime International Network (USA) across Africa.</p>
+    <hr class="my-8">
 
-    <!-- ABOUT -->
-    <section id="about" class="card">
-      <h3 class="section-title">About HIBIAFRICA Directorate</h3>
-      <p>Harvestime International Bible Institute (HIBI) – African Directorate serves as the continental administrative and academic headquarters of Harvestime International Network USA across Africa. We are committed to raising Spirit-filled, biblically grounded, and mission-oriented leaders for the end-time harvest.</p>
-      <p>Through our institutions in Nigeria, South Africa, Benin, Cameroon, Niger, Burkina Faso, Togo, Mali, Chad, Ghana, Ivory Coast, and other nations, we provide holistic education that balances theology, spirituality, and practical ministry.</p>
-      <p class="muted">Headquarters: Osogbo, Osun State, Nigeria • Email: <a href="mailto:hibiafrica@gmail.com">hibiafrica@gmail.com</a></p>
-    </section>
+    <section id="admissions">
+      <h3 class="text-2xl md:text-3xl font-bold">🏫 Admission Information</h3>
 
-    <!-- FOUNDERS -->
-    <section id="founders" class="grid grid-2">
-      <article class="card">
-        <h3 class="section-title">Our Founders</h3>
-        <p><strong>Dr. Argis Hulsey (Founder)</strong> — Missionary and theologian whose God-given vision birthed Harvestime International Bible Institute worldwide.</p>
-        <p><strong>Dr. (Mrs.) Patricia Hulsey (Worldwide President)</strong> — Continuing the global mandate to train and equip labourers for the worldwide spiritual harvest.</p>
-      </article>
-      <aside class="card">
-        <h3 class="section-title">Motto & Mandate</h3>
-        <p class="pill">Matthew 9:37–38</p>
-        <p class="muted">“The harvest truly is plenteous, but the labourers are few…”</p>
-        <div class="callouts">
-          <div class="call"><strong>Spirit-filled Training</strong><br/>Biblically grounded formation for life and ministry.</div>
-          <div class="call"><strong>Mission-oriented</strong><br/>Church, marketplace, and global missions focus.</div>
-          <div class="call"><strong>Practical Ministry</strong><br/>Balanced theology, spirituality, and application.</div>
-        </div>
-      </aside>
-    </section>
+      <h4 class="mt-6 text-xl font-bold">Welcome to Your Next Level of Ministerial Growth!</h4>
+      <p class="mt-3">Enrollment is open to all men and women who desire to grow in
+         <strong>biblical knowledge</strong>, <strong>leadership capacity</strong>, and
+         <strong>ministerial excellence</strong>.</p>
 
-    <!-- DOCTRINAL FAITH -->
-    <section id="doctrine" class="card">
-      <h3 class="section-title">Doctrinal Statement & Faith</h3>
-      <ul>
-        <li>The Bible as the inspired and infallible Word of God.</li>
-        <li>The Trinity: Father, Son, and Holy Spirit.</li>
-        <li>Salvation by grace through faith in Jesus Christ.</li>
-        <li>The Great Commission and the work of the Holy Spirit.</li>
-        <li>The Church as Christ’s body called to holiness and service.</li>
-      </ul>
-      <p class="note">(*This preserves your doctrinal summary; expand anytime with your full approved statement.*)</p>
-    </section>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="https://wa.me/2347039429826?text=I%20want%20to%20enroll%20at%20HIBIAFRICA"
+           class="inline-flex items-center rounded-lg px-5 py-3 font-semibold bg-green-600 text-white hover:bg-green-700">
+          📱 Apply on WhatsApp
+        </a>
 
-    <!-- VISION / MISSION -->
-    <section id="vision" class="grid grid-2">
-      <article class="card">
-        <h3 class="section-title">Vision, Mission, Philosophy</h3>
-        <p><strong>Vision:</strong> To raise Spirit-filled, biblically grounded, and mission-oriented leaders for the end-time harvest.</p>
-        <p><strong>Mission:</strong> Provide high-quality theological education and practical ministerial formation across Africa’s nations and languages.</p>
-        <p><strong>Philosophy:</strong> Balanced training of head, heart, and hands — theology, spirituality, and practice.</p>
-      </article>
-      <aside class="card">
-        <h3 class="section-title">Core Expressions</h3>
-        <ul>
-          <li>Two Major Schools and multiple Faculties across levels (Certificate to PhD).</li>
-          <li>Anglophone and Francophone coordination under one Directorate.</li>
-          <li>Leadership refresher courses, discipleship, missions, and community transformation.</li>
-        </ul>
-      </aside>
-    </section>
+        <a href="mailto:harvestimeafricadirectorate@gmail.com?subject=HIBIAFRICA%20Admission%20Application&body=Full%20Name:%0APhone/WhatsApp:%0ACountry:%0AProgramme%20Interested%20In%20(Certificate/Diploma/Bachelor/PGD/Master/PhD):%0AHow%20Did%20You%20Hear%20About%20HIBIAFRICA?:"
+           class="inline-flex items-center rounded-lg px-5 py-3 font-semibold bg-white border border-green-600 text-green-700 hover:bg-green-50">
+          ✉️ Apply by Email
+        </a>
+      </div>
 
-    <!-- EIGHT CARDINAL VISIONS -->
-    <section id="cardinal" class="card">
-      <h3 class="section-title">Eight Cardinal Visions</h3>
-      <ol>
-        <li><strong>Theological Education:</strong> From Certificate to PhD across key faculties.</li>
-        <li><strong>Community Transformation & Advocacy:</strong> Addressing social and moral issues through biblical engagement.</li>
-        <li><strong>Discipleship Training:</strong> Building mature believers and servant-leaders.</li>
-        <li><strong>Pre- & Post‑Marital Courses:</strong> Strengthening Christian homes and family values.</li>
-        <li><strong>Leadership & Ministerial Refresher:</strong> Ongoing development for pastors and ministry workers.</li>
-        <li><strong>Daily Exegesis Lectures:</strong> Sound interpretation of Scripture for life and ministry.</li>
-        <li><strong>Daily Family Altar Devotion (DAFAD):</strong> Cultivating prayer, worship, and the Word at home.</li>
-        <li><strong>Intercessory Prayer Network:</strong> Standing in the gap for nations, churches, and communities.</li>
-      </ol>
-    </section>
-
-    <!-- OTHER CORE VISIONS -->
-    <section id="other-visions" class="card">
-      <h3 class="section-title">Other Core Visions</h3>
-      <ul>
-        <li><strong>Media & Publications:</strong> Books, manuals, and digital resources for training and discipleship.</li>
-        <li><strong>Youth & Children Ministry:</strong> Nurturing emerging generations for kingdom impact.</li>
-        <li><strong>Counseling & Psychology Services:</strong> Christ-centered care for individuals and families.</li>
-        <li><strong>Marketplace & Bi‑Vocational Ministry:</strong> Equipping believers for witness and service in the workplace.</li>
-      </ul>
-    </section>
-
-    <!-- DIRECTORS TABLE -->
-    <section id="directors" class="card">
-      <h3 class="section-title">National Chapter Directors</h3>
-      <p class="note">Update or extend this table anytime via GitHub; layout adapts automatically.</p>
-      <div style="overflow:auto">
-        <table>
-          <thead>
-            <tr>
-              <th>Country / Role</th>
-              <th>Director / Representative</th>
-              <th>Phone</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>General Francophone Coordinator</strong></td><td>Rev. Dr. Agani Pierre Adeyemi</td><td>+229 97 46 39 59</td></tr>
-            <tr><td>Benin Republic</td><td>Rev. Dr. Agani Pierre Adeyemi</td><td>+229 97 46 39 59</td></tr>
-            <tr><td>Togo</td><td>Pastor Kemakpo Ablamvi</td><td>+228 98 34 04 66</td></tr>
-            <tr><td>Cameroon</td><td>Pastor Mongui Dibebe Thomas</td><td>+237 6 97 38 70 78</td></tr>
-            <tr><td>Niger Republic</td><td>Pastor Maazou Judith</td><td>+227 70 92 81 27</td></tr>
-            <tr><td>Burkina Faso</td><td>Apostle Badolo</td><td>+226 01 39 37 49</td></tr>
-            <tr><td>Côte d’Ivoire</td><td>Pastor KOUASSI NARCISSE (SANHIN)</td><td>+225 05 53 79 58</td></tr>
-            <tr><td>Central African Republic</td><td>Pastor Dr. Kawa Omer</td><td>+236 72 76 29 78</td></tr>
-            <tr><td>Mali</td><td>Pastor Seidou</td><td>+223 75 95 09 09</td></tr>
-            <tr><td>Republic of Chad</td><td>Pastor Semion</td><td>+235 68 67 75 06</td></tr>
-            <!-- More rows can be added as needed -->
-          </tbody>
-        </table>
+      <div class="mt-8 bg-green-50 border border-green-300 rounded-xl p-6">
+        <h5 class="font-semibold text-green-900">📞 For All Enquiries</h5>
+        <p class="mt-2 text-sm text-green-800">
+          Email: <a href="mailto:harvestimeafricadirectorate@gmail.com" class="underline text-green-700">harvestimeafricadirectorate@gmail.com</a><br>
+          Call / WhatsApp: <a href="tel:+2347039429826" class="underline text-green-700">+234 703 942 9826</a> ·
+          <a href="tel:+2348133399661" class="underline text-green-700">+234 813 339 9661</a>
+        </p>
       </div>
     </section>
-
-    <!-- ADMISSIONS -->
-    <section id="admissions" class="card">
-      <h3 class="section-title">Admissions (Certificate to PhD)</h3>
-      <p>We welcome applicants into Certificate, Diploma, Bachelor, PGD, Master, and PhD programs. Training is available on-campus and online across our national chapters.</p>
-      <ul>
-        <li><strong>Enquiries & Applications:</strong> <a href="mailto:hibiafrica@gmail.com">hibiafrica@gmail.com</a></li>
-        <li><strong>Website:</strong> <a href="https://hibiafrica.org" target="_blank" rel="noopener">hibiafrica.org</a></li>
-        <li><strong>Headquarters:</strong> Osogbo, Osun State, Nigeria</li>
-      </ul>
-      <div class="flex">
-        <a class="btn gold" href="mailto:hibiafrica@gmail.com">Email Admissions</a>
-        <a class="btn" href="/#directors">Contact a National Director</a>
-      </div>
-      <p class="note">Financial implications and fee schedules can be linked as a separate page later.</p>
-    </section>
-
-    <!-- CONTACT / QUICK LINKS -->
-    <section id="contact" class="grid grid-2">
-      <div class="card">
-        <h3 class="section-title">Contact</h3>
-        <p><strong>HIBIAFRICA – Africa Directorate</strong><br/>
-        Osogbo, Osun State, Nigeria</p>
-        <p>Email: <a href="mailto:hibiafrica@gmail.com">hibiafrica@gmail.com</a></p>
-        <p class="note">For chapter enquiries, see the Directors table above.</p>
-      </div>
-      <div class="card">
-        <h3 class="section-title">Quick Actions</h3>
-        <p><span class="kbd">/#about</span> • <span class="kbd">/#founders</span> • <span class="kbd">/#doctrine</span> • <span class="kbd">/#vision</span> • <span class="kbd">/#cardinal</span> • <span class="kbd">/#other-visions</span> • <span class="kbd">/#directors</span> • <span class="kbd">/#admissions</span></p>
-        <p class="muted">These links work anywhere on your site and will not change your content—only the section you jump to.</p>
-      </div>
-    </section>
-
   </main>
 
-  <footer>
-    © HIBIAFRICA – Harvestime International Bible Institute (African Directorate). All rights reserved.
+  <footer class="text-center text-white bg-[var(--brand-green)] py-6">
+    <p class="text-sm">© <span id="year"></span> HIBIAFRICA. All rights reserved.</p>
   </footer>
 
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
