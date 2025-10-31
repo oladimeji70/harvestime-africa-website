@@ -44,15 +44,83 @@
   </div>
 </nav>
 
-<!-- Truncated due to length; includes all content sections (About, Founders, Vision, Programs, Leadership, Directors, Admissions, News, Contact, Footer) -->
+<section id="top" class="bg-white py-12 text-center">
+  <div class="container-tight px-4">
+    <h2 class="text-3xl font-bold text-[var(--brand-green)]">Welcome to HIBIAFRICA</h2>
+    <p class="mt-3 text-slate-700 text-lg">Raising Spirit-filled, biblically grounded, and mission-oriented leaders across Africa and beyond.</p>
+  </div>
+</section>
+
+<section id="about" class="container-tight px-4 py-12">
+  <h3 class="text-2xl md:text-3xl font-bold mb-3">🕊️ About HIBIAFRICA Directorate</h3>
+  <p>Harvestime International Bible Institute (HIBI) – African Directorate serves as the continental administrative and academic headquarters of Harvestime International Network USA across Africa.</p>
+</section>
+
+<section id="founders" class="bg-white border-y border-gray-200">
+  <div class="container-tight px-4 py-12">
+    <h3 class="text-2xl md:text-3xl font-bold mb-3">👑 Our Founders</h3>
+    <p>Founded by the late Dr. Argis Hulsey and Dr. (Mrs.) Patricia Hulsey to train labourers for the global harvest.</p>
+  </div>
+</section>
+
+<section id="vision" class="container-tight px-4 py-12">
+  <h3 class="text-2xl md:text-3xl font-bold mb-3">📜 Vision & Mission</h3>
+  <p>Our vision is to raise biblically trained, Spirit-filled, and mission-driven leaders who will transform their world.</p>
+</section>
+
+<section id="programs" class="bg-white border-y border-gray-200">
+  <div class="container-tight px-4 py-12">
+    <h3 class="text-2xl md:text-3xl font-bold mb-3">🎓 Programs Available</h3>
+    <p>Certificate, Diploma, Bachelor, PGD, Master, and PhD programs offered both online and onsite.</p>
+  </div>
+</section>
+
+<section id="leadership" class="container-tight px-4 py-12">
+  <h3 class="text-2xl md:text-3xl font-bold mb-3">🌍 Leadership</h3>
+  <p>Under the leadership of Dr. Samuel Abiodun Oladimeji and a team of seasoned continental officers.</p>
+</section>
+
+<section id="directors" class="bg-white border-y border-gray-200">
+  <div class="container-tight px-4 py-12">
+    <h3 class="text-2xl md:text-3xl font-bold mb-3">🌐 National Chapter Directors</h3>
+    <p>HIBIAFRICA operates across several nations, both Anglophone and Francophone, under one vision.</p>
+  </div>
+</section>
+
+<section id="admissions" class="container-tight px-4 py-12">
+  <h3 class="text-2xl md:text-3xl font-bold mb-3">🏫 Admissions</h3>
+  <p>Enrollment is open to ministers, leaders, and believers seeking theological and ministerial growth.</p>
+</section>
+
+<section id="news" class="bg-white border-y border-gray-200">
+  <div class="container-tight px-4 py-12">
+    <h3 class="text-2xl md:text-3xl font-bold mb-3">📰 News & Updates</h3>
+    <p>Stay tuned for the latest updates from HIBIAFRICA including convocation, DAFAD, and leadership events.</p>
+  </div>
+</section>
+
+<section id="contact" class="container-tight px-4 py-12 text-center">
+  <h3 class="text-2xl md:text-3xl font-bold mb-3">📞 Contact Us</h3>
+  <p>Email: <a href="mailto:harvestimeafricadirectorate@gmail.com" class="text-green-700 underline">harvestimeafricadirectorate@gmail.com</a></p>
+  <p>Phone: +234 703 942 9826 | +234 813 339 9661</p>
+</section>
 
 <footer class="bg-[var(--brand-green)] text-white text-center py-6 mt-6">
   <p class="text-sm">&copy; <span id="year"></span> Harvestime International Bible Institute (HIBI) – African Directorate (HIBIAFRICA). All rights reserved.</p>
-  <p class="text-xs mt-1 opacity-80">Powered by HIBIAFRICA ICT • Osogbo – Nigeria</p>
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+// Smooth scroll fix for navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
