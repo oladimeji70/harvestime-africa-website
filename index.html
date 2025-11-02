@@ -2,370 +2,241 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>HARVESTIME INTERNATIONAL BIBLE INSTITUTE AFRICA (HIBIAFRICA)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="HARVESTIME INTERNATIONAL BIBLE INSTITUTE AFRICA (HIBIAFRICA) – Continental Africa Directorate of Harvestime International Network (USA) – Training and Equipping Labourers for Worldwide Spiritual Harvest." />
+  <title>HIBIAFRICA – Harvestime International Bible Institute Africa</title>
+  <meta name="description" content="Training and equipping labourers for worldwide spiritual harvest across Africa. Former et équiper des ouvriers pour la moisson spirituelle mondiale en Afrique.">
   <link rel="icon" href="logo.png" />
   <style>
     :root {
       --green: #0f5132;
-      --green-soft: #1d7b4d;
       --gold: #fcb900;
-      --gold-soft: #ffe8b3;
-      --dark: #051015;
-      --bg: #f3f5f4;
       --muted: #6c757d;
-      --radius: 1.3rem;
-      --shadow: 0 20px 55px rgba(0,0,0,0.08);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #ffffff;
-      color: #132025;
+      background: #fff;
+      color: #122022;
       line-height: 1.6;
     }
-    a { text-decoration: none; color: inherit; }
-
-    /* subtle fade-in animation */
-    .fade-in {
-      animation: fadeIn .7s ease-in;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(12px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    /* Top bar */
     .topbar {
       background: linear-gradient(90deg, #051015 0%, #0f5132 100%);
       color: #fff;
-      font-size: .78rem;
-      padding: .35rem 5vw;
+      padding: .4rem 5vw;
       display: flex;
       justify-content: space-between;
       gap: 1rem;
       flex-wrap: wrap;
+      font-size: .72rem;
     }
-    .topbar small { display: flex; gap: 1.2rem; flex-wrap: wrap; }
-
-    /* Navbar */
     header {
       position: sticky;
       top: 0;
-      z-index: 200;
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(14px);
+      z-index: 50;
+      box-shadow: 0 14px 28px rgba(0,0,0,.02);
     }
     .nav {
       max-width: 1240px;
       margin: 0 auto;
+      padding: .6rem 1.1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      padding: .8rem 1rem;
     }
     .brand {
       display: flex;
-      gap: .6rem;
+      gap: .75rem;
       align-items: center;
     }
     .brand img {
-      height: 50px;
       width: 50px;
+      height: 50px;
       object-fit: contain;
       border-radius: 999px;
-      border: 2px solid rgba(252,185,0,0.5);
+      border: 2px solid rgba(252,185,0,.35);
       background: #fff;
     }
-    .brand-title {
-      font-size: 1rem;
-      font-weight: 700;
-    }
-    .brand-sub {
-      font-size: .68rem;
-      text-transform: uppercase;
-      color: var(--muted);
-      letter-spacing: .04em;
-    }
+    .brand-title { font-weight: 700; font-size: 1rem; }
+    .brand-sub { font-size: .65rem; text-transform: uppercase; color: var(--muted); }
     .nav-links {
       display: flex;
-      gap: .8rem;
+      gap: .5rem;
       align-items: center;
       font-size: .8rem;
-      font-weight: 500;
+      flex-wrap: wrap;
     }
     .nav-links a {
-      padding: .32rem .7rem;
-      border-radius: 999px;
-      transition: all .2s ease;
+      padding: .35rem .7rem;
+      border-radius: .75rem;
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
     }
     .nav-links a:hover {
-      background: rgba(252,185,0,0.15);
+      background: rgba(15,81,50,.05);
       color: #0f5132;
     }
-    .btn-primary {
-      background: linear-gradient(120deg, #0f5132 0%, #1d7b4d 100%);
-      color: #fff !important;
-      padding: .5rem 1.05rem;
+    .lang-btn {
+      border: 1px solid rgba(15,81,50,.3);
+      background: rgba(15,81,50,.05);
       border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      gap: .35rem;
-      border: none;
-      box-shadow: 0 10px 20px rgba(15,81,50,0.25);
-      font-weight: 600;
+      padding: .3rem .8rem;
       font-size: .75rem;
-    }
-    .mobile-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.45rem;
       cursor: pointer;
-      color: #051015;
+      display: inline-flex;
+      gap: .3rem;
+      align-items: center;
     }
-
-    /* Hero */
+    .lang-btn.active {
+      background: #0f5132;
+      color: #fff;
+      border-color: #0f5132;
+    }
     .hero {
-      background: radial-gradient(circle at top, rgba(252,185,0,0.05) 0%, rgba(15,81,50,0.04) 55%, #ffffff 90%), url("africa-map.png");
-      background-repeat: no-repeat;
-      background-position: right -200px top -120px;
-      padding: 3.6rem 5vw 3.2rem;
       max-width: 1240px;
       margin: 0 auto;
+      padding: 3.3rem 5vw 2.8rem;
       display: grid;
       grid-template-columns: 1.1fr .9fr;
-      gap: 2.6rem;
+      gap: 2.2rem;
       align-items: center;
+      background: radial-gradient(circle at top, rgba(252,185,0,.03) 0%, rgba(15,81,50,.03) 45%, #fff 80%);
     }
     .hero-tag {
       display: inline-flex;
-      background: rgba(252,185,0,0.26);
-      color: #7f5400;
+      gap: .35rem;
+      background: rgba(252,185,0,.25);
+      color: #744b00;
+      padding: .3rem .9rem;
       border-radius: 999px;
-      padding: .3rem .95rem;
       font-size: .68rem;
       text-transform: uppercase;
-      letter-spacing: .05em;
       margin-bottom: .8rem;
     }
     .hero-title {
-      font-size: clamp(2.25rem, 4.3vw, 3rem);
-      margin: 0 0 .65rem;
-      color: #051015;
-      line-height: 1.05;
+      font-size: clamp(2rem, 4.1vw, 2.82rem);
+      margin-bottom: .45rem;
+      line-height: 1.06;
     }
-    .hero p {
-      margin: 0 0 1.2rem;
-      color: #2e3c40;
-      max-width: 32rem;
+    .hero p { max-width: 33rem; margin-bottom: 1rem; }
+    .btn-primary {
+      background: linear-gradient(120deg,#0f5132 0%,#197349 100%);
+      border-radius: 999px;
+      padding: .55rem 1.35rem;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: .78rem;
+      display: inline-flex;
+      gap: .3rem;
+      align-items: center;
     }
-    .hero-actions {
-      display: flex;
-      gap: .75rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.3rem;
-    }
-    .hero-pill {
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.03);
-      border-left: 4px solid #0f5132;
-      border-radius: .9rem;
-      padding: .45rem .75rem;
-      font-size: .7rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.045);
-    }
-    .hero-card {
-      background: radial-gradient(circle at top, #ffffff 0%, #eefaf3 100%);
-      border-radius: 1.35rem;
-      box-shadow: 0 20px 55px rgba(0,0,0,0.06);
-      padding: 1.2rem 1.35rem 1.1rem;
-      border: 1px solid rgba(15,81,50,0.05);
-    }
-    .hero-card h3 {
-      margin-bottom: .4rem;
-    }
-    .hero-meta {
-      font-size: .68rem;
-      color: #5b7664;
-      margin-bottom: .5rem;
-    }
-    .stats {
-      display: flex;
-      gap: .75rem;
-      flex-wrap: wrap;
-      margin-top: .65rem;
-    }
-    .stat-box {
-      background: rgba(15,81,50,0.06);
-      border: 1px solid rgba(15,81,50,0.02);
-      border-radius: .8rem;
-      min-width: 90px;
-      text-align: center;
-      padding: .5rem .55rem .55rem;
-    }
-    .stat-box h4 {
-      margin: 0;
-      font-size: 1.1rem;
-      color: #0f5132;
-    }
-    .stat-box p {
-      margin: 0;
-      font-size: .6rem;
-      color: #4b5e52;
-    }
-
-    /* Sections */
-    section {
-      padding: 3.1rem 5vw;
+    .section {
       max-width: 1240px;
       margin: 0 auto;
+      padding: 2.6rem 5vw 2.4rem;
     }
     .section-title {
-      font-size: 1.4rem;
       display: flex;
       align-items: center;
-      gap: .45rem;
+      gap: .4rem;
+      font-size: 1.35rem;
     }
     .section-title::before {
       content: "";
       width: 11px;
-      height: 28px;
-      background: linear-gradient(140deg, #0f5132 0%, #fcb900 100%);
-      border-radius: 13px;
+      height: 26px;
+      border-radius: 1rem;
+      background: linear-gradient(155deg,#0f5132 0%,#fcb900 100%);
     }
     .section-sub {
+      margin-top: .3rem;
       color: var(--muted);
       max-width: 720px;
-      font-size: .87rem;
-      margin-top: .25rem;
+      font-size: .85rem;
     }
     .grid-2 {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 1.6rem;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 1.5rem;
     }
     .card {
       background: #fff;
-      border-radius: 1.1rem;
-      padding: 1.05rem 1.05rem 1rem;
-      box-shadow: 0 14px 28px rgba(0,0,0,0.01);
-      border: 1px solid rgba(0,0,0,0.015);
+      border-radius: 1.05rem;
+      padding: 1rem .95rem 1.05rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.02);
+      border: 1px solid rgba(15,81,50,.015);
     }
-    .card h3 { margin-top: 0; }
-    .list, .list ul { margin: 0; padding-left: 1.08rem; }
-    .list li { margin-bottom: .32rem; }
-
-    /* Tables */
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: .9rem;
-      font-size: .79rem;
-    }
-    thead tr {
-      background: rgba(15,81,50,0.08);
+      margin-top: 1rem;
+      font-size: .8rem;
     }
     th, td {
-      padding: .5rem .55rem;
-      border-bottom: 1px solid rgba(0,0,0,0.02);
+      padding: .55rem .6rem;
+      border-bottom: 1px solid rgba(0,0,0,.04);
       text-align: left;
     }
-
-    /* Folder grid */
-    .folder-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
-      gap: 1rem;
-      margin-top: 1.1rem;
-    }
-    .folder {
-      background: linear-gradient(140deg, rgba(15,81,50,0.03) 0%, #ffffff 50%, rgba(252,185,0,0.05) 100%);
-      border: 1px solid rgba(15,81,50,0.13);
-      border-left: 4px solid #0f5132;
-      border-radius: .85rem;
-      padding: .7rem .8rem .75rem;
-      display: flex;
-      flex-direction: column;
-      gap: .25rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-    }
-    .folder small { color: var(--muted); }
-
-    /* Contact */
-    .contact-box {
-      display: grid;
-      grid-template-columns: 1.12fr .88fr;
-      gap: 1.3rem;
-      margin-top: 1.3rem;
-    }
-
-    /* Footer */
+    thead tr { background: rgba(15,81,50,.045); }
     .footer {
       background: #051015;
       color: #fff;
-      padding: 1.1rem 5vw 1.2rem;
-      font-size: .7rem;
       text-align: center;
+      font-size: .7rem;
+      padding: 1.1rem 1rem;
       margin-top: 2.4rem;
     }
-
-    /* Responsive */
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
     @media (max-width: 992px) {
-      .hero {
-        grid-template-columns: 1fr;
-        background-position: right -200px top -200px;
-      }
-      .grid-2, .contact-box {
-        grid-template-columns: 1fr;
-      }
+      .hero { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
       .nav-links { display: none; }
-      .mobile-toggle { display: block; }
-    }
-    @media (max-width: 520px) {
-      section, .hero { padding-inline: 1.05rem; }
-      .topbar { flex-direction: column; align-items: flex-start; }
-      .hero-actions { flex-direction: column; align-items: flex-start; }
     }
   </style>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("mobile-toggle");
-      const nav = document.getElementById("nav-links");
-      if (btn) {
-        btn.addEventListener("click", () => {
-          if (nav.style.display === "flex") {
-            nav.style.display = "none";
-          } else {
-            nav.style.display = "flex";
-            nav.style.flexDirection = "column";
-            nav.style.position = "absolute";
-            nav.style.top = "60px";
-            nav.style.right = "10px";
-            nav.style.background = "#fff";
-            nav.style.padding = "0.75rem 1rem";
-            nav.style.borderRadius = "1rem";
-            nav.style.boxShadow = "0 14px 25px rgba(0,0,0,0.12)";
-          }
-        });
+    document.addEventListener("DOMContentLoaded", function(){
+      const enBtn = document.getElementById("lang-en");
+      const frBtn = document.getElementById("lang-fr");
+      const enSection = document.getElementById("lang-en-section");
+      const frSection = document.getElementById("lang-fr-section");
+
+      function showEnglish(){
+        enSection.classList.add("active");
+        frSection.classList.remove("active");
+        enBtn.classList.add("active");
+        frBtn.classList.remove("active");
+        document.documentElement.lang = "en";
       }
+      function showFrench(){
+        frSection.classList.add("active");
+        enSection.classList.remove("active");
+        frBtn.classList.add("active");
+        enBtn.classList.remove("active");
+        document.documentElement.lang = "fr";
+      }
+      enBtn.addEventListener("click", showEnglish);
+      frBtn.addEventListener("click", showFrench);
+      showEnglish();
     });
   </script>
 </head>
 <body>
-
-  <div class="topbar fade-in">
-    <small>
-      <span><strong>Email:</strong> harvestimeafricadirectorate@gmail.com</span>
-      <span><strong>WhatsApp:</strong> +234 703 942 9826 · +234 915 858 8901 · +234 813 339 9661</span>
-    </small>
-    <small><em>Continental Africa Directorate – Osogbo, Osun State, Nigeria</em></small>
+  <div class="topbar">
+    <div>
+      <strong>Email:</strong> harvestimeafricadirectorate@gmail.com
+      &nbsp; | &nbsp;
+      <strong>WhatsApp:</strong> +234 703 942 9826 · +234 915 858 8901 · +234 813 339 9661
+    </div>
+    <div>
+      <small>Continental Africa Directorate – Osogbo, Nigeria</small>
+    </div>
   </div>
-
   <header>
     <nav class="nav">
       <div class="brand">
@@ -376,300 +247,151 @@
         </div>
       </div>
       <div class="nav-links" id="nav-links">
-        <a href="#about">About</a>
-        <a href="#beliefs">Beliefs</a>
-        <a href="#visions">Cardinal Visions</a>
+        <a href="#about">About / À propos</a>
         <a href="#programmes">Programmes</a>
-        <a href="#schools">Schools</a>
         <a href="#leadership">Leadership</a>
-        <a href="#chapters">Chapters</a>
-        <a href="#faculties">Faculties</a>
-        <a href="#downloads">Resources</a>
-        <a href="#contact" class="btn-primary">Admissions</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Admissions</a>
+        <button id="lang-en" class="lang-btn active" type="button">English 🇬🇧</button>
+        <button id="lang-fr" class="lang-btn" type="button">Français 🇫🇷</button>
       </div>
-      <button class="mobile-toggle" id="mobile-toggle">☰</button>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero fade-in" id="top">
+  <section class="hero" id="top">
     <div>
-      <span class="hero-tag">“Training and Equipping Labourers for Worldwide Spiritual Harvest” – Matt. 9:37–38</span>
-      <h1 class="hero-title">Harvestime International Bible Institute Africa</h1>
-      <p>Continental Africa Directorate of Harvestime International Network (USA), committed to raising biblically grounded, Spirit-filled, and mission-minded leaders for the African Church and the nations.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Apply / Enroll Now →</a>
-        <div class="hero-pill">Certificate – Diploma – Bachelor – PGD – Master – PhD</div>
-      </div>
-      <div class="stats">
-        <div class="stat-box">
-          <h4>2007/2008</h4>
-          <p>Introduced to Africa</p>
-        </div>
-        <div class="stat-box">
-          <h4>15+ </h4>
-          <p>African Chapters</p>
-        </div>
-        <div class="stat-box">
-          <h4>2</h4>
-          <p>Major Schools</p>
-        </div>
-      </div>
+      <span class="hero-tag">Training & Equipping · Formation & Équipement</span>
+      <h1 class="hero-title">Harvestime International Bible Institute Africa (HIBIAFRICA)</h1>
+      <p>Continental Africa Directorate of Harvestime International Network (USA) – raising biblically grounded, Spirit-led and mission-minded leaders for Africa and the nations.</p>
+      <a href="#contact" class="btn-primary">Apply / S’inscrire →</a>
     </div>
-    <div class="hero-card">
+    <div class="card">
       <h3>Under the Auspices of HIN (USA)</h3>
-      <p class="hero-meta">Harvestime International Network · USA</p>
-      <p>Operating with the approval and oversight of the Founder and Worldwide President of Harvestime International Network (USA).</p>
-      <ul class="list">
-        <li>Founder (Late): <strong>Argis Hulsey</strong></li>
-        <li>President (USA): <strong>Dr. Patricia Hulsey</strong></li>
-        <li>Africa Directorate: <strong>Dr. Samuel Abiodun Oladimeji</strong></li>
+      <p>Functioning with the approval and oversight of Harvestime International Network, USA.</p>
+      <ul>
+        <li>Founder (late): Argis Hulsey</li>
+        <li>President (USA): Dr. Patricia Hulsey</li>
+        <li>Africa Directorate: Dr. Samuel Abiodun Oladimeji</li>
       </ul>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="fade-in">
-    <h2 class="section-title">About HIBIAFRICA</h2>
-    <p class="section-sub">Established as the continental extension of Harvestime International Network (USA), HIBIAFRICA coordinates national chapters, partner ministries, and students across Anglophone and Francophone Africa.</p>
-    <div class="grid-2">
-      <div class="card">
-        <h3>Identity & Mandate</h3>
-        <p>Introduced to Nigeria by <strong>Dr. Samuel Abiodun Oladimeji</strong> in 2007/2008 and later mandated to spread the vision across Africa. Head Office (Africa): <strong>Osogbo, Osun State, Nigeria.</strong></p>
-      </div>
-      <div class="card" id="founder">
-        <h3>Global Covering</h3>
-        <p>HIBIAFRICA functions under the oversight of the Founder and Worldwide President of Harvestime International Network (USA), ensuring doctrinal alignment and international ministry standards.</p>
-      </div>
+  <main>
+    <div id="lang-en-section" class="lang-section active">
+      <section class="section" id="about">
+        <h2 class="section-title">About HIBIAFRICA</h2>
+        <p class="section-sub">HIBIAFRICA is the continental extension of Harvestime International Network (USA), introduced to Africa in 2007/2008 by Dr. Samuel Abiodun Oladimeji.</p>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Identity & Mandate</h3>
+            <p>Head Office (Africa): Osogbo, Osun State, Nigeria. Supervising national chapters, partner ministries, faculty and students across Anglophone and Francophone Africa.</p>
+          </div>
+          <div class="card">
+            <h3>Our Vision</h3>
+            <p>“Training and equipping labourers for worldwide spiritual harvest.” (Matthew 9:37–38; John 4:35)</p>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="programmes">
+        <h2 class="section-title">Academic Programmes & Duration</h2>
+        <p class="section-sub">Certificate to PhD · On-site & Online · Ministry focused.</p>
+        <div class="card">
+          <table>
+            <thead><tr><th>Programme</th><th>Duration</th><th>Mode</th></tr></thead>
+            <tbody>
+              <tr><td>Certificate</td><td>1 Year</td><td>On-site / Online</td></tr>
+              <tr><td>Diploma</td><td>2 Years</td><td>On-site / Online</td></tr>
+              <tr><td>Bachelor</td><td>3–4 Years</td><td>On-site / Online</td></tr>
+              <tr><td>Postgraduate Diploma (PGD)</td><td>1 Year</td><td>On-site / Online</td></tr>
+              <tr><td>Master’s</td><td>18 Months (3 Semesters)</td><td>On-site / Online</td></tr>
+              <tr><td>PhD</td><td>3 Years</td><td>On-site / Online</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="section" id="leadership">
+        <h2 class="section-title">Continental Leadership</h2>
+        <p class="section-sub">African Directorate – Osogbo, Nigeria.</p>
+        <div class="card" style="overflow-x:auto;">
+          <table>
+            <thead><tr><th>Name</th><th>Position</th><th>Portfolio</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Dr. Samuel Abiodun Oladimeji</strong></td><td>Provost & Continental Africa Director</td><td>Overall leadership, strategic vision, continental coordination.</td></tr>
+              <tr><td><strong>Dr. (Mrs.) Oluwafemi Kenny Oladimeji</strong></td><td>Deputy Provost & Continental Administrator</td><td>Administration, supervision, inter-chapter coordination.</td></tr>
+              <tr><td><strong>Dr. Oluwole Caleb Ojerinde</strong></td><td>Continental Registrar</td><td>Admissions, records, certificates.</td></tr>
+              <tr><td><strong>Dr. Tosin Awoyinka</strong></td><td>Continental Dean of Academics</td><td>Curriculum, quality control, academic affairs.</td></tr>
+              <tr><td><strong>Dr. Olayinka Ojo</strong></td><td>Continental Legal Advisor</td><td>Legal, policy, institutional compliance.</td></tr>
+              <tr><td><strong>Rev. Dr. Agani Pierre Adeyemi</strong></td><td>General Francophone Coordinator / Benin Director</td><td>Francophone oversight and Benin Republic chapter.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
+
+    <div id="lang-fr-section" class="lang-section">
+      <section class="section" id="about-fr">
+        <h2 class="section-title">À propos de HIBIAFRICA</h2>
+        <p class="section-sub">HIBIAFRICA est la direction continentale Afrique du Harvestime International Network (USA), implantée en 2007/2008 au Nigéria par le Dr Samuel Abiodun Oladimeji.</p>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Identité & Mandat</h3>
+            <p>Siège (Afrique) : Osogbo, État d’Osun, Nigéria. Supervision des chapitres nationaux, ministères partenaires et étudiants dans les pays francophones et anglophones.</p>
+          </div>
+          <div class="card">
+            <h3>Notre Vision</h3>
+            <p>« Former et équiper des ouvriers pour la moisson spirituelle mondiale. » (Matthieu 9:37–38; Jean 4:35)</p>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="programmes-fr">
+        <h2 class="section-title">Programmes académiques & Durée</h2>
+        <p class="section-sub">Du Certificat au Doctorat · Présentiel & En ligne.</p>
+        <div class="card">
+          <table>
+            <thead><tr><th>Programme</th><th>Durée</th><th>Mode</th></tr></thead>
+            <tbody>
+              <tr><td>Certificat</td><td>1 an</td><td>Présentiel / En ligne</td></tr>
+              <tr><td>Diplôme</td><td>2 ans</td><td>Présentiel / En ligne</td></tr>
+              <tr><td>Licence (B.A.)</td><td>3–4 ans</td><td>Présentiel / En ligne</td></tr>
+              <tr><td>PGD (Diplôme de 3e cycle)</td><td>1 an</td><td>Présentiel / En ligne</td></tr>
+              <tr><td>Master</td><td>18 mois (3 semestres)</td><td>Présentiel / En ligne</td></tr>
+              <tr><td>Doctorat (PhD)</td><td>3 ans</td><td>Présentiel / En ligne</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="section" id="leadership-fr">
+        <h2 class="section-title">Direction continentale</h2>
+        <p class="section-sub">Direction Afrique – Osogbo, Nigéria.</p>
+        <div class="card" style="overflow-x:auto;">
+          <table>
+            <thead><tr><th>Nom</th><th>Fonction</th><th>Responsabilités</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Dr Samuel Abiodun Oladimeji</strong></td><td>Recteur & Directeur Continental Afrique</td><td>Vision, coordination continentale.</td></tr>
+              <tr><td><strong>Dr (Mme) Oluwafemi Kenny Oladimeji</strong></td><td>Vice-Recteur & Administratrice</td><td>Administration, supervision.</td></tr>
+              <tr><td><strong>Dr Oluwole Caleb Ojerinde</strong></td><td>Registraire continental</td><td>Admissions, résultats, certificats.</td></tr>
+              <tr><td><strong>Dr Tosin Awoyinka</strong></td><td>Doyen académique</td><td>Programmes & qualité académique.</td></tr>
+              <tr><td><strong>Dr Olayinka Ojo</strong></td><td>Conseiller juridique</td><td>Politiques & conformité.</td></tr>
+              <tr><td><strong>Rév. Dr Agani Pierre Adeyemi</strong></td><td>Coordinateur général francophone / Directeur Bénin</td><td>Suivi des pays francophones.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <section class="section" id="resources">
+    <h2 class="section-title">Resources / Ressources</h2>
+    <p class="section-sub">Attach Book Catalogue, Prospectus, Student Handbook, Admission Form, DAFAD, Newsletter, and Photo Gallery here.</p>
   </section>
 
-  <!-- BELIEFS -->
-  <section id="beliefs" class="fade-in">
-    <h2 class="section-title">What We Believe</h2>
-    <p class="section-sub">A Christ-centered, Bible-based, mission-driven and harvest-focused doctrinal statement.</p>
-    <div class="grid-2">
-      <div class="card">
-        <h3>Core Doctrines</h3>
-        <ul class="list">
-          <li>The Bible is God’s inspired and infallible Word (Psalm 119:89).</li>
-          <li>One God in three Persons — Father, Son, Holy Spirit (1 John 5:8).</li>
-          <li>Salvation is by grace through faith in Christ alone (Ephesians 2:8–9).</li>
-          <li>The Church is the Body and Bride of Christ (Mark 16:15–18).</li>
-          <li>We believe in the visible return of Christ and final harvest (Revelation 14:15).</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Our Name & Vision</h3>
-        <p><strong>“Harvestime”</strong> joins “harvest” and “time” — emphasizing urgency for missions:</p>
-        <p><em>“Lift up your eyes… the fields are white already to harvest.” (John 4:35)</em></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- VISIONS -->
-  <section id="visions" class="fade-in">
-    <h2 class="section-title">The Eight Cardinal Visions</h2>
-    <p class="section-sub">Strategic pillars guiding training, discipleship, community transformation, and intercession.</p>
-    <div class="grid-2">
-      <div class="card">
-        <ol class="list">
-          <li>School of Theology Education (Certificate–PhD)</li>
-          <li>School of Community Transformation Ministry</li>
-          <li>School of Discipleship Training (3 levels)</li>
-          <li>School of Pre- & Post-Marital Courses</li>
-        </ol>
-      </div>
-      <div class="card">
-        <ol start="5" class="list">
-          <li>Daily Exegesis Lecture Series</li>
-          <li>Daily Family Altar Devotion (DAFAD)</li>
-          <li>Ministerial Leadership Refresher Course</li>
-          <li>Intercessory & Prayer Network (Continental)</li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROGRAMMES -->
-  <section id="programmes" class="fade-in">
-    <h2 class="section-title">Academic Programmes & Duration</h2>
-    <p class="section-sub">Flexible, on-site and online pathways for ministers, leaders, pastors and students across Africa and the diaspora.</p>
-    <div class="card">
-      <table>
-        <thead>
-          <tr>
-            <th>Programme Level</th>
-            <th>Duration</th>
-            <th>Mode of Study</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Certificate</td><td>1 Year</td><td>On-site / Online</td></tr>
-          <tr><td>Diploma</td><td>2 Years</td><td>On-site / Online</td></tr>
-          <tr><td>Bachelor</td><td>3–4 Years</td><td>On-site / Online</td></tr>
-          <tr><td>Postgraduate Diploma (PGD)</td><td>1 Year</td><td>On-site / Online</td></tr>
-          <tr><td>Master’s Programme</td><td>18 Months (3 Semesters)</td><td>On-site / Online</td></tr>
-          <tr><td>Doctor of Philosophy (PhD)</td><td>3 Years</td><td>On-site / Online</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- SCHOOLS -->
-  <section id="schools" class="fade-in">
-    <h2 class="section-title">Two Major Schools</h2>
-    <p class="section-sub">Theological formation and social transformation working together.</p>
-    <div class="grid-2">
-      <div class="card">
-        <h3>1. School of Theology Education</h3>
-        <p>Comprehensive biblical and theological studies from Certificate to PhD — with emphasis on exegesis, doctrine, ministry skills, and African contextual theology. <em>(See Prospectus.)</em></p>
-      </div>
-      <div class="card">
-        <h3>2. School of Community Transformation & Advocacy Ministries</h3>
-        <p>Training leaders for community engagement, social justice, anti-vice ministry, and transformational projects — from Certificate to PhD.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEADERSHIP -->
-  <section id="leadership" class="fade-in">
-    <h2 class="section-title">Continental Leadership – African Directorate</h2>
-    <p class="section-sub">Headquarters: Osogbo, Osun State, Nigeria.</p>
-    <div class="card" style="overflow-x:auto;">
-      <table>
-        <thead>
-          <tr>
-            <th>Name & Title</th>
-            <th>Position</th>
-            <th>Responsibilities / Portfolio</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Dr. Samuel Abiodun Oladimeji</strong></td><td>Provost & Continental Africa Director</td><td>Overall leadership, strategic vision, continental coordination.</td></tr>
-          <tr><td><strong>Dr. (Mrs.) Oluwafemi Kenny Oladimeji</strong></td><td>Deputy Provost & Continental Administrator</td><td>Administration, supervision, inter-chapter coordination.</td></tr>
-          <tr><td><strong>Dr. Oluwole Caleb Ojerinde</strong></td><td>Continental Registrar</td><td>Admissions, records, results, certificates.</td></tr>
-          <tr><td><strong>Dr. Tosin Awoyinka</strong></td><td>Continental Dean of Academics</td><td>Curriculum, quality control, academic affairs.</td></tr>
-          <tr><td><strong>Dr. Olayinka Ojo</strong></td><td>Continental Legal Advisor</td><td>Legal, policy, institutional compliance.</td></tr>
-          <tr><td><strong>Rev. Dr. Agani Pierre Adeyemi</strong></td><td>General Francophone Coordinator / Benin Director</td><td>Francophone oversight and Benin Republic chapter.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- CHAPTERS -->
-  <section id="chapters" class="fade-in">
-    <h2 class="section-title">National Chapter Directors – Africa</h2>
-    <p class="section-sub">For nation-specific enquiries, contact your national coordinator.</p>
-    <div class="card" style="overflow-x:auto;">
-      <table>
-        <thead>
-          <tr><th>Country</th><th>Director / Representative</th><th>Contact</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Benin Republic</td><td>Rev. Dr. Agani Pierre Adeyemi</td><td>+229 97 46 39 59</td></tr>
-          <tr><td>Niger Republic</td><td>Pastor Maazou Judith</td><td>+227 70 92 81 27</td></tr>
-          <tr><td>Mali</td><td>Pastor Seidou</td><td>+223 75 95 09 09</td></tr>
-          <tr><td>Burkina Faso</td><td>Apostle Badolo</td><td>+226 01 39 37 49</td></tr>
-          <tr><td>Republic of Chad</td><td>Pastor Semion</td><td>+235 68 67 75 06</td></tr>
-          <tr><td>Togo</td><td>Pastor Kemakpo Ablamvi</td><td>+228 98 34 04 66</td></tr>
-          <tr><td>Côte d’Ivoire</td><td>Pastor SANHIN (Kouassi Narcisse)</td><td>+225 05 53 79 58</td></tr>
-          <tr><td>Ghana</td><td>Sis. Kehinde Bukoye</td><td>+234 816 261 9392</td></tr>
-          <tr><td>Cameroon</td><td>Pastor Mongui Dibebe Thomas</td><td>+237 6 97 38 70 78</td></tr>
-          <tr><td>Central African Republic (Centrafrique)</td><td>Pastor Dr. Kawa Omer</td><td>+236 72 76 29 78</td></tr>
-          <tr><td>Republic of South Africa</td><td>Apostle Dr. Living Stone Aganano & Rev. Mrs. Bulelwa Aganano</td><td>+27 60 212 2441 / +27 69 114 1554</td></tr>
-          <tr><td>Zimbabwe</td><td>Sis. Shamiso Madzorera</td><td>+263 77 867 9592</td></tr>
-          <tr><td>Nigeria</td><td>Dr. (Mrs.) Oluwafemi Kenny Oladimeji</td><td>+234 813 339 9661</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- FACULTIES -->
-  <section id="faculties" class="fade-in">
-    <h2 class="section-title">Faculties & Departments</h2>
-    <p class="section-sub">Available under: School of Theology Education & School of Transformation and Community Advocacy Ministry.</p>
-    <div class="grid-2">
-      <div class="card">
-        <h3>School of Theology Education</h3>
-        <ul class="list">
-          <li>Faculty of Biblical & Theological Studies</li>
-          <li>Faculty of Pastoral & Ministerial Leadership</li>
-          <li>Faculty of Missions & Evangelism</li>
-          <li>Faculty of Christian Education</li>
-          <li>Faculty of Christian Counseling & Psychology</li>
-          <li>Faculty of Church Administration & Management</li>
-          <li>Faculty of Worship & Creative Arts</li>
-          <li>Faculty of Ethics & Christian Living</li>
-          <li>Faculty of Marketplace & Bi-vocational Ministry</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>School of Transformation & Community Advocacy</h3>
-        <ul class="list">
-          <li>Faculty of Addiction Recovery Ministry</li>
-          <li>Faculty of Human Trafficking Intervention</li>
-          <li>Faculty of Domestic Violence Counseling</li>
-          <li>Faculty of Widows & Orphans Care</li>
-          <li>Faculty of Poverty Alleviation & Economic Empowerment</li>
-          <li>Faculty of Youth Ministry & Crime Prevention</li>
-          <li>Faculty of Peacebuilding & Reconciliation</li>
-          <li>Faculty of Family & Marriage Counseling</li>
-          <li>Faculty of Digital Ethics & Cyber Ministry</li>
-          <li>Faculty of Vulnerable Populations Ministry</li>
-          <li>Faculty of Sexual Purity & Addiction Recovery</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- RESOURCES -->
-  <section id="downloads" class="fade-in">
-    <h2 class="section-title">HIBIAFRICA Resources & Downloads</h2>
-    <p class="section-sub">Connect these folders to your GitHub/Vercel project directories.</p>
-    <div class="folder-grid">
-      <div class="folder"><strong>Book Catalogue</strong><small>Official HIBIAFRICA books & publications.</small></div>
-      <div class="folder"><strong>Prospectus</strong><small>Programmes, fees, academic details.</small></div>
-      <div class="folder"><strong>Student Handbook</strong><small>Policies, grading, conduct.</small></div>
-      <div class="folder"><strong>Admission Form</strong><small>Downloadable application form.</small></div>
-      <div class="folder"><strong>Online Admission</strong><small>Link to admission portal.</small></div>
-      <div class="folder"><strong>Course Materials</strong><small>Lecture notes, manuals, outlines.</small></div>
-      <div class="folder"><strong>Monthly Newsletter</strong><small>Latest news & updates.</small></div>
-      <div class="folder"><strong>Monthly DAFAD</strong><small>Daily Family Altar Devotion.</small></div>
-      <div class="folder"><strong>Photo Gallery</strong><small>Campus & chapter activities.</small></div>
-      <div class="folder"><strong>Annual Convocation</strong><small>Programme, speeches, oath.</small></div>
-      <div class="folder"><strong>Semester Registration Form</strong><small>For returning students.</small></div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="fade-in">
-    <h2 class="section-title">Admissions & Enquiries</h2>
-    <p class="section-sub">Apply through your national chapter director or contact the African Directorate Office in Osogbo, Nigeria.</p>
-    <div class="contact-box">
-      <div class="card">
-        <h3>Contact HIBIAFRICA</h3>
-        <p><strong>Email:</strong> harvestimeafricadirectorate@gmail.com</p>
-        <p><strong>WhatsApp:</strong> +234 703 942 9826 · +234 915 858 8901 · +234 813 339 9661</p>
-        <p><strong>Head Office (Africa):</strong> Osogbo, Osun State, Nigeria</p>
-        <p><em>For nation-specific matters, contact your National Chapter Director.</em></p>
-      </div>
-      <div class="card">
-        <h3>Quick Admission Interest</h3>
-        <p>Send us:</p>
-        <ul class="list">
-          <li>Full Name & Country</li>
-          <li>Programme (Cert/Dip/B.A./PGD/M.A./PhD)</li>
-          <li>Preferred Mode: Online / On-site</li>
-        </ul>
-        <p>We will respond with fees, semester schedule, and study materials.</p>
-      </div>
-    </div>
+  <section class="section" id="contact">
+    <h2 class="section-title">Contact / Contact</h2>
+    <p class="section-sub">Email: harvestimeafricadirectorate@gmail.com · Head Office (Africa): Osogbo, Osun State, Nigeria.</p>
   </section>
 
   <footer class="footer">
     © 2025 Harvestime International Bible Institute Africa (HIBIAFRICA). Continental Africa Directorate of Harvestime International Network (USA). All Rights Reserved.
   </footer>
-
 </body>
 </html>
