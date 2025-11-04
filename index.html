@@ -4,111 +4,698 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HIBIAFRICA – Harvestime International Bible Institute Africa</title>
+  <meta name="description" content="Harvestime International Bible Institute Africa (HIBIAFRICA) – Continental Africa Directorate of Harvestime International Network (USA). Training and Equipping Labourers for Worldwide Spiritual Harvest." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%231d4ed8'/%3E%3Ctext x='50' y='58' font-size='44' text-anchor='middle' fill='white' font-family='Arial'%3EH%3C/text%3E%3C/svg%3E" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --hibi-blue:#1d4ed8; --hibi-blue-600:#2563eb; }
+    .btn-primary{ background:var(--hibi-blue); color:#fff }
+    .btn-primary:hover{ background:var(--hibi-blue-600) }
+    .card{ background:#fff; border:1px solid #e5e7eb; border-radius:14px; box-shadow:0 8px 20px rgba(0,0,0,.06) }
+    .nav-underline a{ position:relative }
+    .nav-underline a::after{ content:''; position:absolute; left:0; bottom:-6px; height:2px; width:0; background:var(--hibi-blue); transition:width .25s ease }
+    .nav-underline a:hover::after{ width:100% }
+    .badge{ background:#fff7db; border:1px solid #f5e6a6; color:#7a5a00 }
+    .section-title{ font-weight:800 }
+    .floating-cta{ position:fixed; right:1rem; bottom:1rem; z-index:60 }
+    .content-wrap[hidden]{ display:none }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased">
+  <div class="bg-gray-900 text-gray-100 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col md:flex-row items-center gap-2 md:gap-6 justify-between">
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+        <span><strong>Email:</strong> <a href="mailto:harvestimeafricadirectorate@gmail.com" class="underline decoration-dotted">harvestimeafricadirectorate@gmail.com</a></span>
+        <span class="hidden md:inline">|</span>
+        <span><strong>WhatsApp:</strong> +234 703 942 9826 · +234 915 858 8901 · +234 813 339 9661</span>
+      </div>
+      <div class="text-xs md:text-sm">Head Office (Africa): Osogbo, Osun State, Nigeria</div>
+    </div>
+  </div>
+
   <header class="bg-white sticky top-0 z-40 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between py-4">
         <a href="#home" class="flex items-center gap-3">
-          <img src="assets/logo.png" alt="HIBIAFRICA Logo" class="w-10 h-10 object-contain" />
+          <img src="logo.png" alt="HIBIAFRICA Logo" class="w-10 h-10 rounded-full object-cover" onerror="this.style.display='none';document.getElementById('hibi-fallback').style.display='grid';">
+          <div id="hibi-fallback" class="w-10 h-10 rounded-full grid place-items-center bg-blue-600 text-white font-bold hidden">HI</div>
           <div class="leading-tight">
             <div class="font-bold">HIBIAFRICA</div>
             <div class="text-xs text-gray-600">Harvestime Intl. Bible Institute Africa</div>
           </div>
         </a>
-        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-          <a href="#about">About</a>
-          <a href="#beliefs">Doctrinal Statement</a>
-          <a href="#visions">8 Cardinal Visions</a>
-          <a href="#programmes">Programmes</a>
-          <a href="#schools">2 Major Schools</a>
-          <a href="#leadership">Leadership</a>
-          <a href="#chapters">Chapters</a>
-          <a href="#faculties">Faculties</a>
-          <a href="#resources">Resources</a>
-          <a href="#admissions">Admissions</a>
+        <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold nav-underline">
+          <a href="#about" data-i18n="en">About</a>
+          <a href="#beliefs" data-i18n="en">Doctrinal Statement</a>
+          <a href="#visions" data-i18n="en">8 Cardinal Visions</a>
+          <a href="#programmes" data-i18n="en">Programmes</a>
+          <a href="#schools" data-i18n="en">2 Major Schools</a>
+          <a href="#leadership" data-i18n="en">Leadership</a>
+          <a href="#chapters" data-i18n="en">Chapters</a>
+          <a href="#faculties" data-i18n="en">Faculties</a>
+          <a href="#resources" data-i18n="en">Resources</a>
+          <a href="#admissions" data-i18n="en">Admissions</a>
+          <a href="#apropos" data-i18n="fr">À propos</a>
+          <a href="#croyances" data-i18n="fr">Déclaration doctrinale</a>
+          <a href="#visions-fr" data-i18n="fr">8 Visions Cardinales</a>
+          <a href="#programmes-fr" data-i18n="fr">Programmes</a>
+          <a href="#ecoles-fr" data-i18n="fr">Deux Grandes Écoles</a>
+          <a href="#direction-fr" data-i18n="fr">Direction</a>
+          <a href="#chapitres-fr" data-i18n="fr">Chapitres</a>
+          <a href="#facultes-fr" data-i18n="fr">Facultés</a>
+          <a href="#ressources-fr" data-i18n="fr">Ressources</a>
+          <a href="#admissions-fr" data-i18n="fr">Admissions</a>
         </nav>
+        <div class="flex items-center gap-2">
+          <button id="btnEn" class="px-3 py-1 text-sm rounded-full border border-gray-300 hover:bg-gray-100" aria-pressed="true">English 🇬🇧</button>
+          <button id="btnFr" class="px-3 py-1 text-sm rounded-full border border-gray-300 hover:bg-gray-100" aria-pressed="false">Français 🇫🇷</button>
+          <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-md border border-gray-300" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
       </div>
+    </div>
+    <div id="mobileMenu" class="lg:hidden hidden border-t border-gray-200 bg-white">
+      <nav class="max-w-7xl mx-auto px-4 py-4 grid gap-3 text-sm font-semibold">
+        <div class="text-gray-500 uppercase tracking-wider">English</div>
+        <a href="#about">About</a>
+        <a href="#beliefs">Doctrinal Statement</a>
+        <a href="#visions">8 Cardinal Visions</a>
+        <a href="#programmes">Programmes</a>
+        <a href="#schools">2 Major Schools</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#chapters">Chapters</a>
+        <a href="#faculties">Faculties</a>
+        <a href="#resources">Resources</a>
+        <a href="#admissions">Admissions</a>
+        <div class="text-gray-500 uppercase tracking-wider mt-2">Français</div>
+        <a href="#apropos">À propos</a>
+        <a href="#croyances">Déclaration doctrinale</a>
+        <a href="#visions-fr">8 Visions Cardinales</a>
+        <a href="#programmes-fr">Programmes</a>
+        <a href="#ecoles-fr">Deux Grandes Écoles</a>
+        <a href="#direction-fr">Direction</a>
+        <a href="#chapitres-fr">Chapitres</a>
+        <a href="#facultes-fr">Facultés</a>
+        <a href="#ressources-fr">Ressources</a>
+        <a href="#admissions-fr">Admissions</a>
+      </nav>
     </div>
   </header>
 
-  <section id="home" class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 class="text-3xl md:text-4xl font-extrabold">HARVESTIME INTERNATIONAL BIBLE INSTITUTE AFRICA (HIBIAFRICA)</h1>
-      <p class="mt-3 text-gray-700">All content preserved. Use the top buttons to scroll to each section on this same page.</p>
-      <img src="assets/hero-image.png" alt="HIBIAFRICA banner" class="mt-6 rounded-xl border" />
+  <section id="home" class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="uppercase tracking-wide text-sm text-blue-700 font-semibold">
+            Motto: “Training and Equipping Labourers for Worldwide Spiritual Harvest.” – Matthew 9:37–38
+          </p>
+          <h1 class="mt-3 text-3xl md:text-5xl section-title leading-tight">
+            HARVESTIME INTERNATIONAL BIBLE INSTITUTE AFRICA (HIBIAFRICA)
+          </h1>
+          <p class="mt-4 text-lg text-gray-700">
+            Continental Africa Directorate of Harvestime International Network (USA)
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#admissions" class="inline-flex items-center justify-center px-5 py-3 rounded-xl btn-primary font-semibold shadow focus:outline-none focus:ring-2 focus:ring-blue-500">Apply / Enroll Now</a>
+            <a href="#resources" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white text-blue-700 font-semibold border border-blue-200 hover:bg-blue-50 shadow">Download Resources</a>
+          </div>
+          <p class="mt-6 text-xs md:text-sm badge inline-block rounded-full px-3 py-1">Under the Auspices of HIN (USA)</p>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/3] w-full rounded-2xl bg-white shadow-xl border border-gray-100 grid place-items-center p-6">
+            <div class="text-center">
+              <div class="text-5xl font-extrabold text-blue-700">HIBIAFRICA</div>
+              <div class="mt-2 text-gray-500">Replace with a banner image if desired.</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="about" class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-bold">About HIBIAFRICA</h2>
-      <p class="mt-3">Identity & Mandate… (your full About text goes here; unchanged from your previous content).</p>
-    </div>
-  </section>
+  <!-- English -->
+  <main id="content-en" class="content-wrap" data-lang="en">
+    <section id="about" class="py-14 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">ABOUT HIBIAFRICA</h2>
+        <h3 class="mt-3 font-bold">Identity &amp; Mandate</h3>
+        <p class="mt-3">Harvestime International Bible Institute (HIBI) was introduced to Africa (Nigeria) by Dr. Samuel Abiodun Oladimeji in 2007/2008. A few years later, he received a divine mandate to extend the vision across the African continent. With full authorization and support from the Headquarters in the United States of America, the Harvestime International Bible Institute African Directorate (HIBIAFRICA) was established as the continental arm of Harvestime International Network (USA).</p>
+        <p class="mt-2"><strong>Head Office (Africa):</strong> Osogbo, Osun State, Nigeria.</p>
+        <p class="mt-2">HIBIAFRICA oversees national chapters, partner ministries, faculty, and students across Anglophone and Francophone African nations.</p>
+        <h3 class="mt-6 font-bold">UNDER THE AUSPICES OF HIN (USA)</h3>
+        <p class="mt-2"><strong>Founder &amp; Worldwide Presidency (USA)</strong><br/>HIBIAFRICA operates under the oversight of the Founder and Worldwide President of Harvestime International Network (USA).</p>
+        <h3 class="mt-6 font-bold">The Meaning of “Harvestime”</h3>
+        <p class="mt-2">The name combines <strong>harvest</strong> and <strong>time</strong>, emphasizing the urgency of Christ’s call:<br/><em>“Lift up your eyes, and look on the fields; for they are white already to harvest.” – John 4:35</em></p>
+        <h3 class="mt-6 font-bold">Vision</h3>
+        <p class="mt-2">As the return of our Lord Jesus Christ draws near, the need for labourers in the global harvest fields grows stronger than ever.</p>
+        <ul class="list-disc ml-6 mt-2">
+          <li><strong>International:</strong> A global vision with special focus on reaching unreached peoples.</li>
+          <li><strong>Network:</strong> Uniting churches, ministries, and believers across nations to advance the Gospel of the Kingdom.</li>
+        </ul>
+      </div>
+    </section>
 
-  <section id="beliefs" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-bold">What We Believe (Doctrinal Statement)</h2>
-      <p class="mt-3">Christ-centered · Bible-based · Mission-focused…</p>
-    </div>
-  </section>
+    <section id="founders" class="py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">Founders</h2>
+        <p class="mt-3"><strong>Argis Hulsey (Late)</strong><br/>Founder &amp; Former President, Harvestime International Network (USA). A veteran law enforcement officer (29 years) and international ministry leader who served faithfully until his transition in 2022.</p>
+        <p class="mt-3"><strong>Dr. Patricia Hulsey</strong><br/>President, Harvestime International Network (USA). Educator, author of the Harvestime Training Series, and an international speaker who has ministered in over 45 nations.</p>
+      </div>
+    </section>
 
-  <section id="visions" class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-bold">The Eight Cardinal Visions of HIBIAFRICA</h2>
-      <p class="mt-3">Strategic pillars for training, discipleship, transformation, and intercession…</p>
-    </div>
-  </section>
+    <section id="beliefs" class="py-14 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">WHAT WE BELIEVE (DOCTRINAL STATEMENT)</h2>
+        <ul class="mt-4 space-y-4">
+          <li><strong>The Word of God – The Seed (Luke 8:11):</strong> The Bible (Old &amp; New Testaments) is the inspired, infallible, and final authority for faith, life, and ministry (Psalm 119:89).</li>
+          <li><strong>The Triune God – The Lord of the Harvest (Matthew 9:38):</strong> One God in three Persons — Father, Son, and Holy Spirit (1 John 5:8).</li>
+          <li><strong>Man – The Sower (Mark 4:3):</strong> Created in God’s image, fallen through sin, and restored only through Christ (1 Corinthians 15:45–47).</li>
+          <li><strong>Salvation – The Harvest (Matthew 13:23):</strong> Salvation is by grace through faith in Christ alone (Ephesians 2:8–9).</li>
+          <li><strong>The Church – The Labourers (Matthew 9:38):</strong> The Body and Bride of Christ, commissioned to preach, teach, disciple, and demonstrate God’s power (Mark 16:15–18).</li>
+          <li><strong>The Consummation – The Final Harvest (Revelation 14:15):</strong> We believe in the visible return of Christ, resurrection, judgment, and eternal destinies (1 Thessalonians 4:13–17; Revelation 20:12).</li>
+        </ul>
+        <p class="mt-4"><strong>Legal Status:</strong> Harvestime International Network (USA) is a registered non-profit religious organization.</p>
+      </div>
+    </section>
 
-  <section id="programmes" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-bold">Academic Programmes and Duration</h2>
-      <p class="mt-3">Table and details preserved…</p>
-    </div>
-  </section>
+    <section id="visions" class="py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">THE EIGHT CARDINAL VISIONS OF HIBIAFRICA</h2>
+        <ol class="mt-4 list-decimal ml-6 space-y-2">
+          <li>School of Theology Education – Spirit-led academic training from Certificate to PhD.</li>
+          <li>School of Community Transformation Ministry – Empowering leaders to reach marginalized and vulnerable populations.</li>
+          <li>School of Discipleship Training – Foundational, intermediate, and advanced discipleship for equipping disciple-makers (2 Tim. 2:2).</li>
+          <li>School of Pre- &amp; Post-Marital Courses – Building godly and crisis-free families.</li>
+          <li>Daily Exegesis Lecture Series – Doctrinally sound, daily Bible exposition.</li>
+          <li>Daily Family Altar Devotion (DAFAD) – Restoring family worship and generational faith.</li>
+          <li>Ministerial Leadership Refresher Course – Ongoing ministerial ethics and renewal training.</li>
+          <li>Intercessory Network – Continental 24/7 prayer mobilization for revival and vision protection.</li>
+        </ol>
+      </div>
+    </section>
 
-  <section id="schools" class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-bold">Two Major Schools</h2>
-      <p class="mt-3">Theology Education & Community Transformation…</p>
-    </div>
-  </section>
+    <section id="programmes" class="py-14 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">ACADEMIC PROGRAMMES AND DURATION</h2>
+        <div class="overflow-x-auto mt-4">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-100">
+              <tr class="text-left">
+                <th class="p-3 font-bold">Programme Level</th>
+                <th class="p-3 font-bold">Duration</th>
+                <th class="p-3 font-bold">Mode of Study</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y">
+              <tr><td class="p-3">Certificate</td><td class="p-3">1 Year</td><td class="p-3">On-site / Online</td></tr>
+              <tr><td class="p-3">Diploma</td><td class="p-3">2 Years</td><td class="p-3">On-site / Online</td></tr>
+              <tr><td class="p-3">Bachelor</td><td class="p-3">3–4 Years</td><td class="p-3">On-site / Online</td></tr>
+              <tr><td class="p-3">Postgraduate Diploma (PGD)</td><td class="p-3">1 Year</td><td class="p-3">On-site / Online</td></tr>
+              <tr><td class="p-3">Master’s Programme</td><td class="p-3">18 Months (3 Semesters)</td><td class="p-3">On-site / Online</td></tr>
+              <tr><td class="p-3">Doctor of Philosophy (PhD)</td><td class="p-3">3 Years</td><td class="p-3">On-site / Online</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4">All programmes integrate biblical depth, academic excellence, and practical ministry for global impact.</p>
+      </div>
+    </section>
 
-  <section id="leadership" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-bold">Continental Leadership – African Directorate</h2>
-      <p class="mt-3">Leadership table retained…</p>
-    </div>
-  </section>
+    <section id="schools" class="py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">TWO MAJOR SCHOOLS</h2>
+        <h3 class="mt-4 font-bold">1. School of Theology Education</h3>
+        <p class="mt-2">Covers biblical and theological studies from Certificate to PhD — focusing on exegesis, doctrine, and contextual theology.<br/>(See Prospectus for full details.)</p>
+        <h3 class="mt-6 font-bold">2. School of Community Transformation &amp; Advocacy Ministries</h3>
+        <p class="mt-2">Trains leaders for social transformation, advocacy, and empowerment ministries — from Certificate to PhD.<br/>(See Prospectus for full details.)</p>
+      </div>
+    </section>
 
-  <section id="chapters" class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-bold">National Chapter Directors – Africa</h2>
-      <p class="mt-3">Country and contacts preserved…</p>
-    </div>
-  </section>
+    <section id="leadership" class="py-14 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">CONTINENTAL LEADERSHIP (AFRICA DIRECTORATE)</h2>
+        <p class="mt-2"><strong>Headquarters:</strong> Osogbo, Osun State, Nigeria</p>
+        <div class="overflow-x-auto mt-4">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-100">
+              <tr class="text-left">
+                <th class="p-3 font-bold">Name</th>
+                <th class="p-3 font-bold">Position</th>
+                <th class="p-3 font-bold">Responsibilities / Portfolio</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y">
+              <tr><td class="p-3">Dr. Samuel Abiodun Oladimeji</td><td class="p-3">Provost &amp; Continental Africa Director</td><td class="p-3">Overall leadership, vision, and continental coordination.</td></tr>
+              <tr><td class="p-3">Dr. (Mrs.) Oluwafemi Kenny Oladimeji</td><td class="p-3">Deputy Provost &amp; Continental Administrator</td><td class="p-3">Administration, supervision, and inter-chapter coordination.</td></tr>
+              <tr><td class="p-3">Dr. Oluwole Caleb Ojerinde</td><td class="p-3">Continental Registrar</td><td class="p-3">Admissions, records, results, certificates.</td></tr>
+              <tr><td class="p-3">Dr. Tosin Awoyinka</td><td class="p-3">Continental Dean of Academics</td><td class="p-3">Curriculum design and academic quality control.</td></tr>
+              <tr><td class="p-3">Dr. Olayinka Ojo</td><td class="p-3">Continental Legal Advisor</td><td class="p-3">Legal, policy, and institutional compliance.</td></tr>
+              <tr><td class="p-3">Rev. Dr. Agani Pierre Adeyemi</td><td class="p-3">General Francophone Coordinator / Benin Director</td><td class="p-3">Oversight of Francophone nations and Benin Republic.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-  <section id="faculties" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-bold">Faculties and Departments – School of Theology Education</h2>
-      <p class="mt-3">All departments listed…</p>
-    </div>
-  </section>
+    <section id="chapters" class="py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">NATIONAL CHAPTER DIRECTORS (AFRICA)</h2>
+        <div class="overflow-x-auto mt-4">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-100">
+              <tr class="text-left">
+                <th class="p-3 font-bold">Country</th>
+                <th class="p-3 font-bold">Director / Representative</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y">
+              <tr><td class="p-3">Benin Republic</td><td class="p-3">Rev. Dr. Agani Pierre Adeyemi</td></tr>
+              <tr><td class="p-3">Niger Republic</td><td class="p-3">Pastor Maazou Judith</td></tr>
+              <tr><td class="p-3">Mali</td><td class="p-3">Pastor Seidou</td></tr>
+              <tr><td class="p-3">Burkina Faso</td><td class="p-3">Apostle Badolo</td></tr>
+              <tr><td class="p-3">Republic of Chad</td><td class="p-3">Pastor Semion</td></tr>
+              <tr><td class="p-3">Togo</td><td class="p-3">Pastor Kemakpo Ablamvi</td></tr>
+              <tr><td class="p-3">Côte d’Ivoire</td><td class="p-3">Pastor SANHIN (Kouassi Narcisse)</td></tr>
+              <tr><td class="p-3">Ghana</td><td class="p-3">Sis. Kehinde Bukoye</td></tr>
+              <tr><td class="p-3">Cameroon</td><td class="p-3">Pastor Mongui Dibebe Thomas</td></tr>
+              <tr><td class="p-3">Central African Republic</td><td class="p-3">Pastor Dr. Kawa Omer</td></tr>
+              <tr><td class="p-3">Republic of South Africa</td><td class="p-3">Apostle Dr. Living Stone &amp; Rev. Mrs. Bulelwa Aganano</td></tr>
+              <tr><td class="p-3">Zimbabwe</td><td class="p-3">Sis. Shamiso Madzorera</td></tr>
+              <tr><td class="p-3">Nigeria</td><td class="p-3">Dr. (Mrs.) Oluwafemi Kenny Oladimeji</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-  <section id="resources" class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-bold">HIBIAFRICA Downloadable / Navigation Resources</h2>
-      <p class="mt-3">Administrative & Admission, Curricular & Academic Guides, Monthly Publications…</p>
-    </div>
-  </section>
+    <section id="faculties" class="py-14 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">FACULTIES AND DEPARTMENTS</h2>
+        <h3 class="mt-4 font-bold">A. School of Theology Education</h3>
+        <p class="mt-2">Includes:</p>
+        <ul class="list-disc ml-6 mt-2 space-y-1">
+          <li>Faculty of Biblical &amp; Theological Studies</li>
+          <li>Faculty of Pastoral &amp; Ministerial Leadership</li>
+          <li>Faculty of Missions &amp; Evangelism</li>
+          <li>Faculty of Christian Education</li>
+          <li>Faculty of Christian Counseling &amp; Psychology</li>
+          <li>Faculty of Church Administration &amp; Management</li>
+          <li>Faculty of Worship &amp; Creative Arts</li>
+          <li>Faculty of Ethics &amp; Christian Living</li>
+          <li>Faculty of Marketplace &amp; Bi-Vocational Ministry</li>
+        </ul>
+        <p class="mt-2 italic">(Each with corresponding departments and study levels from Certificate to PhD.)</p>
 
-  <section id="admissions" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-bold">Admissions & Enrollment</h2>
-      <p class="mt-3">Contact details retained…</p>
-    </div>
-  </section>
+        <h3 class="mt-6 font-bold">B. School of Community Transformation &amp; Advocacy Ministries</h3>
+        <p class="mt-2">Includes specialized faculties such as:</p>
+        <ul class="list-disc ml-6 mt-2 space-y-1">
+          <li>Addiction Recovery Ministry</li>
+          <li>Human Trafficking Intervention</li>
+          <li>Domestic Violence Counseling</li>
+          <li>Widows and Orphans Care</li>
+          <li>Poverty Alleviation &amp; Economic Empowerment</li>
+          <li>Youth Ministry &amp; Crime Prevention</li>
+          <li>Peacebuilding &amp; Reconciliation</li>
+          <li>Family &amp; Marriage Counseling</li>
+          <li>Digital Ethics &amp; Cyber Ministry</li>
+          <li>Vulnerable Populations Ministry</li>
+          <li>Sexual Purity &amp; Addiction Recovery</li>
+        </ul>
+        <p class="mt-2">Each faculty offers Certificate, Diploma, Bachelor, PGD, Master’s, and PhD programmes tailored to equip ministers for community transformation.</p>
+      </div>
+    </section>
+
+    <section id="faculty-intl" class="py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">INTERNATIONAL FACULTY AND INSTRUCTORS</h2>
+        <p class="mt-3">HIBIAFRICA engages qualified international instructors from Africa and beyond, serving both online and on-site. These include visiting lecturers and ministry leaders who bring global perspectives and Spirit-led teaching to equip students for effective ministry.</p>
+      </div>
+    </section>
+
+    <section id="resources" class="py-14 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">RESOURCES / NAVIGATION</h2>
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <a class="card p-5 hover:bg-blue-50" href="/resources/book-catalogue/" title="Book Catalogue Folder">Book Catalogue Folder</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/prospectus/" title="Prospectus Folder">Prospectus Folder</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/student-handbook/" title="Student Handbook">Student Handbook</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/admission-forms/" title="Admission Form Folder">Admission Form Folder</a>
+          <a class="card p-5 hover:bg-blue-50" href="/admissions/portal/" title="Online Admission Portal">Online Admission Portal</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/course-materials/" title="Course Materials Folder">Course Materials Folder</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/newsletters/" title="Monthly Newsletter Folder">Monthly Newsletter Folder</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/dafad/" title="Monthly DAFAD (Devotion) Folder">Monthly DAFAD (Devotion) Folder</a>
+          <a class="card p-5 hover:bg-blue-50" href="/gallery/" title="Photo Gallery Folder">Photo Gallery Folder</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/convocation/" title="Annual Convocation Folder">Annual Convocation Folder</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/semester-registration/" title="Semester Registration Form Folder">Semester Registration Form Folder</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="admissions" class="py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">ADMISSIONS &amp; ENROLLMENT</h2>
+        <p class="mt-3">Prospective students may apply:</p>
+        <ul class="list-disc ml-6 mt-2">
+          <li>Through their National Chapter Director, or</li>
+          <li>Directly via the African Directorate Office in Osogbo, Nigeria.</li>
+        </ul>
+        <p class="mt-3">All details on fees, requirements, and academic schedules are contained in the official HIBIAFRICA Prospectus.</p>
+        <div class="mt-6 grid md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-xl border border-gray-200 bg-white"><h3 class="font-semibold">Email</h3><a class="mt-1 block text-blue-700 underline decoration-dotted" href="mailto:harvestimeafricadirectorate@gmail.com">harvestimeafricadirectorate@gmail.com</a></div>
+          <div class="p-6 rounded-xl border border-gray-200 bg-white"><h3 class="font-semibold">WhatsApp</h3><p class="mt-1">+234 703 942 9826 · +234 915 858 8901 · +234 813 339 9661</p></div>
+          <div class="p-6 rounded-xl border border-gray-200 bg-white"><h3 class="font-semibold">Head Office (Africa)</h3><p class="mt-1">Osogbo, Osun State, Nigeria</p></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-3 gap-8">
+        <div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full grid place-items-center bg-blue-600 text-white font-bold">HI</div>
+            <div><div class="font-bold text-white">HIBIAFRICA</div><div class="text-xs">Harvestime International Bible Institute Africa</div></div>
+          </div>
+          <p class="mt-4 text-sm">Continental Africa Directorate of Harvestime International Network (USA).</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white">Quick Links</h4>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li><a href="#beliefs" class="hover:underline">Doctrinal Statement</a></li>
+            <li><a href="#visions" class="hover:underline">8 Cardinal Visions</a></li>
+            <li><a href="#resources" class="hover:underline">Resources</a></li>
+            <li><a href="#admissions" class="hover:underline">Admissions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white">Contact</h4>
+          <p class="mt-3 text-sm">Email: <a href="mailto:harvestimeafricadirectorate@gmail.com" class="underline decoration-dotted">harvestimeafricadirectorate@gmail.com</a></p>
+          <p class="mt-1 text-sm">WhatsApp: +234 703 942 9826 · +234 915 858 8901 · +234 813 339 9661</p>
+          <p class="mt-1 text-sm">Head Office (Africa): Osogbo, Osun State, Nigeria</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-xs text-gray-400">
+          © 2025 Harvestime International Bible Institute Africa (HIBIAFRICA). All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- French -->
+  <main id="content-fr" class="content-wrap" data-lang="fr" hidden>
+    <section id="apropos" class="py-14 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">À PROPOS DE HIBIAFRICA</h2>
+        <h3 class="mt-3 font-bold">Identité &amp; Mandat</h3>
+        <p class="mt-3">L’Institut Biblique International Harvestime (HIBI) a été introduit en Afrique (Nigéria) par le Dr Samuel Abiodun Oladimeji en 2007/2008. Quelques années plus tard, il a reçu un mandat divin pour étendre la vision à l’ensemble du continent africain. Avec l’autorisation et le soutien complets du Siège aux États-Unis d’Amérique, la Direction Africaine de l’Institut Biblique International Harvestime (HIBIAFRICA) a été établie comme bras continental du Harvestime International Network (USA).</p>
+        <p class="mt-2"><strong>Siège (Afrique) :</strong> Osogbo, État d’Osun, Nigéria.</p>
+        <p class="mt-2">HIBIAFRICA supervise des chapitres nationaux, des ministères partenaires, le corps enseignant et les étudiants dans les nations africaines anglophones et francophones.</p>
+        <h3 class="mt-6 font-bold">SOUS L’ÉGIDE DE HIN (USA)</h3>
+        <p class="mt-2"><strong>Fondateur &amp; Présidence mondiale (USA)</strong><br/>HIBIAFRICA fonctionne sous la supervision du Fondateur et de la Présidente mondiale du Harvestime International Network (USA).</p>
+        <h3 class="mt-6 font-bold">Signification de « Harvestime »</h3>
+        <p class="mt-2">Le nom unit <strong>moisson</strong> et <strong>temps</strong>, soulignant l’urgence de l’appel du Christ :<br/><em>« Levez vos yeux et regardez les champs, car ils sont déjà blancs pour la moisson. » – Jean 4:35</em></p>
+        <h3 class="mt-6 font-bold">Vision</h3>
+        <p class="mt-2">À l’approche du retour de notre Seigneur Jésus-Christ, le besoin d’ouvriers dans le champ mondial devient plus pressant que jamais.</p>
+        <ul class="list-disc ml-6 mt-2">
+          <li><strong>International :</strong> Vision globale avec un accent particulier sur les peuples non atteints.</li>
+          <li><strong>Réseau :</strong> Unir Églises, ministères et croyants à travers les nations pour faire avancer l’Évangile du Royaume.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="fondateurs" class="py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">FONDATEURS</h2>
+        <p class="mt-3"><strong>Argis Hulsey (décédé)</strong><br/>Fondateur et ancien Président, Harvestime International Network (USA). Officier de police chevronné (29 ans) et leader de ministère international, il a servi fidèlement jusqu’à sa transition en 2022.</p>
+        <p class="mt-3"><strong>Dr Patricia Hulsey</strong><br/>Présidente, Harvestime International Network (USA). Éducatrice, auteure de la série de formation Harvestime et oratrice internationale ayant exercé dans plus de 45 nations.</p>
+      </div>
+    </section>
+
+    <section id="croyances" class="py-14 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">CE QUE NOUS CROYONS (DÉCLARATION DOCTRINALE)</h2>
+        <ul class="mt-4 space-y-4">
+          <li><strong>La Parole de Dieu – La Semence (Luc 8:11) :</strong> La Bible (Ancien &amp; Nouveau Testaments) est inspirée, infaillible et l’autorité finale pour la foi, la vie et le ministère (Psaume 119:89).</li>
+          <li><strong>Le Dieu Trinitaire – Le Maître de la Moisson (Matthieu 9:38) :</strong> Un seul Dieu en trois Personnes — Père, Fils et Saint-Esprit (1 Jean 5:8).</li>
+          <li><strong>L’Homme – Le Semeur (Marc 4:3) :</strong> Créé à l’image de Dieu, déchu par le péché et restauré uniquement en Christ (1 Corinthiens 15:45–47).</li>
+          <li><strong>Le Salut – La Moisson (Matthieu 13:23) :</strong> Le salut s’obtient par la grâce, au moyen de la foi en Christ seul (Éphésiens 2:8–9).</li>
+          <li><strong>L’Église – Les Ouvriers (Matthieu 9:38) :</strong> Corps et Épouse de Christ, mandatée pour prêcher, enseigner, faire des disciples et démontrer la puissance de Dieu (Marc 16:15–18).</li>
+          <li><strong>La Consommation – La Moisson Finale (Apocalypse 14:15) :</strong> Nous croyons au retour visible de Christ, à la résurrection, au jugement et aux destinées éternelles (1 Thessaloniciens 4:13–17 ; Apocalypse 20:12).</li>
+        </ul>
+        <p class="mt-4"><strong>Statut juridique :</strong> Harvestime International Network (USA) est une organisation religieuse à but non lucratif dûment enregistrée.</p>
+      </div>
+    </section>
+
+    <section id="visions-fr" class="py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">LES HUIT VISIONS CARDINALES DE HIBIAFRICA</h2>
+        <ol class="mt-4 list-decimal ml-6 space-y-2">
+          <li>École de Formation Théologique – Formation académique conduite par l’Esprit, du Certificat au Doctorat.</li>
+          <li>École de Transformation Communautaire – Outiller des leaders pour atteindre les populations marginalisées et vulnérables.</li>
+          <li>École de Discipolat – Discipolat fondamental, intermédiaire et avancé pour former des faiseurs de disciples (2 Tim. 2:2).</li>
+          <li>École de Cours Pré- et Post-Matrimoniaux – Bâtir des foyers pieux et sans crises.</li>
+          <li>Série d’Exégèse Quotidienne – Exposition biblique quotidienne, doctrinale et saine.</li>
+          <li>DAFAD (Dévotion de l’Autel Familial) – Restaurer le culte familial et la foi générationnelle.</li>
+          <li>Cours de Recyclage en Leadership Ministériel – Formation continue à l’éthique et au renouveau ministériel.</li>
+          <li>Réseau d’Intercession – Mobilisation continentale 24/7 pour le réveil et la protection de la vision.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="programmes-fr" class="py-14 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">PROGRAMMES ACADÉMIQUES ET DURÉE</h2>
+        <div class="overflow-x-auto mt-4">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-100">
+              <tr class="text-left">
+                <th class="p-3 font-bold">Niveau de programme</th>
+                <th class="p-3 font-bold">Durée</th>
+                <th class="p-3 font-bold">Mode d’étude</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y">
+              <tr><td class="p-3">Certificat</td><td class="p-3">1 an</td><td class="p-3">Présentiel / En ligne</td></tr>
+              <tr><td class="p-3">Diplôme</td><td class="p-3">2 ans</td><td class="p-3">Présentiel / En ligne</td></tr>
+              <tr><td class="p-3">Licence (Bachelor)</td><td class="p-3">3–4 ans</td><td class="p-3">Présentiel / En ligne</td></tr>
+              <tr><td class="p-3">Diplôme de 3e cycle (PGD)</td><td class="p-3">1 an</td><td class="p-3">Présentiel / En ligne</td></tr>
+              <tr><td class="p-3">Master</td><td class="p-3">18 mois (3 semestres)</td><td class="p-3">Présentiel / En ligne</td></tr>
+              <tr><td class="p-3">Doctorat (PhD)</td><td class="p-3">3 ans</td><td class="p-3">Présentiel / En ligne</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4">Tous les programmes intègrent profondeur biblique, excellence académique et ministère pratique pour un impact mondial.</p>
+      </div>
+    </section>
+
+    <section id="ecoles-fr" class="py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">DEUX GRANDES ÉCOLES</h2>
+        <h3 class="mt-4 font-bold">1. École de Formation Théologique</h3>
+        <p class="mt-2">Couvre les études bibliques et théologiques du Certificat au Doctorat — avec un accent sur l’exégèse, la doctrine et la théologie contextuelle.<br/>(Voir le Prospectus pour les détails complets.)</p>
+        <h3 class="mt-6 font-bold">2. École de Transformation Communautaire &amp; Ministères de Plaidoyer</h3>
+        <p class="mt-2">Forme des leaders pour la transformation sociale, le plaidoyer et les ministères d’autonomisation — du Certificat au Doctorat.<br/>(Voir le Prospectus pour les détails complets.)</p>
+      </div>
+    </section>
+
+    <section id="direction-fr" class="py-14 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">DIRECTION CONTINENTALE (DIRECTORAT AFRICAIN)</h2>
+        <p class="mt-2"><strong>Siège :</strong> Osogbo, État d’Osun, Nigéria</p>
+        <div class="overflow-x-auto mt-4">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-100">
+              <tr class="text-left">
+                <th class="p-3 font-bold">Nom</th>
+                <th class="p-3 font-bold">Fonction</th>
+                <th class="p-3 font-bold">Responsabilités / Portefeuille</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y">
+              <tr><td class="p-3">Dr Samuel Abiodun Oladimeji</td><td class="p-3">Recteur &amp; Directeur Continental Afrique</td><td class="p-3">Direction générale, vision, coordination continentale.</td></tr>
+              <tr><td class="p-3">Dr (Mme) Oluwafemi Kenny Oladimeji</td><td class="p-3">Vice-Recteur &amp; Administratrice Continentale</td><td class="p-3">Administration, supervision, coordination inter-chapitres.</td></tr>
+              <tr><td class="p-3">Dr Oluwole Caleb Ojerinde</td><td class="p-3">Registraire Continental</td><td class="p-3">Admissions, dossiers, résultats, certificats.</td></tr>
+              <tr><td class="p-3">Dr Tosin Awoyinka</td><td class="p-3">Doyen Académique Continental</td><td class="p-3">Conception curriculaire, contrôle de qualité académique.</td></tr>
+              <tr><td class="p-3">Dr Olayinka Ojo</td><td class="p-3">Conseiller Juridique Continental</td><td class="p-3">Affaires juridiques, politiques, conformité institutionnelle.</td></tr>
+              <tr><td class="p-3">Rév. Dr Agani Pierre Adeyemi</td><td class="p-3">Coordinateur Général Francophone / Directeur Bénin</td><td class="p-3">Suivi des nations francophones et de la République du Bénin.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="chapitres-fr" class="py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">DIRECTEURS DES CHAPITRES NATIONAUX (AFRIQUE)</h2>
+        <div class="overflow-x-auto mt-4">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-100">
+              <tr class="text-left">
+                <th class="p-3 font-bold">Pays</th>
+                <th class="p-3 font-bold">Directeur / Représentant</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y">
+              <tr><td class="p-3">République du Bénin</td><td class="p-3">Rév. Dr Agani Pierre Adeyemi</td></tr>
+              <tr><td class="p-3">République du Niger</td><td class="p-3">Pasteur Maazou Judith</td></tr>
+              <tr><td class="p-3">Mali</td><td class="p-3">Pasteur Seidou</td></tr>
+              <tr><td class="p-3">Burkina Faso</td><td class="p-3">Apôtre Badolo</td></tr>
+              <tr><td class="p-3">République du Tchad</td><td class="p-3">Pasteur Semion</td></tr>
+              <tr><td class="p-3">Togo</td><td class="p-3">Pasteur Kemakpo Ablamvi</td></tr>
+              <tr><td class="p-3">Côte d’Ivoire</td><td class="p-3">Pasteur SANHIN (Kouassi Narcisse)</td></tr>
+              <tr><td class="p-3">Ghana</td><td class="p-3">Sœur Kehinde Bukoye</td></tr>
+              <tr><td class="p-3">Cameroun</td><td class="p-3">Pasteur Mongui Dibebe Thomas</td></tr>
+              <tr><td class="p-3">République Centrafricaine</td><td class="p-3">Pasteur Dr Kawa Omer</td></tr>
+              <tr><td class="p-3">République d’Afrique du Sud</td><td class="p-3">Apôtre Dr Living Stone &amp; Rév. Mme Bulelwa Aganano</td></tr>
+              <tr><td class="p-3">Zimbabwe</td><td class="p-3">Sœur Shamiso Madzorera</td></tr>
+              <tr><td class="p-3">Nigéria</td><td class="p-3">Dr (Mme) Oluwafemi Kenny Oladimeji</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="facultes-fr" class="py-14 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">FACULTÉS ET DÉPARTEMENTS</h2>
+        <h3 class="mt-4 font-bold">A. École de Formation Théologique</h3>
+        <p class="mt-2">Inclut :</p>
+        <ul class="list-disc ml-6 mt-2 space-y-1">
+          <li>Faculté d’Études Bibliques &amp; Théologiques</li>
+          <li>Faculté de Leadership Pastoral &amp; Ministériel</li>
+          <li>Faculté de Missions &amp; d’Évangélisation</li>
+          <li>Faculté d’Éducation Chrétienne</li>
+          <li>Faculté de Counseling Chrétien &amp; de Psychologie</li>
+          <li>Faculté d’Administration &amp; de Gestion de l’Église</li>
+          <li>Faculté d’Adoration &amp; Arts Créatifs</li>
+          <li>Faculté d’Éthique &amp; de Vie Chrétienne</li>
+          <li>Faculté du Ministère Bi-vocationnel &amp; du Marché</li>
+        </ul>
+        <p class="mt-2 italic">(Chaque faculté comporte des départements et des niveaux d’étude du Certificat au Doctorat.)</p>
+
+        <h3 class="mt-6 font-bold">B. École de Transformation Communautaire &amp; Ministères de Plaidoyer</h3>
+        <p class="mt-2">Comprend des facultés spécialisées telles que :</p>
+        <ul class="list-disc ml-6 mt-2 space-y-1">
+          <li>Ministère de Rétablissement des Addictions</li>
+          <li>Intervention contre la Traite des Êtres Humains</li>
+          <li>Counseling en Violences Domestiques</li>
+          <li>Prise en Charge des Veuves et Orphelins</li>
+          <li>Lutte contre la Pauvreté &amp; Autonomisation Économique</li>
+          <li>Ministère de la Jeunesse &amp; Prévention de la Criminalité</li>
+          <li>Construction de la Paix &amp; Réconciliation</li>
+          <li>Counseling Familial &amp; Conjugal</li>
+          <li>Éthique Numérique &amp; Cyber-Ministère</li>
+          <li>Ministère auprès des Populations Vulnérables</li>
+          <li>Pureté Sexuelle &amp; Rétablissement des Addictions</li>
+        </ul>
+        <p class="mt-2">Chaque faculté propose Certificat, Diplôme, Licence, PGD, Master et Doctorat pour équiper les ministres à la transformation communautaire.</p>
+      </div>
+    </section>
+
+    <section id="ressources-fr" class="py-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">RESSOURCES / NAVIGATION</h2>
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <a class="card p-5 hover:bg-blue-50" href="/resources/book-catalogue/" title="Dossier Catalogue de livres">Dossier Catalogue de livres</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/prospectus/" title="Dossier Prospectus">Dossier Prospectus</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/student-handbook/" title="Manuel de l’Étudiant">Manuel de l’Étudiant</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/admission-forms/" title="Dossier Formulaire d’Admission">Dossier Formulaire d’Admission</a>
+          <a class="card p-5 hover:bg-blue-50" href="/admissions/portal/" title="Portail d’Admission en ligne">Portail d’Admission en ligne</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/course-materials/" title="Dossier Supports de Cours">Dossier Supports de Cours</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/newsletters/" title="Dossier Bulletin Mensuel">Dossier Bulletin Mensuel</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/dafad/" title="Dossier DAFAD (Dévotion) Mensuel">Dossier DAFAD (Dévotion) Mensuel</a>
+          <a class="card p-5 hover:bg-blue-50" href="/gallery/" title="Dossier Galerie Photos">Dossier Galerie Photos</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/convocation/" title="Dossier Convocation Annuelle">Dossier Convocation Annuelle</a>
+          <a class="card p-5 hover:bg-blue-50" href="/resources/semester-registration/" title="Dossier Formulaire d’Inscription Semestrielle">Dossier Formulaire d’Inscription Semestrielle</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="admissions-fr" class="py-14 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl md:text-3xl section-title">ADMISSIONS &amp; INSCRIPTION</h2>
+        <p class="mt-3">Les candidats peuvent postuler :</p>
+        <ul class="list-disc ml-6 mt-2">
+          <li>Par l’intermédiaire de leur Directeur de Chapitre National, ou</li>
+          <li>Directement auprès du Bureau de la Direction Africaine à Osogbo, Nigéria.</li>
+        </ul>
+        <p class="mt-3">Tous les détails (frais, conditions, calendriers académiques) figurent dans le Prospectus officiel de HIBIAFRICA.</p>
+        <div class="mt-6 grid md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-xl border border-gray-200 bg-white"><h3 class="font-semibold">Email</h3><a class="mt-1 block text-blue-700 underline decoration-dotted" href="mailto:harvestimeafricadirectorate@gmail.com">harvestimeafricadirectorate@gmail.com</a></div>
+          <div class="p-6 rounded-xl border border-gray-200 bg-white"><h3 class="font-semibold">WhatsApp</h3><p class="mt-1">+234 703 942 9826 · +234 915 858 8901 · +234 813 339 9661</p></div>
+          <div class="p-6 rounded-xl border border-gray-200 bg-white"><h3 class="font-semibold">Siège (Afrique)</h3><p class="mt-1">Osogbo, État d’Osun, Nigéria</p></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-3 gap-8">
+        <div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full grid place-items-center bg-blue-600 text-white font-bold">HI</div>
+            <div><div class="font-bold text-white">HIBIAFRICA</div><div class="text-xs">Harvestime International Bible Institute Africa</div></div>
+          </div>
+          <p class="mt-4 text-sm">Direction Continentale Afrique du Harvestime International Network (USA).</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white">Liens rapides</h4>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li><a href="#croyances" class="hover:underline">Déclaration doctrinale</a></li>
+            <li><a href="#visions-fr" class="hover:underline">8 Visions Cardinales</a></li>
+            <li><a href="#ressources-fr" class="hover:underline">Ressources</a></li>
+            <li><a href="#admissions-fr" class="hover:underline">Admissions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white">Contact</h4>
+          <p class="mt-3 text-sm">Email : <a href="mailto:harvestimeafricadirectorate@gmail.com" class="underline decoration-dotted">harvestimeafricadirectorate@gmail.com</a></p>
+          <p class="mt-1 text-sm">WhatsApp : +234 703 942 9826 · +234 915 858 8901 · +234 813 339 9661</p>
+          <p class="mt-1 text-sm">Siège (Afrique) : Osogbo, État d’Osun, Nigéria</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-xs text-gray-400">
+          © 2025 Harvestime International Bible Institute Africa (HIBIAFRICA). Tous droits réservés.
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="floating-cta">
+    <a href="#admissions" class="px-5 py-3 rounded-full btn-primary shadow-lg font-semibold flex items-center gap-2">
+      <svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 4v16m8-8H4'/></svg>
+      Apply Now
+    </a>
+  </div>
+
+  <script>
+    const btnEn = document.getElementById('btnEn');
+    const btnFr = document.getElementById('btnFr');
+    const enWrap = document.getElementById('content-en');
+    const frWrap = document.getElementById('content-fr');
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function setLang(lang){
+      if(lang === 'fr'){
+        enWrap.hidden = true;
+        frWrap.hidden = false;
+        btnEn.setAttribute('aria-pressed', 'false');
+        btnFr.setAttribute('aria-pressed', 'true');
+        document.documentElement.lang = 'fr';
+      }else{
+        frWrap.hidden = true;
+        enWrap.hidden = false;
+        btnEn.setAttribute('aria-pressed', 'true');
+        btnFr.setAttribute('aria-pressed', 'false');
+        document.documentElement.lang = 'en';
+      }
+      localStorage.setItem('hibi-lang', lang);
+    }
+    btnEn && btnEn.addEventListener('click', ()=>setLang('en'));
+    btnFr && btnFr.addEventListener('click', ()=>setLang('fr'));
+    mobileBtn && mobileBtn.addEventListener('click', ()=>mobileMenu.classList.toggle('hidden'));
+    setLang(localStorage.getItem('hibi-lang') || 'en');
+  </script>
 </body>
 </html>
