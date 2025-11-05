@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIBIAFRICA Resources</title>
+  <meta name="description" content="Quick access to HIBIAFRICA resource folders and documents.">
+  <style>
+    :root{
+      --blue:#1d4ed8;
+      --gold:#facc15;
+      --text:#0b1220;
+      --muted:#64748b;
+      --border:#e5e7eb;
+      --bg:#ffffff;
+      --light:#f8fafc;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    .wrap{max-width:960px;margin:0 auto;padding:24px 16px}
+    h1{font-size:1.5rem;margin:0 0 6px 0}
+    .sub{color:var(--muted);margin:0 0 18px 0}
+    .note{
+      background:var(--light);
+      border:1px dashed var(--border);
+      padding:10px 12px;border-radius:10px;color:var(--muted);font-size:.95rem;margin-bottom:14px
+    }
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:720px){.grid{grid-template-columns:1fr}}
+    a.btn{
+      display:block;text-decoration:none;color:var(--text);font-weight:600;
+      border:1px solid var(--border);background:#fff;border-radius:12px;
+      padding:14px 16px;box-shadow:0 8px 16px rgba(2,6,23,.05);
+    }
+    a.btn:hover{background:var(--light)}
+    .primary{background:var(--blue);color:#fff;border-color:transparent}
+    .primary:hover{filter:brightness(.95)}
+    small{display:block;color:var(--muted);font-weight:500;margin-top:4px}
+    footer{margin-top:22px;color:var(--muted);font-size:.9rem}
+    .badge{display:inline-block;background:var(--gold);color:#111827;font-weight:700;font-size:.8rem;padding:4px 8px;border-radius:999px;margin-bottom:8px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="badge">HIBIAFRICA</span>
+    <h1>Resource Folders</h1>
+    <p class="sub">Simple, direct access to official documents and downloads.</p>
+
+    <div class="note">
+      <strong>How to use:</strong> Upload your PDFs into the matching folders in your repo (e.g. <code>/prospectus/Prospectus.pdf</code>), then update the links below to the exact file names. Use <code>target="_blank"</code> to open in a new tab.
+    </div>
+
+    <div class="grid">
+      <a class="btn" href="/books/" target="_blank">1) Book Catalogue Folder<small>Official HIBIAFRICA books & publications</small></a>
+      <a class="btn" href="/prospectus/" target="_blank">2) Prospectus Folder<small>Programme details, duration, requirements, fees</small></a>
+
+      <a class="btn" href="/handbook/" target="_blank">3) Students’ Handbook<small>Policies, code of conduct, grading</small></a>
+      <a class="btn" href="/admission_form/" target="_blank">4) Admission Form Folder<small>Downloadable application forms</small></a>
+
+      <a class="btn primary" href="/apply/" target="_blank">5) Online Admission Portal<small>Submit applications online</small></a>
+      <a class="btn" href="/course_materials/" target="_blank">6) Course Materials Folder<small>Lecture notes, outlines, manuals</small></a>
+
+      <a class="btn" href="/newsletters/" target="_blank">7) Monthly Newsletter Folder<small>HIBIAFRICA news & updates</small></a>
+      <a class="btn" href="/dafad/" target="_blank">8) Monthly DAFAD Folder<small>Daily Family Altar Devotion</small></a>
+
+      <a class="btn" href="/photos/" target="_blank">9) Photo Gallery Folder<small>Chapters, events, campus photos</small></a>
+      <a class="btn" href="/convocation/" target="_blank">10) Annual Convocation Folder<small>Programme, oath, speeches</small></a>
+
+      <a class="btn" href="/semester_registration/" target="_blank">11) Semester Registration Form Folder<small>Returning students registration</small></a>
+    </div>
+
+    <footer>
+      Tip: If you prefer direct links to a single PDF, change <code>/folder/</code> to the file path, e.g. <code>/prospectus/HIBIAFRICA_Prospectus.pdf</code>.
+    </footer>
+  </div>
+</body>
+</html>
