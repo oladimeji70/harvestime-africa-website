@@ -3,48 +3,47 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HIBIAFRICA – Harvestime International Bible Institute Africa</title>
+<title>HIBIAFRICA – Bilingual Homepage (EN/FR) • Apply • Payments • Resources</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0b1220;--ink:#e5e7eb;--muted:#9fb3ce;--line:#11213f;
-    --panel1:#0c1426;--panel2:#0a1324;
-    --brand1:#0ea5e9;--brand2:#22c55e;--brand3:#a78bfa;--brand4:#f59e0b;
-    --white:#fff;--accent:#60a5fa;
+    --bg:#0b1220; --ink:#ebf2ff; --muted:#9fb3ce; --line:#13213f;
+    --panel:#0c152a; --panel2:#0a1324; --brand:#0ea5e9; --brand2:#22c55e; --brand3:#a78bfa; --accent:#f59e0b;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,sans-serif}
-  a{color:#93c5fd;text-decoration:none}
-  a:hover{text-decoration:underline}
-  .container{max-width:1240px;margin:0 auto;padding:0 1rem}
-  .topbar{background:linear-gradient(90deg,var(--brand1),var(--brand3));color:#001018}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+  a{color:#93c5fd;text-decoration:none} a:hover{text-decoration:underline}
+  .container{max-width:1224px;margin:0 auto;padding:0 1rem}
+  .topbar{background:linear-gradient(90deg,var(--brand),var(--brand3));color:#001018}
   .topbar .container{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:.55rem 1rem;font-weight:800}
   .lang-btn{border:0;border-radius:999px;background:#001018;color:#c7f9ff;font-weight:900;padding:.35rem .75rem;cursor:pointer;margin-left:.4rem}
   .lang-btn.active{outline:2px solid #001018;background:#d9fbff;color:#001018}
   header.nav{position:sticky;top:0;z-index:50;background:#0a1224cc;backdrop-filter:blur(8px);border-bottom:1px solid #0f1b33}
   header.nav .container{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem}
   .brand{display:flex;gap:.9rem;align-items:center}
-  .logo-wrap{width:52px;height:52px;border-radius:14px;overflow:hidden;display:grid;place-items:center;border:2px solid #1f2e55;background:linear-gradient(135deg,var(--brand1),var(--brand2))}
-  .logo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
-  .logo-fallback{font-weight:900;color:#001018}
-  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.6rem;flex-wrap:wrap}
-  nav a{display:inline-block;padding:.5rem .7rem;border-radius:10px;color:#cbd5e1;font-weight:800}
+  .logo{width:56px;height:56px;border-radius:14px;overflow:hidden;border:2px solid #1f2e55;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center}
+  .logo img{width:100%;height:100%;object-fit:cover;display:block}
+  .logo .fallback{font-weight:900;color:#001018}
+  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.5rem;flex-wrap:wrap}
+  nav a{display:inline-flex;align-items:center;gap:.35rem;padding:.5rem .7rem;border-radius:10px;color:#cbd5e1;font-weight:800}
   nav a:hover{background:#0f1b33}
   .hero{background:
    radial-gradient(1200px 600px at -10% 20%, rgba(14,165,233,.22), transparent 60%),
    radial-gradient(1200px 600px at 110% 40%, rgba(167,139,250,.20), transparent 60%),
    radial-gradient(1200px 800px at 50% -20%, rgba(34,197,94,.15), transparent 60%);
    border-bottom:1px solid #0f1b33}
-  .hero .container{padding:3.3rem 1rem 2.2rem;display:grid;gap:1rem}
+  .hero .container{padding:3.2rem 1rem 2rem;display:grid;gap:1rem}
   .badge{display:inline-flex;align-items:center;gap:.5rem;background:#09132a;border:1px solid #0f264a;color:#90e0ef;padding:.35rem .6rem;border-radius:999px;font-weight:900}
-  .title{font-size:clamp(1.9rem,4vw,3rem);line-height:1.08;margin:.3rem 0;font-weight:900;background:linear-gradient(90deg,#eff6ff,#93c5fd,#a78bfa,#86efac);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .title{font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.12;margin:.3rem 0;font-weight:900;background:linear-gradient(90deg,#eff6ff,#93c5fd,#a78bfa,#86efac);-webkit-background-clip:text;background-clip:text;color:transparent}
   .subtitle{color:#cbd5e1;max-width:1000px;font-weight:500}
   .cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.5rem}
   .btn{display:inline-flex;align-items:center;gap:.5rem;border:0;border-radius:12px;padding:.8rem 1.05rem;font-weight:900;cursor:pointer}
-  .btn-primary{background:linear-gradient(90deg,var(--brand2),#4ade80);color:#081b0e}
+  .btn-primary{background:linear-gradient(90deg,#22c55e,#4ade80);color:#081b0e}
   .btn-outline{background:transparent;color:#e2e8f0;border:2px solid #20314f}
+  .btn-pay{background:linear-gradient(90deg,#0ea5e9,#60a5fa);color:#07131e}
+  .btn-alt{background:linear-gradient(90deg,#f59e0b,#fde68a);color:#111827}
   .section{padding:2.6rem 0;border-bottom:1px solid #0f1b33}
-  .card{background:linear-gradient(180deg,var(--panel1),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:1rem;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  .card{background:linear-gradient(180deg,#0c1426,#0a1324);border:1px solid var(--line);border-radius:16px;padding:1rem;box-shadow:0 10px 30px rgba(0,0,0,.25)}
   h2{margin:0 0 1rem;font-size:1.6rem;background:linear-gradient(90deg,#bae6fd,#ddd6fe,#bbf7d0);-webkit-background-clip:text;background-clip:text;color:transparent}
   h3{margin:.6rem 0;color:#dbeafe}
   .grid{display:grid;gap:1rem}
@@ -52,20 +51,17 @@
   .table{width:100%;border-collapse:collapse}
   .table th,.table td{border-bottom:1px solid var(--line);padding:.5rem .6rem;text-align:left;vertical-align:top}
   .note{font-size:.92rem;color:var(--muted)}
-  .folder{border:1px dashed #1f3b66;background:#081226;border-radius:14px;padding:1rem}
-  .folder-head{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-  .folder-title{display:flex;align-items:center;gap:.7rem;font-weight:900}
-  .folder-title .icon{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#f59e0b,#fde68a);display:grid;place-items:center;color:#111827;font-weight:900}
-  .res-buttons a{border:1px solid #1f3b66;background:#0a1a34;color:#cbd5e1;border-radius:10px;padding:.45rem .7rem;font-weight:900}
-  .lang-en{display:block}
-  .lang-fr{display:none}
-  .hidden{display:none}
+  main[hidden]{display:none}
+  .t-fr{display:none}
+  .res-list{display:grid;gap:.6rem}
+  .res-list a{display:block;padding:.7rem .9rem;border-radius:12px;background:#0a1832;border:1px solid #18325c;font-weight:800}
   form.apply{display:grid;gap:.7rem}
   form.apply input, form.apply select, form.apply textarea{
     background:#0b1a35;border:1px solid #1f355e;border-radius:10px;color:#e5e7eb;padding:.6rem .7rem;font-weight:600}
   form.apply button{justify-self:start}
-  .chips{display:flex;flex-wrap:wrap;gap:.35rem}
-  .chip{border:1px solid #284374;border-radius:999px;padding:.25rem .6rem;background:#0a1832;color:#cfe0ff;font-weight:800}
+  .paygrid{display:grid;gap:1rem}
+  @media(min-width:820px){.paygrid{grid-template-columns:repeat(3,1fr)}}
+  footer{padding:2rem 0;color:#a7bed9}
 </style>
 </head>
 <body>
@@ -89,11 +85,9 @@
   <header class="nav">
     <div class="container">
       <div class="brand">
-        <div class="logo-wrap">
+        <div class="logo">
           <img src="logo.png" alt="HIBIAFRICA Logo" onerror="this.replaceWith(document.getElementById('logo-fallback').content.cloneNode(true));">
-          <template id="logo-fallback">
-            <div class="logo-fallback">HIBI</div>
-          </template>
+          <template id="logo-fallback"><div class="fallback">HIBI</div></template>
         </div>
         <div>
           <strong>HIBIAFRICA – Harvestime International Bible Institute Africa</strong><br>
@@ -101,17 +95,19 @@
         </div>
       </div>
       <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#doctrine">Doctrinal Statement</a></li>
-          <li><a href="#visions">8 Cardinal Visions</a></li>
-          <li><a href="#programmes">Programmes</a></li>
-          <li><a href="#schools">2 Major Schools</a></li>
-          <li><a href="#leadership">Leadership</a></li>
-          <li><a href="#chapters">Chapters</a></li>
-          <li><a href="#faculties">Faculties</a></li>
-          <li><a href="#resources">Resources</a></li>
-          <li><a href="#apply">Admissions / Apply</a></li>
+        <ul id="main-nav">
+          <li><a href="#" data-target="about"><span class="t-en">About</span><span class="t-fr">À propos</span></a></li>
+          <li><a href="#" data-target="doctrine"><span class="t-en">Doctrinal Statement</span><span class="t-fr">Déclaration doctrinale</span></a></li>
+          <li><a href="#" data-target="visions"><span class="t-en">8 Cardinal Visions</span><span class="t-fr">8 Visions cardinales</span></a></li>
+          <li><a href="#" data-target="programmes"><span class="t-en">Programmes</span><span class="t-fr">Programmes</span></a></li>
+          <li><a href="#" data-target="schools"><span class="t-en">2 Major Schools</span><span class="t-fr">2 Grandes Écoles</span></a></li>
+          <li><a href="#" data-target="leadership"><span class="t-en">Leadership</span><span class="t-fr">Direction</span></a></li>
+          <li><a href="#" data-target="chapters"><span class="t-en">Chapters</span><span class="t-fr">Chapitres</span></a></li>
+          <li><a href="#" data-target="faculties"><span class="t-en">Faculties</span><span class="t-fr">Facultés</span></a></li>
+          <li><a href="#" data-target="instructors"><span class="t-en">Instructors</span><span class="t-fr">Enseignants</span></a></li>
+          <li><a href="#" data-target="resources"><span class="t-en">Resources</span><span class="t-fr">Ressources</span></a></li>
+          <li><a href="#" data-target="apply"><span class="t-en">Admissions / Apply</span><span class="t-fr">Admissions / Candidater</span></a></li>
+          <li><a href="#" data-target="pay"><span class="t-en">Payments</span><span class="t-fr">Paiements</span></a></li>
         </ul>
       </nav>
     </div>
@@ -119,538 +115,252 @@
 
   <section class="hero">
     <div class="container">
-      <span class="badge">Raising biblically sound, Spirit-led, and mission-oriented leaders for Africa and the nations.</span>
-      <h1 class="title">“Training and Equipping Labourers for Worldwide Spiritual Harvest.” – Matthew 9:37–38</h1>
+      <span class="badge">
+        <span class="t-en">Raising biblically sound, Spirit-led, and mission-oriented leaders for Africa and the nations.</span>
+        <span class="t-fr">Former des leaders bibliquement solides, conduits par l’Esprit et orientés vers la mission pour l’Afrique et les nations.</span>
+      </span>
+      <h1 class="title">
+        <span class="t-en">“Training and Equipping Labourers for Worldwide Spiritual Harvest.” – Matthew 9:37–38</span>
+        <span class="t-fr">« Former et équiper des ouvriers pour la moisson spirituelle mondiale. » – Matthieu 9:37–38</span>
+      </h1>
       <p class="subtitle"><strong>Language:</strong> English 🇬🇧 · Français 🇫🇷 • Head Office (Africa): Osogbo, Osun State, Nigeria.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="#apply">Apply / Enroll Now</a>
-        <a class="btn btn-outline" href="#resources">Open Resources</a>
+        <a class="btn btn-primary" href="#" data-target="apply"><span class="t-en">Apply / Enroll Now</span><span class="t-fr">Postuler / S’inscrire</span></a>
+        <a class="btn btn-pay" href="#" data-target="pay"><span class="t-en">Make a Payment</span><span class="t-fr">Effectuer un paiement</span></a>
+        <a class="btn btn-outline" href="#" data-target="resources"><span class="t-en">Resources</span><span class="t-fr">Ressources</span></a>
       </div>
     </div>
   </section>
 
-  <main class="lang-en" id="lang-en">
-    <section id="about" class="section">
-      <div class="container grid cols-2">
-        <div class="card">
-          <h2>ABOUT HIBIAFRICA</h2>
-          <p><strong>Identity & Mandate</strong></p>
-          <p>Harvestime International Bible Institute (HIBI) was introduced to Africa (Nigeria) by Dr. Samuel Abiodun Oladimeji in 2007/2008. A few years later, he received a divine mandate to extend the vision across the African continent. With full authorization and support from the Headquarters in the United States of America, the Harvestime International Bible Institute African Directorate (HIBIAFRICA) was established as the continental arm of Harvestime International Network (USA).</p>
-          <p><strong>Head Office (Africa):</strong> Osogbo, Osun State, Nigeria.</p>
-          <p>HIBIAFRICA oversees national chapters, partner ministries, faculty, and students across Anglophone and Francophone African nations.</p>
-          <p><strong>Under the Auspices of HIN (USA)</strong><br>
-          Founder (Late): Argis Hulsey • President (USA): Dr. Patricia Hulsey • Africa Directorate: Dr. Samuel Abiodun Oladimeji.<br>
-          HIBIAFRICA operates under the oversight of the Founder and Worldwide President of Harvestime International Network (USA).</p>
-          <h3>The Meaning of “Harvestime”</h3>
-          <p>The name combines <em>harvest</em> and <em>time</em>, emphasizing the urgency of Christ’s call: “Lift up your eyes, and look on the fields; for they are white already to harvest.” – John 4:35</p>
-          <h3>Vision</h3>
-          <ul>
-            <li><strong>International:</strong> A global vision with special focus on reaching unreached peoples.</li>
-            <li><strong>Network:</strong> Uniting churches, ministries, and believers across nations to advance the Gospel of the Kingdom.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h2 id="doctrine">WHAT WE BELIEVE (DOCTRINAL STATEMENT)</h2>
-          <ul>
-            <li><strong>The Word of God – The Seed (Luke 8:11):</strong> The Bible (Old & New Testaments) is the inspired, infallible, and final authority for faith, life, and ministry (Psalm 119:89).</li>
-            <li><strong>The Triune God – The Lord of the Harvest (Matthew 9:38):</strong> One God in three Persons — Father, Son and Holy Spirit (1 John 5:8).</li>
-            <li><strong>Man – The Sower (Mark 4:3):</strong> Created in God’s image, fallen through sin, and restored only through Christ (1 Corinthians 15:45–47).</li>
-            <li><strong>Salvation – The Harvest (Matthew 13:23):</strong> Salvation is by grace through faith in Christ alone (Ephesians 2:8–9).</li>
-            <li><strong>The Church – The Labourers (Matthew 9:38):</strong> The Body and Bride of Christ, commissioned to preach, teach, disciple, and demonstrate God’s power (Mark 16:15–18).</li>
-            <li><strong>The Consummation – The Final Harvest (Revelation 14:15):</strong> We believe in the visible return of Christ, resurrection, judgment, and eternal destinies (1 Thessalonians 4:13–17; Revelation 20:12).</li>
-          </ul>
-          <p class="note">Legal Status: Harvestime International Network (USA) is a registered non-profit religious organization.</p>
-        </div>
-      </div>
-    </section>
+  <!-- ENGLISH -->
+  <main id="lang-en">
+    <section id="about-en" class="section"><div class="container"><div class="card">
+      <h2>ABOUT HIBIAFRICA</h2>
+      <p><strong>Identity & Mandate.</strong> Harvestime International Bible Institute (HIBI) was introduced to Africa (Nigeria) by Dr. Samuel Abiodun Oladimeji in 2007/2008. A few years later, he received a divine mandate to extend the vision across the African continent. With full authorization and support from the Headquarters in the United States of America, the Harvestime International Bible Institute African Directorate (HIBIAFRICA) was established as the continental arm of Harvestime International Network (USA).</p>
+      <p><strong>Head Office (Africa):</strong> Osogbo, Osun State, Nigeria.</p>
+      <p>HIBIAFRICA oversees national chapters, partner ministries, faculty, and students across Anglophone and Francophone African nations.</p>
+      <p><strong>Under the Auspices of HIN (USA)</strong><br>
+      Founder (Late): Argis Hulsey • President (USA): Dr. Patricia Hulsey • Africa Directorate: Dr. Samuel Abiodun Oladimeji</p>
+      <p>HIBIAFRICA operates under the oversight of the Founder and Worldwide President of Harvestime International Network (USA).</p>
+      <h3>The Meaning of “Harvestime”</h3>
+      <p>The name combines harvest and time, emphasizing the urgency of Christ’s call: “Lift up your eyes, and look on the fields; for they are white already to harvest.” – John 4:35</p>
+      <h3>Vision</h3>
+      <ul>
+        <li><strong>International:</strong> A global vision with special focus on reaching unreached peoples.</li>
+        <li><strong>Network:</strong> Uniting churches, ministries, and believers across nations to advance the Gospel of the Kingdom.</li>
+      </ul>
+    </div></div></section>
 
-    <section id="visions" class="section">
-      <div class="container">
-        <h2>THE EIGHT CARDINAL VISIONS OF HIBIAFRICA</h2>
-        <div class="grid cols-2">
-          <div class="card">
-            <ul>
-              <li><strong>School of Theology Education:</strong> Biblically sound, Spirit-led, academically rigorous training from Certificate to PhD; exegesis integration, seminars, publications.</li>
-              <li><strong>School of Community Transformation Ministry:</strong> Training to reach marginalized groups (sex workers, cybercriminals, drug addicts, widows, orphans, abused persons); holistic and missional.</li>
-              <li><strong>School of Discipleship Training:</strong> Three-level discipleship (foundational, intermediate, advanced) — to raise disciple-makers (2 Tim. 2:2).</li>
-              <li><strong>School of Pre- & Post-Marital Courses:</strong> Preparing singles and couples for godly, crisis-free homes.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <ul>
-              <li><strong>Daily Exegesis Lecture Series:</strong> Daily, thorough Bible interpretation to correct error and build doctrinal depth.</li>
-              <li><strong>Daily Family Altar Devotion (DAFAD):</strong> Restoring the family altar for generational transfer of faith.</li>
-              <li><strong>Ministerial Leadership Refresher Course:</strong> Ongoing training for ministers to stay current, ethical, and effective.</li>
-              <li><strong>Intercessory Network:</strong> Continental 24/7 prayer watches and mobilization of intercessors for revival and protection of the vision.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section id="doctrine-en" class="section"><div class="container"><div class="card">
+      <h2>WHAT WE BELIEVE (DOCTRINAL STATEMENT)</h2>
+      <ul>
+        <li><strong>The Word of God – The Seed (Luke 8:11):</strong> The Bible (Old & New Testaments) is the inspired, infallible, and final authority for faith, life, and ministry (Psalm 119:89).</li>
+        <li><strong>The Triune God – The Lord of the Harvest (Matthew 9:38):</strong> One God in three Persons — Father, Son and Holy Spirit (1 John 5:8).</li>
+        <li><strong>Man – The Sower (Mark 4:3):</strong> Created in God’s image, fallen through sin, and restored only through Christ (1 Corinthians 15:45–47).</li>
+        <li><strong>Salvation – The Harvest (Matthew 13:23):</strong> Salvation is by grace through faith in Christ alone (Ephesians 2:8–9).</li>
+        <li><strong>The Church – The Labourers (Matthew 9:38):</strong> The Body and Bride of Christ, commissioned to preach, teach, disciple, and demonstrate God’s power (Mark 16:15–18).</li>
+        <li><strong>The Consummation – The Final Harvest (Revelation 14:15):</strong> We believe in the visible return of Christ, resurrection, judgment, and eternal destinies (1 Thessalonians 4:13–17; Revelation 20:12).</li>
+      </ul>
+      <p class="note">Legal Status: Harvestime International Network (USA) is a registered non-profit religious organization.</p>
+    </div></div></section>
 
-    <section id="programmes" class="section">
-      <div class="container">
-        <h2>ACADEMIC PROGRAMMES AND DURATION</h2>
-        <div class="card">
-          <table class="table">
-            <thead><tr><th>Programme Level</th><th>Duration</th><th>Mode of Study</th></tr></thead>
-            <tbody>
-              <tr><td>Certificate</td><td>1 Year</td><td>On-site / Online</td></tr>
-              <tr><td>Diploma</td><td>2 Years</td><td>On-site / Online</td></tr>
-              <tr><td>Bachelor</td><td>3–4 Years</td><td>On-site / Online</td></tr>
-              <tr><td>Postgraduate Diploma (PGD)</td><td>1 Year</td><td>On-site / Online</td></tr>
-              <tr><td>Master’s Programme</td><td>18 Months (3 Semesters)</td><td>On-site / Online</td></tr>
-              <tr><td>Doctor of Philosophy (PhD)</td><td>3 Years</td><td>On-site / Online</td></tr>
-            </tbody>
-          </table>
-          <p class="note">All programmes combine biblical depth, academic excellence, and practical ministry to equip labourers for worldwide spiritual harvest.</p>
-        </div>
-      </div>
-    </section>
+    <section id="visions-en" class="section"><div class="container"><div class="card">
+      <h2>THE EIGHT CARDINAL VISIONS OF HIBIAFRICA</h2>
+      <ul>
+        <li>School of Theology Education: Biblically sound, Spirit-led, academically rigorous training from Certificate to PhD; exegesis integration, seminars, publications.</li>
+        <li>School of Community Transformation Ministry: Training to reach marginalized groups (sex workers, cybercriminals, drug addicts, widows, orphans, abused persons); holistic and missional.</li>
+        <li>School of Discipleship Training: Three-level discipleship (foundational, intermediate, advanced) — to raise disciple-makers (2 Tim. 2:2).</li>
+        <li>School of Pre- & Post-Marital Courses: Preparing singles and couples for godly, crisis-free homes.</li>
+        <li>Daily Exegesis Lecture Series: Daily, thorough Bible interpretation to correct error and build doctrinal depth.</li>
+        <li>Daily Family Altar Devotion (DAFAD): Restoring the family altar for generational transfer of faith.</li>
+        <li>Ministerial Leadership Refresher Course: Ongoing training for ministers to stay current, ethical, and effective.</li>
+        <li>Intercessory Network: Continental 24/7 prayer watches and mobilization of intercessors for revival and protection of the vision.</li>
+      </ul>
+    </div></div></section>
 
-    <section id="schools" class="section">
-      <div class="container grid cols-2">
-        <div class="card">
-          <h2>1. School of Theology Education</h2>
-          <p>Comprehensive biblical and theological studies from Certificate to PhD — with emphasis on exegesis, doctrine, ministry skills, and African contextual theology. (See Prospectus for full details.)</p>
-        </div>
-        <div class="card">
-          <h2>2. School of Community Transformation & Advocacy Ministries</h2>
-          <p>Training leaders for community engagement, social justice, anti-vice ministry, and transformational projects — from Certificate to PhD. (See Prospectus for full details.)</p>
-        </div>
-      </div>
-    </section>
+    <section id="programmes-en" class="section"><div class="container"><div class="card">
+      <h2>ACADEMIC PROGRAMMES AND DURATION</h2>
+      <table class="table">
+        <thead><tr><th>Programme Level</th><th>Duration</th><th>Mode of Study</th></tr></thead>
+        <tbody>
+          <tr><td>Certificate</td><td>1 Year</td><td>On-site / Online</td></tr>
+          <tr><td>Diploma</td><td>2 Years</td><td>On-site / Online</td></tr>
+          <tr><td>Bachelor</td><td>3–4 Years</td><td>On-site / Online</td></tr>
+          <tr><td>Postgraduate Diploma (PGD)</td><td>1 Year</td><td>On-site / Online</td></tr>
+          <tr><td>Master’s Programme</td><td>18 Months (3 Semesters)</td><td>On-site / Online</td></tr>
+          <tr><td>Doctor of Philosophy (PhD)</td><td>3 Years</td><td>On-site / Online</td></tr>
+        </tbody>
+      </table>
+      <p class="note">All programmes combine biblical depth, academic excellence, and practical ministry to equip labourers for worldwide spiritual harvest.</p>
+    </div></div></section>
 
-    <section id="leadership" class="section">
-      <div class="container">
-        <h2>CONTINENTAL LEADERSHIP – AFRICAN DIRECTORATE</h2>
-        <div class="card">
-          <table class="table">
-            <thead><tr><th>Name & Title</th><th>Position</th><th>Responsibilities / Portfolio</th></tr></thead>
-            <tbody>
-              <tr><td>Dr. Samuel Abiodun Oladimeji</td><td>Provost & Continental Africa Director</td><td>Overall leadership, strategic vision, continental coordination.</td></tr>
-              <tr><td>Dr. (Mrs.) Oluwafemi Kenny Oladimeji</td><td>Deputy Provost & Continental Administrator</td><td>Administration, supervision, inter-chapter coordination.</td></tr>
-              <tr><td>Dr. Oluwole Caleb Ojerinde</td><td>Continental Registrar</td><td>Admissions, records, results, certificates.</td></tr>
-              <tr><td>Dr. Tosin Awoyinka</td><td>Continental Dean of Academics</td><td>Curriculum, quality control, academic affairs.</td></tr>
-              <tr><td>Dr. Olayinka Ojo</td><td>Continental Legal Advisor</td><td>Legal, policy, institutional compliance.</td></tr>
-              <tr><td>Rev. Dr. Agani Pierre Adeyemi</td><td>General Francophone Coordinator / Benin Director</td><td>Francophone oversight and Benin Republic chapter.</td></tr>
-            </tbody>
-          </table>
-        </div>
+    <section id="schools-en" class="section"><div class="container grid cols-2">
+      <div class="card">
+        <h2>1. School of Theology Education</h2>
+        <p>Comprehensive biblical and theological studies from Certificate to PhD — with emphasis on exegesis, doctrine, ministry skills, and African contextual theology. (See Prospectus for full details.)</p>
       </div>
-    </section>
-
-    <section id="chapters" class="section">
-      <div class="container">
-        <h2>NATIONAL CHAPTER DIRECTORS – AFRICA</h2>
-        <div class="card">
-          <table class="table">
-            <thead><tr><th>Country</th><th>Director / Representative</th></tr></thead>
-            <tbody>
-              <tr><td>Benin Republic</td><td>Rev. Dr. Agani Pierre Adeyemi</td></tr>
-              <tr><td>Niger Republic</td><td>Pastor Maazou Judith</td></tr>
-              <tr><td>Mali</td><td>Pastor Seidou</td></tr>
-              <tr><td>Burkina Faso</td><td>Apostle Badolo</td></tr>
-              <tr><td>Republic of Chad</td><td>Pastor Semion</td></tr>
-              <tr><td>Togo</td><td>Pastor Kemakpo Ablamvi</td></tr>
-              <tr><td>Côte d’Ivoire</td><td>Pastor SANHIN (Kouassi Narcisse)</td></tr>
-              <tr><td>Ghana</td><td>Sis. Kehinde Bukoye</td></tr>
-              <tr><td>Cameroon</td><td>Pastor Mongui Dibebe Thomas</td></tr>
-              <tr><td>Central African Republic (Centrafrique)</td><td>Pastor Dr. Kawa Omer</td></tr>
-              <tr><td>Republic of South Africa</td><td>Apostle Dr. Living Stone Aganano & Rev. Mrs. Bulelwa Aganano</td></tr>
-              <tr><td>Zimbabwe</td><td>Sis. Shamiso Madzorera</td></tr>
-              <tr><td>Nigeria</td><td>Dr. (Mrs.) Oluwafemi Kenny Oladimeji</td></tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="card">
+        <h2>2. School of Community Transformation & Advocacy Ministries</h2>
+        <p>Training leaders for community engagement, social justice, anti-vice ministry, and transformational projects — from Certificate to PhD. (See Prospectus for full details.)</p>
       </div>
-    </section>
+    </div></section>
 
-    <section id="faculties" class="section">
-      <div class="container">
+    <section id="leadership-en" class="section"><div class="container"><div class="card">
+      <h2>CONTINENTAL LEADERSHIP – AFRICAN DIRECTORATE</h2>
+      <p><strong>Headquarters:</strong> Osogbo, Osun State, Nigeria.</p>
+      <table class="table">
+        <thead><tr><th>Name & Title</th><th>Position</th><th>Responsibilities / Portfolio</th></tr></thead>
+        <tbody>
+          <tr><td>Dr. Samuel Abiodun Oladimeji</td><td>Provost & Continental Africa Director</td><td>Overall leadership, strategic vision, continental coordination.</td></tr>
+          <tr><td>Dr. (Mrs.) Oluwafemi Kenny Oladimeji</td><td>Deputy Provost & Continental Administrator</td><td>Administration, supervision, inter-chapter coordination.</td></tr>
+          <tr><td>Dr. Oluwole Caleb Ojerinde</td><td>Continental Registrar</td><td>Admissions, records, results, certificates.</td></tr>
+          <tr><td>Dr. Tosin Awoyinka</td><td>Continental Dean of Academics</td><td>Curriculum, quality control, academic affairs.</td></tr>
+          <tr><td>Dr. Olayinka Ojo</td><td>Continental Legal Advisor</td><td>Legal, policy, institutional compliance.</td></tr>
+          <tr><td>Rev. Dr. Agani Pierre Adeyemi</td><td>General Francophone Coordinator / Benin Director</td><td>Francophone oversight and Benin Republic chapter.</td></tr>
+          <tr><td>Apostle Dr. David Living Stone Aganano</td><td>General Anglophone Coordinator / Republic of South Africa Director</td><td>Anglophone oversight and South Africa Republic chapter.</td></tr>
+        </tbody>
+      </table>
+    </div></div></section>
+
+    <section id="chapters-en" class="section"><div class="container"><div class="card">
+      <h2>NATIONAL CHAPTER DIRECTORS – AFRICA</h2>
+      <table class="table">
+        <thead><tr><th>Country</th><th>Director / Representative</th></tr></thead>
+        <tbody>
+          <tr><td>Benin Republic</td><td>Rev. Dr. Agani Pierre Adeyemi</td></tr>
+          <tr><td>Niger Republic</td><td>Pastor Maazou Judith</td></tr>
+          <tr><td>Mali</td><td>Pastor Seidou</td></tr>
+          <tr><td>Burkina Faso</td><td>Apostle Badolo</td></tr>
+          <tr><td>Republic of Chad</td><td>Pastor Semion</td></tr>
+          <tr><td>Togo</td><td>Pastor Kemakpo Ablamvi</td></tr>
+          <tr><td>Côte d’Ivoire</td><td>Pastor SANHIN (Kouassi Narcisse)</td></tr>
+          <tr><td>Ghana</td><td>Sis. Kehinde Bukoye</td></tr>
+          <tr><td>Cameroon</td><td>Pastor Mongui Dibebe Thomas</td></tr>
+          <tr><td>Central African Republic (Centrafrique)</td><td>Pastor Dr. Kawa Omer</td></tr>
+          <tr><td>Republic of South Africa</td><td>Apostle Dr. Living Stone Aganano & Rev. Mrs. Bulelwa Aganano</td></tr>
+          <tr><td>Zimbabwe</td><td>Sis. Shamiso Madzorera</td></tr>
+          <tr><td>Nigeria</td><td>Dr. (Mrs.) Oluwafemi Kenny Oladimeji</td></tr>
+        </tbody>
+      </table>
+    </div></div></section>
+
+    <section id="faculties-en" class="section"><div class="container grid cols-2">
+      <div class="card">
         <h2>FACULTIES AND DEPARTMENTS – SCHOOL OF THEOLOGY EDUCATION</h2>
-        <div class="card grid cols-3">
-          <div>
-            <h3>FACULTY OF BIBLICAL AND THEOLOGICAL STUDIES</h3>
-            <ul>
-              <li>1.1 Department of Biblical Studies</li>
-              <li>1.2 Department of Theology</li>
-              <li>1.3 Department of Hermeneutics & Exegesis</li>
-              <li>1.4 Department of Apologetics & Prophecy</li>
-            </ul>
-          </div>
-          <div>
-            <h3>FACULTY OF PASTORAL AND MINISTERIAL LEADERSHIP</h3>
-            <ul>
-              <li>2.1 Department of Ministry & Leadership</li>
-              <li>2.2 Department of Prophetic & Deliverance Ministries</li>
-            </ul>
-            <h3>FACULTY OF MISSIONS AND EVANGELISM</h3>
-            <ul><li>3.1 Department of Missions</li></ul>
-            <h3>FACULTY OF CHRISTIAN EDUCATION</h3>
-            <ul><li>4.1 Department of Education & Discipleship</li></ul>
-          </div>
-          <div>
-            <h3>FACULTY OF CHRISTIAN COUNSELING AND PSYCHOLOGY</h3>
-            <ul>
-              <li>5.1 Department of Counseling & Family Care</li>
-              <li>5.2 Department of Trauma, Abuse & Recovery Psychology</li>
-              <li>5.3 Department of Addiction & Rehabilitation Psychology</li>
-            </ul>
-            <h3>FACULTY OF CHURCH ADMINISTRATION AND MANAGEMENT</h3>
-            <ul>
-              <li>6.1 Department of Church Administration</li>
-              <li>6.2 Department of Leadership & Governance</li>
-            </ul>
-            <h3>FACULTY OF WORSHIP AND CREATIVE ARTS</h3>
-            <ul>
-              <li>7.1 Department of Gospel Music & Worship Arts</li>
-              <li>7.2 Department of Christian Drama & Creative Arts</li>
-            </ul>
-            <h3>FACULTY OF ETHICS AND CHRISTIAN LIVING</h3>
-            <ul><li>8.1 Department of Christian Ethics & Justice</li></ul>
-            <h3>FACULTY OF MARKETPLACE & BI-VOCATIONAL MINISTRY</h3>
-            <ul>
-              <li>9.1 Department of Marketplace & Bi-vocational Studies</li>
-              <li>9.2 Department of Christian Legal & Policy Studies</li>
-            </ul>
-          </div>
-        </div>
-
-        <h2 style="margin-top:1.5rem">FACULTIES AND DEPARTMENTS – SCHOOL OF TRANSFORMATION AND COMMUNITY ADVOCACY MINISTRY</h2>
-        <div class="card">
-          <h3>FACULTY OF ADDICTION RECOVERY MINISTRY – Department of Drug Addiction Awareness and Recovery</h3>
-          <ul>
-            <li>Certificate in Foundations of Drug Addiction Awareness</li>
-            <li>Diploma in Drug Addiction Recovery Techniques and Prevention</li>
-            <li>B.A. in Advanced Drug Addiction Recovery and Rehabilitation Ministry</li>
-            <li>PGD in Advanced Recovery and Deliverance in Drug Addiction Ministry</li>
-            <li>M.A. in Leadership in Addiction Recovery and Deliverance Ministry</li>
-            <li>Ph.D. in Research and Leadership in Deliverance and Rehabilitation Ministry (Addictions)</li>
-          </ul>
-
-          <h3>FACULTY OF HUMAN TRAFFICKING INTERVENTION – Department of Women and Child Trafficking Advocacy</h3>
-          <ul>
-            <li>Certificate in Introduction to Women and Child Trafficking Issues</li>
-            <li>Diploma in Women and Child Trafficking Intervention Strategies</li>
-            <li>B.A. in Advocacy and Intervention in Women and Child Trafficking</li>
-            <li>PGD in Strategic Leadership for Women and Child Trafficking Rescue</li>
-            <li>M.A. in Advocacy, Policy Development, and Rescue in Human Trafficking</li>
-            <li>Ph.D. in Theology, Policy, and Strategic Interventions in Human Trafficking</li>
-          </ul>
-
-          <h3>FACULTY OF DOMESTIC VIOLENCE COUNSELING – Department of Domestic Violence Support Ministry</h3>
-          <ul>
-            <li>Certificate in Basics of Domestic Violence Support</li>
-            <li>Diploma in Domestic Violence Counseling and Support Ministry</li>
-            <li>B.A. in Leadership in Domestic Violence Prevention and Support</li>
-            <li>PGD in Clinical Counseling and Pastoral Care for Domestic Violence Survivors</li>
-            <li>M.A. in Crisis Intervention, Pastoral Care, and Counseling for Domestic Abuse</li>
-            <li>Ph.D. in Christian Response, Advocacy, and Healing for Gender-Based Violence</li>
-          </ul>
-
-          <h3>FACULTY OF WIDOWS AND ORPHANS CARE – Department of Pastoral Care and Advocacy</h3>
-          <ul>
-            <li>Certificate in Care Ministry for Widows and Orphans</li>
-            <li>Diploma in Widows and Orphans Pastoral Care and Advocacy</li>
-            <li>B.A. in Comprehensive Ministry for Widows and Orphans Care</li>
-            <li>PGD in Holistic Care and Advocacy for Widows, Orphans, and Vulnerable Groups</li>
-            <li>M.A. in Theological Foundations and Leadership in Widowhood and Orphan Care</li>
-            <li>Ph.D. in Holistic Ministry Leadership for Widows, Orphans, and Vulnerable Populations</li>
-          </ul>
-
-          <h3>FACULTY OF POVERTY ALLEVIATION & ECONOMIC EMPOWERMENT – Department of Christian Economic Development</h3>
-          <ul>
-            <li>Certificate in Fundamentals of Poverty Alleviation and Empowerment</li>
-            <li>Diploma in Poverty Alleviation Programs and Economic Empowerment</li>
-            <li>B.A. in Strategic Poverty Alleviation and Economic Development Ministry</li>
-            <li>PGD in Christian Economic Development and Community Empowerment</li>
-            <li>M.A. in Economic Empowerment Leadership and Sustainable Community Development</li>
-            <li>Ph.D. in Kingdom Economics, Policy Formulation, and Socio-Economic Empowerment</li>
-          </ul>
-
-          <h3>FACULTY OF YOUTH MINISTRY & CRIME PREVENTION – Department of Youth Leadership and Risk Management</h3>
-          <ul>
-            <li>Certificate in Youth Risk Awareness and Prevention</li>
-            <li>Diploma in Youth Risk Management and Crime Prevention Ministry</li>
-            <li>B.A. in Youth Leadership, Risk Prevention and Crime Intervention</li>
-            <li>PGD in Youth Leadership, Mentorship, and Crime Prevention Strategies</li>
-            <li>M.A. in Advanced Youth Leadership, Crime Prevention, and Risk Management</li>
-            <li>Ph.D. in Transformational Youth Ministry, Crime Prevention, and Social Reform</li>
-          </ul>
-
-          <h3>FACULTY OF PEACEBUILDING & RECONCILIATION – Department of Conflict Resolution and Social Justice</h3>
-          <ul>
-            <li>Certificate in Principles of Peace building and Reconciliation</li>
-            <li>Diploma in Peace building, Conflict Resolution and Ethnic Reconciliation</li>
-            <li>B.A. in Peace building, Ethnic Reconciliation and Social Justice</li>
-            <li>PGD in Conflict Resolution, Ethnic Healing, and Reconciliation Ministry</li>
-            <li>M.A. in Biblical Justice, Peace building, and Social Reconciliation Ministry</li>
-            <li>Ph.D. in Advanced Biblical Justice, Peace building, and National Reconciliation</li>
-          </ul>
-
-          <h3>FACULTY OF FAMILY & MARRIAGE COUNSELING – Department of Family Restoration and Therapy</h3>
-          <ul>
-            <li>Certificate in Foundations of Family Restoration and Counseling</li>
-            <li>Diploma in Family Restoration, Marriage Counseling and Therapy</li>
-            <li>B.A. in Family Restoration, Marriage Counseling and Pastoral Care</li>
-            <li>PGD in Family Systems Therapy, Restoration, and Christian Counseling</li>
-            <li>M.A. in Marriage Therapy, Family Systems Leadership, and Pastoral Counseling</li>
-            <li>Ph.D. in Family Systems Therapy, Advanced Marriage Counseling, and Pastoral Leadership</li>
-          </ul>
-
-          <h3>FACULTY OF DIGITAL ETHICS & CYBER MINISTRY – Department of Internet Fraud Prevention and Cyber Ethics</h3>
-          <ul>
-            <li>Certificate in Digital Ethics and Internet Fraud Awareness</li>
-            <li>Diploma in Internet Fraud Prevention and Advanced Digital Ethics</li>
-            <li>B.A. in Digital Ethics, Internet Fraud Prevention and Cyber Ministry</li>
-            <li>PGD in Cyber Ethics, Internet Security, and Fraud Prevention Ministry</li>
-            <li>M.A. in Ethical Leadership, Cyber security, and Internet Fraud Prevention</li>
-            <li>Ph.D. in Christian Cyber Ethics, Digital Leadership, and Moral Governance</li>
-          </ul>
-
-          <h3>FACULTY OF VULNERABLE POPULATIONS MINISTRY – Department of Outreach and Rehabilitation to Sex Workers</h3>
-          <ul>
-            <li>Certificate in Outreach to Sex Workers and Vulnerable Groups</li>
-            <li>Diploma in Ministry and Support for Sex Workers and Vulnerable Populations</li>
-            <li>B.A. in Missional Outreach to Sex Workers and Social Transformation</li>
-            <li>PGD in Missional Engagement and Rehabilitation Ministry to Sex Workers</li>
-            <li>M.A. in Redemptive and Transformational Ministry to Sex Workers and Prostitutes</li>
-            <li>Ph.D. in Missional Theology and Strategic Ministry to Sex Workers and Social Outcasts</li>
-          </ul>
-
-          <h3>FACULTY OF SEXUAL PURITY & ADDICTION RECOVERY – Department of Sexual Integrity and Counseling</h3>
-          <ul>
-            <li>Certificate in Introduction to Sexual Purity and Addiction Recovery</li>
-            <li>Diploma in Sexual Purity Counseling and Addiction Recovery Ministry</li>
-            <li>B.A. in Pastoral Sexual Purity, Addiction Recovery and Counseling Ministry</li>
-            <li>PGD in Advanced Sexual Purity Counseling and Addiction Recovery Ministry</li>
-            <li>M.A. in Pastoral Sexual Integrity, Counseling, and Addiction Recovery Ministry</li>
-            <li>Ph.D. in Theology of Sexual Holiness, Inner Healing, and Addiction Recovery</li>
-          </ul>
-        </div>
+        <ul>
+          <li><strong>FACULTY OF BIBLICAL AND THEOLOGICAL STUDIES</strong>
+            <ul><li>1.1 Department of Biblical Studies</li><li>1.2 Department of Theology</li><li>1.3 Department of Hermeneutics & Exegesis</li><li>1.4 Department of Apologetics & Prophecy</li></ul>
+          </li>
+          <li><strong>FACULTY OF PASTORAL AND MINISTERIAL LEADERSHIP</strong>
+            <ul><li>2.1 Department of Ministry & Leadership</li><li>2.2 Department of Prophetic & Deliverance Ministries</li></ul>
+          </li>
+          <li><strong>FACULTY OF MISSIONS AND EVANGELISM</strong><ul><li>3.1 Department of Missions</li></ul></li>
+          <li><strong>FACULTY OF CHRISTIAN EDUCATION</strong><ul><li>4.1 Department of Education & Discipleship</li></ul></li>
+          <li><strong>FACULTY OF CHRISTIAN COUNSELING AND PSYCHOLOGY</strong>
+            <ul><li>5.1 Department of Counseling & Family Care</li><li>5.2 Department of Trauma, Abuse & Recovery Psychology</li><li>5.3 Department of Addiction & Rehabilitation Psychology</li></ul>
+          </li>
+          <li><strong>FACULTY OF CHURCH ADMINISTRATION AND MANAGEMENT</strong>
+            <ul><li>6.1 Department of Church Administration</li><li>6.2 Department of Leadership & Governance</li></ul>
+          </li>
+          <li><strong>FACULTY OF WORSHIP AND CREATIVE ARTS</strong>
+            <ul><li>7.1 Department of Gospel Music & Worship Arts</li><li>7.2 Department of Christian Drama & Creative Arts</li></ul>
+          </li>
+          <li><strong>FACULTY OF ETHICS AND CHRISTIAN LIVING</strong><ul><li>8.1 Department of Christian Ethics & Justice</li></ul></li>
+          <li><strong>FACULTY OF MARKETPLACE & BI-VOCATIONAL MINISTRY</strong>
+            <ul><li>9.1 Department of Marketplace & Bi-vocational Studies</li><li>9.2 Department of Christian Legal & Policy Studies</li></ul>
+          </li>
+        </ul>
       </div>
-    </section>
 
-    <section id="instructors" class="section">
+      <div class="card">
+        <h2>FACULTIES – SCHOOL OF TRANSFORMATION & COMMUNITY ADVOCACY MINISTRY</h2>
+        <ul>
+          <li><strong>FACULTY OF ADDICTION RECOVERY MINISTRY</strong> – Department of Drug Addiction Awareness and Recovery
+            <ul><li>Certificate in Foundations of Drug Addiction Awareness</li><li>Diploma in Drug Addiction Recovery Techniques and Prevention</li><li>B.A. in Advanced Drug Addiction Recovery and Rehabilitation Ministry</li><li>PGD in Advanced Recovery and Deliverance in Drug Addiction Ministry</li><li>M.A. in Leadership in Addiction Recovery and Deliverance Ministry</li><li>Ph.D. in Research and Leadership in Deliverance and Rehabilitation Ministry (Addictions)</li></ul>
+          </li>
+          <li><strong>FACULTY OF HUMAN TRAFFICKING INTERVENTION</strong> – Department of Women and Child Trafficking Advocacy
+            <ul><li>Certificate in Introduction to Women and Child Trafficking Issues</li><li>Diploma in Women and Child Trafficking Intervention Strategies</li><li>B.A. in Advocacy and Intervention in Women and Child Trafficking</li><li>PGD in Strategic Leadership for Women and Child Trafficking Rescue</li><li>M.A. in Advocacy, Policy Development, and Rescue in Human Trafficking</li><li>Ph.D. in Theology, Policy, and Strategic Interventions in Human Trafficking</li></ul>
+          </li>
+          <li><strong>FACULTY OF DOMESTIC VIOLENCE COUNSELING</strong> – Department of Domestic Violence Support Ministry
+            <ul><li>Certificate in Basics of Domestic Violence Support</li><li>Diploma in Domestic Violence Counseling and Support Ministry</li><li>B.A. in Leadership in Domestic Violence Prevention and Support</li><li>PGD in Clinical Counseling and Pastoral Care for Domestic Violence Survivors</li><li>M.A. in Crisis Intervention, Pastoral Care, and Counseling for Domestic Abuse</li><li>Ph.D. in Christian Response, Advocacy, and Healing for Gender-Based Violence</li></ul>
+          </li>
+          <li><strong>FACULTY OF WIDOWS AND ORPHANS CARE</strong> – Department of Pastoral Care and Advocacy
+            <ul><li>Certificate in Care Ministry for Widows and Orphans</li><li>Diploma in Widows and Orphans Pastoral Care and Advocacy</li><li>B.A. in Comprehensive Ministry for Widows and Orphans Care</li><li>PGD in Holistic Care and Advocacy for Widows, Orphans, and Vulnerable Groups</li><li>M.A. in Theological Foundations and Leadership in Widowhood and Orphan Care</li><li>Ph.D. in Holistic Ministry Leadership for Widows, Orphans, and Vulnerable Populations</li></ul>
+          </li>
+          <li><strong>FACULTY OF POVERTY ALLEVIATION & ECONOMIC EMPOWERMENT</strong> – Department of Christian Economic Development
+            <ul><li>Certificate in Fundamentals of Poverty Alleviation and Empowerment</li><li>Diploma in Poverty Alleviation Programs and Economic Empowerment</li><li>B.A. in Strategic Poverty Alleviation and Economic Development Ministry</li><li>PGD in Christian Economic Development and Community Empowerment</li><li>M.A. in Economic Empowerment Leadership and Sustainable Community Development</li><li>Ph.D. in Kingdom Economics, Policy Formulation, and Socio-Economic Empowerment</li></ul>
+          </li>
+          <li><strong>FACULTY OF YOUTH MINISTRY & CRIME PREVENTION</strong> – Department of Youth Leadership and Risk Management
+            <ul><li>Certificate in Youth Risk Awareness and Prevention</li><li>Diploma in Youth Risk Management and Crime Prevention Ministry</li><li>B.A. in Youth Leadership, Risk Prevention and Crime Intervention</li><li>PGD in Youth Leadership, Mentorship, and Crime Prevention Strategies</li><li>M.A. in Advanced Youth Leadership, Crime Prevention, and Risk Management</li><li>Ph.D. in Transformational Youth Ministry, Crime Prevention, and Social Reform</li></ul>
+          </li>
+          <li><strong>FACULTY OF PEACEBUILDING & RECONCILIATION</strong> – Department of Conflict Resolution and Social Justice
+            <ul><li>Certificate in Principles of Peace building and Reconciliation</li><li>Diploma in Peace building, Conflict Resolution and Ethnic Reconciliation</li><li>B.A. in Peace building, Ethnic Reconciliation and Social Justice</li><li>PGD in Conflict Resolution, Ethnic Healing, and Reconciliation Ministry</li><li>M.A. in Biblical Justice, Peace building, and Social Reconciliation Ministry</li><li>Ph.D. in Advanced Biblical Justice, Peace building, and National Reconciliation</li></ul>
+          </li>
+          <li><strong>FACULTY OF FAMILY & MARRIAGE COUNSELING</strong> – Department of Family Restoration and Therapy
+            <ul><li>Certificate in Foundations of Family Restoration and Counseling</li><li>Diploma in Family Restoration, Marriage Counseling and Therapy</li><li>B.A. in Family Restoration, Marriage Counseling and Pastoral Care</li><li>PGD in Family Systems Therapy, Restoration, and Christian Counseling</li><li>M.A. in Marriage Therapy, Family Systems Leadership, and Pastoral Counseling</li><li>Ph.D. in Family Systems Therapy, Advanced Marriage Counseling, and Pastoral Leadership</li></ul>
+          </li>
+          <li><strong>FACULTY OF DIGITAL ETHICS & CYBER MINISTRY</strong> – Department of Internet Fraud Prevention and Cyber Ethics
+            <ul><li>Certificate in Digital Ethics and Internet Fraud Awareness</li><li>Diploma in Internet Fraud Prevention and Advanced Digital Ethics</li><li>B.A. in Digital Ethics, Internet Fraud Prevention and Cyber Ministry</li><li>PGD in Cyber Ethics, Internet Security, and Fraud Prevention Ministry</li><li>M.A. in Ethical Leadership, Cyber security, and Internet Fraud Prevention</li><li>Ph.D. in Christian Cyber Ethics, Digital Leadership, and Moral Governance</li></ul>
+          </li>
+          <li><strong>FACULTY OF VULNERABLE POPULATIONS MINISTRY</strong> – Department of Outreach and Rehabilitation to Sex Workers
+            <ul><li>Certificate in Outreach to Sex Workers and Vulnerable Groups</li><li>Diploma in Ministry and Support for Sex Workers and Vulnerable Populations</li><li>B.A. in Missional Outreach to Sex Workers and Social Transformation</li><li>PGD in Missional Engagement and Rehabilitation Ministry to Sex Workers</li><li>M.A. in Redemptive and Transformational Ministry to Sex Workers and Prostitutes</li><li>Ph.D. in Missional Theology and Strategic Ministry to Sex Workers and Social Outcasts</li></ul>
+          </li>
+          <li><strong>FACULTY OF SEXUAL PURITY & ADDICTION RECOVERY</strong> – Department of Sexual Integrity and Counseling
+            <ul><li>Certificate in Introduction to Sexual Purity and Addiction Recovery</li><li>Diploma in Sexual Purity Counseling and Addiction Recovery Ministry</li><li>B.A. in Pastoral Sexual Purity, Addiction Recovery and Counseling Ministry</li><li>PGD in Advanced Sexual Purity Counseling and Addiction Recovery Ministry</li><li>M.A. in Pastoral Sexual Integrity, Counseling, and Addiction Recovery Ministry</li><li>Ph.D. in Theology of Sexual Holiness, Inner Healing, and Addiction Recovery</li></ul>
+          </li>
+        </ul>
+      </div>
+    </div></section>
+
+    <section id="instructors-en" class="section"><div class="container grid cols-2">
+      <div class="card">
+        <h2>GLOBAL INSTRUCTORS & FACULTY</h2>
+        <p>We have instructors around the world — Bible scholars, theologians, and Ministers of the Gospel in various capacities — who teach, mentor, examine, and supervise research across our programmes.</p>
+      </div>
+      <div class="card">
+        <h2>WHY HIBIAFRICA?</h2>
+        <ul>
+          <li>Biblically balanced & Spirit-led</li>
+          <li>Same content in English & French</li>
+          <li>Flexible study options (On-site / Online)</li>
+          <li>Direct application via Email/WhatsApp</li>
+        </ul>
+      </div>
+    </div></section>
+
+    <section id="resources-en" class="section"><div class="container"><div class="card">
+      <h2>RESOURCES & DOWNLOADS</h2>
+      <div class="res-list">
+        <a href="resources/book-catalogue/">1. Book Catalogue</a>
+        <a href="resources/prospectus/">2. Prospectus Folder</a>
+        <a href="resources/handbook/">3. Students’ Handbook</a>
+        <a href="resources/admission-form/">4. Admission Form Folder</a>
+        <a href="#" data-target="apply">5. Online Admission Portal (via Email Submission)</a>
+        <a href="resources/course-materials/">6. Course Materials Folder</a>
+        <a href="resources/newsletters/">7. Monthly Newsletter Folder</a>
+        <a href="resources/dafad/">8. Monthly DAFAD Folder</a>
+        <a href="resources/gallery/">9. Photo Gallery Folder</a>
+        <a href="resources/convocation/">10. Annual Convocation Folder</a>
+        <a href="resources/registration/">11. Semester Registration Form Folder</a>
+        <a href="resources/journals/">12. Academic Journals Folder</a>
+      </div>
+      <p class="note">Create these folders/pages on your host so each button opens the correct content.</p>
+    </div></div></section>
+
+    <section id="apply-en" class="section">
       <div class="container grid cols-2">
         <div class="card">
-          <h2>GLOBAL FACULTY & INSTRUCTORS</h2>
-          <p>HIBIAFRICA engages <strong>instructors all over the world</strong> — Bible scholars and seasoned ministers of the Gospel serving in diverse capacities across continents. Our global network enriches every programme with practical ministry insights, academic rigor, and Spirit-led mentorship.</p>
-          <div class="chips">
-            <span class="chip">Bible Scholars</span><span class="chip">Pastors</span><span class="chip">Missionaries</span>
-            <span class="chip">Counselors</span><span class="chip">Youth Ministers</span><span class="chip">Apologists</span>
-            <span class="chip">Theologians</span><span class="chip">Community Advocates</span>
-          </div>
-        </div>
-        <div class="card">
-          <h2>WHY CHOOSE HIBIAFRICA?</h2>
-          <ul>
-            <li>Balanced: Christ-centered, Bible-based, mission-focused.</li>
-            <li>Bilingual access: English & French across Africa.</li>
-            <li>Flexible learning: On-site & Online.</li>
-            <li>Direct application on the website with email/WhatsApp support.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="resources" class="section">
-      <div class="container">
-        <h2>HIBIAFRICA DOWNLOADABLE / NAVIGATION RESOURCES</h2>
-        <p class="note">Upload files to the paths below; every button opens a real file or folder (no “#” links).</p>
-        <div class="grid cols-2" id="res-en">
-          <div class="folder">
-            <details>
-              <summary class="folder-head">
-                <div class="folder-title"><div class="icon">1</div><span>Book Catalogue Folder</span></div>
-                <div class="res-buttons"><a href="resources/book-catalogue/book-catalogue.zip">Download All (zip)</a></div>
-              </summary>
-              <div class="card" style="margin-top:.8rem">
-                <ul>
-                  <li><a href="resources/book-catalogue/Catalogue_2025_EN.pdf" target="_blank">Catalogue_2025_EN.pdf</a></li>
-                  <li><a href="resources/book-catalogue/Catalogue_2025_FR.pdf" target="_blank">Catalogue_2025_FR.pdf</a></li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="folder">
-            <details>
-              <summary class="folder-head">
-                <div class="folder-title"><div class="icon">2</div><span>Prospectus Folder</span></div>
-                <div class="res-buttons"><a href="resources/prospectus/prospectus.zip">Download All (zip)</a></div>
-              </summary>
-              <div class="card" style="margin-top:.8rem">
-                <ul>
-                  <li><a href="resources/prospectus/Prospectus_EN.pdf" target="_blank">Prospectus_EN.pdf</a></li>
-                  <li><a href="resources/prospectus/Prospectus_FR.pdf" target="_blank">Prospectus_FR.pdf</a></li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="folder">
-            <details>
-              <summary class="folder-head">
-                <div class="folder-title"><div class="icon">3</div><span>Students’ Handbook</span></div>
-                <div class="res-buttons"><a href="resources/handbook/handbook.zip">Download All (zip)</a></div>
-              </summary>
-              <div class="card" style="margin-top:.8rem">
-                <ul>
-                  <li><a href="resources/handbook/Students_Handbook_EN.pdf" target="_blank">Students_Handbook_EN.pdf</a></li>
-                  <li><a href="resources/handbook/Students_Handbook_FR.pdf" target="_blank">Students_Handbook_FR.pdf</a></li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="folder">
-            <details>
-              <summary class="folder-head">
-                <div class="folder-title"><div class="icon">4</div><span>Admission Form Folder</span></div>
-                <div class="res-buttons"><a href="resources/admissions/admissions.zip">Download All (zip)</a></div>
-              </summary>
-              <div class="card" style="margin-top:.8rem">
-                <ul>
-                  <li><a href="resources/admissions/Admission_Form_EN.docx" target="_blank">Admission_Form_EN.docx</a></li>
-                  <li><a href="resources/admissions/Admission_Form_FR.docx" target="_blank">Admission_Form_FR.docx</a></li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="folder">
-            <details>
-              <summary class="folder-head">
-                <div class="folder-title"><div class="icon">5</div><span>Online Admission Portal</span></div>
-                <div class="res-buttons"><a href="apply.html" target="_blank">Open Portal</a></div>
-              </summary>
-              <div class="card" style="margin-top:.8rem">
-                <p><a href="apply.html" target="_blank">apply.html</a> (local portal) — or point to your Google Form/Student Portal.</p>
-              </div>
-            </details>
-          </div>
-
-          <div class="folder">
-            <details>
-              <summary class="folder-head">
-                <div class="folder-title"><div class="icon">6</div><span>Course Materials Folder</span></div>
-                <div class="res-buttons"><a href="resources/course-materials/course-materials.zip">Download All (zip)</a></div>
-              </summary>
-              <div class="card" style="margin-top:.8rem">
-                <ul>
-                  <li><a href="resources/course-materials/Exegesis_Lectures.zip" target="_blank">Exegesis_Lectures.zip</a></li>
-                  <li><a href="resources/course-materials/Counseling_Module_EN.pdf" target="_blank">Counseling_Module_EN.pdf</a></li>
-                  <li><a href="resources/course-materials/Leadership_Refresher_FR.pdf" target="_blank">Leadership_Refresher_FR.pdf</a></li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="folder">
-            <details>
-              <summary class="folder-head">
-                <div class="folder-title"><div class="icon">7</div><span>Monthly Newsletter Folder</span></div>
-              </summary>
-              <div class="card" style="margin-top:.8rem">
-                <ul>
-                  <li><a href="resources/newsletters/Newsletter_Nov_2025_EN.pdf" target="_blank">Newsletter_Nov_2025_EN.pdf</a></li>
-                  <li><a href="resources/newsletters/Newsletter_Nov_2025_FR.pdf" target="_blank">Newsletter_Nov_2025_FR.pdf</a></li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="folder">
-            <details>
-              <summary class="folder-head">
-                <div class="folder-title"><div class="icon">8</div><span>Monthly DAFAD Folder</span></div>
-              </summary>
-              <div class="card" style="margin-top:.8rem">
-                <ul>
-                  <li><a href="resources/dafad/DAFAD_Nov_2025_EN.pdf" target="_blank">DAFAD_Nov_2025_EN.pdf</a></li>
-                  <li><a href="resources/dafad/DAFAD_Nov_2025_FR.pdf" target="_blank">DAFAD_Nov_2025_FR.pdf</a></li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="folder">
-            <details>
-              <summary class="folder-head">
-                <div class="folder-title"><div class="icon">9</div><span>Photo Gallery Folder</span></div>
-              </summary>
-              <div class="card" style="margin-top:.8rem">
-                <ul>
-                  <li><a href="resources/gallery/convocation-2025/" target="_blank">Gallery_Convocation_2025/</a></li>
-                  <li><a href="resources/gallery/leaders-retreat/" target="_blank">Gallery_Leaders_Retreat/</a></li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="folder">
-            <details>
-              <summary class="folder-head">
-                <div class="folder-title"><div class="icon">10</div><span>Annual Convocation Folder</span></div>
-              </summary>
-              <div class="card" style="margin-top:.8rem">
-                <ul>
-                  <li><a href="resources/convocation/Convocation_Programme_EN.pdf" target="_blank">Convocation_Programme_EN.pdf</a></li>
-                  <li><a href="resources/convocation/Convocation_Programme_FR.pdf" target="_blank">Convocation_Programme_FR.pdf</a></li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="folder">
-            <details>
-              <summary class="folder-head">
-                <div class="folder-title"><div class="icon">11</div><span>Semester Registration Form Folder</span></div>
-              </summary>
-              <div class="card" style="margin-top:.8rem">
-                <ul>
-                  <li><a href="resources/registration/Semester_Registration_EN.docx" target="_blank">Semester_Registration_EN.docx</a></li>
-                  <li><a href="resources/registration/Semester_Registration_FR.docx" target="_blank">Semester_Registration_FR.docx</a></li>
-                </ul>
-              </div>
-            </details>
-          </div>
-
-          <div class="folder">
-            <details>
-              <summary class="folder-head">
-                <div class="folder-title"><div class="icon">12</div><span>Academic Journals Folder</span></div>
-              </summary>
-              <div class="card" style="margin-top:.8rem">
-                <ul>
-                  <li><a href="resources/journals/HIBI_Journal_Vol1_EN.pdf" target="_blank">HIBI_Journal_Vol1_EN.pdf</a></li>
-                  <li><a href="resources/journals/HIBI_Journal_Vol1_FR.pdf" target="_blank">HIBI_Journal_Vol1_FR.pdf</a></li>
-                </ul>
-              </div>
-            </details>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="apply" class="section">
-      <div class="container grid cols-2">
-        <div class="card">
-          <h2>ADMISSIONS & ENROLLMENT</h2>
-          <p>Prospective students can apply directly on the website using the form, or via the Online Admission Portal.</p>
+          <h2>ADMISSIONS & ENROLLMENT (Direct Application)</h2>
+          <p>Prospective students can apply through their national chapter directors or directly through the African Directorate Office in Osogbo, Nigeria.</p>
           <p>📧 <a href="mailto:harvestimeafricadirectorate@gmail.com">harvestimeafricadirectorate@gmail.com</a><br>
-             💬 WhatsApp:
-             <a href="https://wa.me/2347039429826" target="_blank">+234 703 942 9826</a> ·
-             <a href="https://wa.me/2349158588901" target="_blank">+234 915 858 8901</a> ·
-             <a href="https://wa.me/2348133399661" target="_blank">+234 813 339 9661</a><br>
-             📍 Head Office (Africa): Osogbo, Osun State, Nigeria</p>
-          <p><a class="btn btn-outline" href="apply.html" target="_blank">Open Online Admission Portal</a></p>
+             💬 WhatsApp: <a href="https://wa.me/2347039429826" target="_blank">+234 703 942 9826</a> •
+             <a href="https://wa.me/2349158588901" target="_blank">+234 915 858 8901</a> •
+             <a href="https://wa.me/2348133399661" target="_blank">+234 813 339 9661</a></p>
+          <p class="note">Fill the form and submit — your email app will open with a pre‑filled application to our official address.</p>
         </div>
         <div class="card">
-          <h2>Quick Application Form (Website)</h2>
-          <form class="apply" id="apply-form">
+          <h2>Quick Application Form</h2>
+          <form class="apply" id="apply-form-en">
             <input type="text" id="fullName" placeholder="Full Name" required>
             <input type="email" id="email" placeholder="Email" required>
             <input type="tel" id="phone" placeholder="Phone / WhatsApp" required>
@@ -665,83 +375,270 @@
               <option>School of Community Transformation & Advocacy</option>
             </select>
             <textarea id="country" rows="2" placeholder="Country / Chapter"></textarea>
-            <button type="submit" class="btn btn-primary">Submit Application</button>
-            <p class="note">Submitting will open your email app with the details pre-filled to send to HIBIAFRICA.</p>
+            <button type="submit" class="btn btn-primary">Submit via Email</button>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="pay-en" class="section">
+      <div class="container">
+        <h2>Make a Payment (Secure Online)</h2>
+        <div class="card">
+          <p>Select a fee and pay through secure links. Keep your <strong>Transaction Reference</strong> for confirmation.</p>
+          <div class="paygrid">
+            <div class="card">
+              <h3>Admission Form Fee</h3>
+              <a class="btn btn-pay" href="https://paystack.com/pay/HIBIAFRICA-AdmissionForm" target="_blank">Pay via Paystack</a>
+              <a class="btn btn-alt" href="https://flutterwave.com/pay/HIBIAFRICA-AdmissionForm" target="_blank">Pay via Flutterwave</a>
+              <p class="note">Replace these URLs with your live payment links.</p>
+            </div>
+            <div class="card">
+              <h3>Study Materials (per semester)</h3>
+              <a class="btn btn-pay" href="https://paystack.com/pay/HIBIAFRICA-StudyMaterials" target="_blank">Pay via Paystack</a>
+              <a class="btn btn-alt" href="https://flutterwave.com/pay/HIBIAFRICA-StudyMaterials" target="_blank">Pay via Flutterwave</a>
+            </div>
+            <div class="card">
+              <h3>Acceptance Fee</h3>
+              <a class="btn btn-pay" href="https://paystack.com/pay/HIBIAFRICA-Acceptance" target="_blank">Pay via Paystack</a>
+              <a class="btn btn-alt" href="https://flutterwave.com/pay/HIBIAFRICA-Acceptance" target="_blank">Pay via Flutterwave</a>
+            </div>
+          </div>
+          <p class="note" style="margin-top:1rem">After payment, send your <strong>Full Name</strong>, <strong>Programme</strong>, and <strong>Transaction Reference</strong> to 
+          <a href="mailto:harvestimeafricadirectorate@gmail.com">harvestimeafricadirectorate@gmail.com</a> or via WhatsApp.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <main class="lang-fr hidden" id="lang-fr">
-    <section class="section">
-      <div class="container grid cols-2">
-        <div class="card">
-          <h2>À PROPOS DE HIBIAFRICA</h2>
-          <p><strong>Identité & Mandat</strong></p>
-          <p>HIBI a été introduit en Afrique (Nigéria) par le Dr Samuel Abiodun Oladimeji en 2007/2008. Avec l’autorisation du Siège (USA), HIBIAFRICA a été établi comme bras continental du Harvestime International Network (USA) pour servir les nations africaines anglophones et francophones.</p>
-          <p><strong>Siège (Afrique) :</strong> Osogbo, État d’Osun, Nigéria.</p>
-          <p><strong>Sous l’égide de HIN (USA)</strong> : Fondateur (†) Argis Hulsey • Présidente (USA) : Dr Patricia Hulsey • Direction Afrique : Dr Samuel Abiodun Oladimeji.</p>
-          <p><em>Harvestime</em> unit « moisson » et « temps » : « Levez vos yeux… les champs blanchissent pour la moisson » – Jean 4:35.</p>
-        </div>
-        <div class="card">
-          <h2 id="doctrine-fr">DÉCLARATION DOCTRINALE</h2>
-          <ul>
-            <li>La Bible (AT & NT) est la Parole inspirée et l’autorité finale (Ps 119:89).</li>
-            <li>Un seul Dieu en trois Personnes : Père, Fils, Saint-Esprit (1 Jn 5:8).</li>
-            <li>L’homme est déchu et restauré uniquement en Christ (1 Co 15:45–47).</li>
-            <li>Le salut par la grâce au moyen de la foi en Jésus-Christ (Ép 2:8–9).</li>
-            <li>L’Église : Corps & Épouse de Christ, mandatée pour la mission (Mc 16:15–18).</li>
-            <li>Retour visible de Christ, résurrection, jugement, destinées éternelles (1 Th 4:13–17 ; Ap 20:12).</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+  <!-- FRENCH -->
+  <main id="lang-fr" hidden>
+    <section id="about-fr" class="section"><div class="container"><div class="card">
+      <h2>À PROPOS DE HIBIAFRICA</h2>
+      <p><strong>Identité & Mandat.</strong> Harvestime International Bible Institute (HIBI) a été introduit en Afrique (Nigéria) par le Dr Samuel Abiodun Oladimeji en 2007/2008. Quelques années plus tard, il a reçu un mandat divin pour étendre la vision à l’ensemble du continent africain. Avec l’autorisation et l’appui du Siège des États-Unis d’Amérique, la Direction Africaine de HIBI (HIBIAFRICA) a été établie comme bras continental du Harvestime International Network (USA).</p>
+      <p><strong>Siège (Afrique) :</strong> Osogbo, État d’Osun, Nigéria.</p>
+      <p>HIBIAFRICA supervise les chapitres nationaux, les ministères partenaires, le corps enseignant et les étudiants dans les nations africaines anglophones et francophones.</p>
+      <p><strong>Sous l’égide de HIN (USA)</strong><br>
+      Fondateur (décédé) : Argis Hulsey • Présidente (USA) : Dr Patricia Hulsey • Direction Afrique : Dr Samuel Abiodun Oladimeji</p>
+      <p>HIBIAFRICA fonctionne sous la supervision du Fondateur et de la Présidente mondiale du Harvestime International Network (USA).</p>
+      <h3>Signification de « Harvestime »</h3>
+      <p>Le nom unit moisson et temps, soulignant l’urgence de l’appel du Christ : « Levez vos yeux, et regardez les champs qui déjà blanchissent pour la moisson » – Jean 4:35</p>
+      <h3>Vision</h3>
+      <ul>
+        <li><strong>International :</strong> Vision globale avec accent particulier sur les peuples non atteints.</li>
+        <li><strong>Réseau :</strong> Relier les Églises, ministères et croyants des nations pour faire avancer l’Évangile du Royaume.</li>
+      </ul>
+    </div></div></section>
 
-    <section class="section">
-      <div class="container grid cols-2">
-        <div class="card">
-          <h2>VISIONS CARDINALES</h2>
-          <ul>
-            <li>École de Formation Théologique</li>
-            <li>École de Transformation Communautaire</li>
-            <li>École de Discipolat</li>
-            <li>Pré & Post-Mariage</li>
-            <li>Exégèse Quotidienne</li>
-            <li>DAFAD – Autel Familial</li>
-            <li>Recyclage en Leadership</li>
-            <li>Réseau d’Intercession 24/7</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h2>ENSEIGNANTS MONDIAUX</h2>
-          <p>Nous collaborons avec des enseignants <strong>partout dans le monde</strong> — exégètes, pasteurs, missionnaires et ministres de l’Évangile.</p>
-        </div>
-      </div>
-    </section>
+    <section id="doctrine-fr" class="section"><div class="container"><div class="card">
+      <h2>CE QUE NOUS CROYONS (DÉCLARATION DOCTRINALE)</h2>
+      <ul>
+        <li><strong>La Parole de Dieu – La Semence (Luc 8:11) :</strong> La Bible (Ancien & Nouveau Testaments) est inspirée, infaillible et l’autorité finale pour la foi, la vie et le ministère (Psaume 119:89).</li>
+        <li><strong>Le Dieu Trinitaire – Le Maître de la moisson (Matthieu 9:38) :</strong> Un seul Dieu en trois Personnes — Père, Fils et Saint‑Esprit (1 Jean 5:8).</li>
+        <li><strong>L’Homme – Le Semeur (Marc 4:3) :</strong> Créé à l’image de Dieu, déchu par le péché, restauré seulement en Christ (1 Corinthiens 15:45–47).</li>
+        <li><strong>Le Salut – La Moisson (Matthieu 13:23) :</strong> Le salut s’obtient par la grâce au moyen de la foi en Christ seul (Éphésiens 2:8–9).</li>
+        <li><strong>L’Église – Les Ouvriers (Matthieu 9:38) :</strong> Corps et Épouse de Christ, mandatée pour prêcher, enseigner, faire des disciples et démontrer la puissance de Dieu (Marc 16:15–18).</li>
+        <li><strong>La Consommation – La Moisson Finale (Apocalypse 14:15) :</strong> Nous croyons au retour visible de Christ, à la résurrection, au jugement et aux destinées éternelles (1 Thessaloniciens 4:13–17 ; Apocalypse 20:12).</li>
+      </ul>
+      <p class="note">Statut juridique : Harvestime International Network (USA) est une organisation religieuse à but non lucratif dûment enregistrée.</p>
+    </div></div></section>
 
-    <section id="resources-fr" class="section">
-      <div class="container">
-        <h2>RESSOURCES & TÉLÉCHARGEMENTS</h2>
-        <p class="note">Les liens ouvrent les fichiers/répertoires réels. Conservez les mêmes chemins.</p>
-        <div class="grid cols-2" id="res-mirror"></div>
+    <section id="visions-fr" class="section"><div class="container"><div class="card">
+      <h2>LES HUIT VISIONS CARDINALES DE HIBIAFRICA</h2>
+      <ul>
+        <li>École de Formation Théologique : Formation biblique solide, conduite par l’Esprit et rigoureuse académiquement, du Certificat au Doctorat ; intégration de l’exégèse, séminaires, publications.</li>
+        <li>École de Transformation Communautaire : Former pour atteindre les groupes marginalisés (prostituées, cybercriminels, toxicomanes, veuves, orphelins, victimes d’abus) ; approche holistique & missionnelle.</li>
+        <li>École de Discipolat : Discipolat en trois niveaux (fondamental, intermédiaire, avancé) — pour susciter des faiseurs de disciples (2 Tim. 2:2).</li>
+        <li>École de Pré & Post‑Mariage : Préparer les célibataires et les couples à des foyers chrétiens sans crise.</li>
+        <li>Série d’Exégèse Quotidienne : Interprétation biblique quotidienne, approfondie, pour corriger l’erreur et bâtir la solidité doctrinale.</li>
+        <li>DAFAD – Dévotion Quotidienne à l’Autel Familial : Restaurer l’autel familial pour la transmission de la foi.</li>
+        <li>Cours de Recyclage en Leadership Ministériel : Mise à jour continue pour des ministres actuels, éthiques & efficaces.</li>
+        <li>Réseau d’Intercession : Veilles de prière 24/7 & mobilisation d’intercesseurs pour le réveil et la protection de la vision.</li>
+      </ul>
+    </div></div></section>
+
+    <section id="programmes-fr" class="section"><div class="container"><div class="card">
+      <h2>PROGRAMMES ACADÉMIQUES & DURÉE</h2>
+      <table class="table">
+        <thead><tr><th>Niveau</th><th>Durée</th><th>Mode</th></tr></thead>
+        <tbody>
+          <tr><td>Certificat</td><td>1 an</td><td>Présentiel / En ligne</td></tr>
+          <tr><td>Diplôme</td><td>2 ans</td><td>Présentiel / En ligne</td></tr>
+          <tr><td>Licence (B.A.)</td><td>3–4 ans</td><td>Présentiel / En ligne</td></tr>
+          <tr><td>Diplôme de 3e cycle (PGD)</td><td>1 an</td><td>Présentiel / En ligne</td></tr>
+          <tr><td>Master</td><td>18 mois (3 semestres)</td><td>Présentiel / En ligne</td></tr>
+          <tr><td>Doctorat (PhD)</td><td>3 ans</td><td>Présentiel / En ligne</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Tous les programmes allient profondeur biblique, excellence académique et ministère pratique.</p>
+    </div></div></section>
+
+    <section id="schools-fr" class="section"><div class="container grid cols-2">
+      <div class="card">
+        <h2>1. École de Formation Théologique</h2>
+        <p>Études bibliques et théologiques complètes, du Certificat au Doctorat — exégèse, doctrine, compétences ministérielles et théologie contextuelle africaine. (Voir le Prospectus.)</p>
       </div>
-    </section>
+      <div class="card">
+        <h2>2. École de Transformation Communautaire & Plaidoyer</h2>
+        <p>Former des leaders pour l’engagement communautaire, la justice sociale, la lutte contre les vices et des projets de transformation — du Certificat au Doctorat. (Voir le Prospectus.)</p>
+      </div>
+    </div></section>
+
+    <section id="leadership-fr" class="section"><div class="container"><div class="card">
+      <h2>DIRECTION CONTINENTALE – DIRECTORAT AFRICAIN</h2>
+      <p><strong>Siège :</strong> Osogbo, État d’Osun, Nigéria.</p>
+      <table class="table">
+        <thead><tr><th>Nom & Titre</th><th>Fonction</th><th>Portefeuille</th></tr></thead>
+        <tbody>
+          <tr><td>Dr Samuel Abiodun Oladimeji</td><td>Recteur & Directeur Continental Afrique</td><td>Direction générale, vision stratégique, coordination continentale.</td></tr>
+          <tr><td>Dr (Mme) Oluwafemi Kenny Oladimeji</td><td>Vice‑Recteur & Administratrice Continentale</td><td>Administration, supervision, coordination inter‑chapitres.</td></tr>
+          <tr><td>Dr Oluwole Caleb Ojerinde</td><td>Registraire Continental</td><td>Admissions, dossiers, résultats, certificats.</td></tr>
+          <tr><td>Dr Tosin Awoyinka</td><td>Doyen Académique Continental</td><td>Curriculum, contrôle de qualité, affaires académiques.</td></tr>
+          <tr><td>Dr Olayinka Ojo</td><td>Conseiller Juridique Continental</td><td>Affaires légales, politiques, conformité.</td></tr>
+          <tr><td>Rév. Dr Agani Pierre Adeyemi</td><td>Coordinateur Général Francophone / Directeur Bénin</td><td>Suivi francophone & chapitre du Bénin.</td></tr>
+          <tr><td>Apôtre Dr David Living Stone Aganano</td><td>Coordinateur Général Anglophone / Directeur RAS</td><td>Suivi anglophone & chapitre de la République d’Afrique du Sud.</td></tr>
+        </tbody>
+      </table>
+    </div></div></section>
+
+    <section id="chapters-fr" class="section"><div class="container"><div class="card">
+      <h2>DIRECTEURS DE CHAPITRES NATIONAUX – AFRIQUE</h2>
+      <table class="table">
+        <thead><tr><th>Pays</th><th>Directeur / Représentant</th></tr></thead>
+        <tbody>
+          <tr><td>République du Bénin</td><td>Rév. Dr Agani Pierre Adeyemi</td></tr>
+          <tr><td>République du Niger</td><td>Pasteur Maazou Judith</td></tr>
+          <tr><td>Mali</td><td>Pasteur Seidou</td></tr>
+          <tr><td>Burkina Faso</td><td>Apôtre Badolo</td></tr>
+          <tr><td>République du Tchad</td><td>Pasteur Semion</td></tr>
+          <tr><td>Togo</td><td>Pasteur Kemakpo Ablamvi</td></tr>
+          <tr><td>Côte d’Ivoire</td><td>Pasteur SANHIN (Kouassi Narcisse)</td></tr>
+          <tr><td>Ghana</td><td>Sœur Kehinde Bukoye</td></tr>
+          <tr><td>Cameroun</td><td>Pasteur Mongui Dibebe Thomas</td></tr>
+          <tr><td>République Centrafricaine</td><td>Pasteur Dr Kawa Omer</td></tr>
+          <tr><td>République d’Afrique du Sud</td><td>Apôtre Dr Living Stone Aganano & Rév. Mme Bulelwa Aganano</td></tr>
+          <tr><td>Zimbabwe</td><td>Sœur Shamiso Madzorera</td></tr>
+          <tr><td>Nigéria</td><td>Dr (Mme) Oluwafemi Kenny Oladimeji</td></tr>
+        </tbody>
+      </table>
+    </div></div></section>
+
+    <section id="faculties-fr" class="section"><div class="container grid cols-2">
+      <div class="card">
+        <h2>FACULTÉS & DÉPARTEMENTS – ÉCOLE DE THÉOLOGIE</h2>
+        <ul>
+          <li><strong>FACULTÉ D’ÉTUDES BIBLIQUES & THÉOLOGIQUES</strong>
+            <ul><li>1.1 Dépt. des Études Bibliques</li><li>1.2 Dépt. de Théologie</li><li>1.3 Dépt. d’Herméneutique & d’Exégèse</li><li>1.4 Dépt. d’Apologétique & Prophétie</li></ul>
+          </li>
+          <li><strong>FACULTÉ DE DIRECTION PASTORALE & MINISTÉRIELLE</strong>
+            <ul><li>2.1 Dépt. du Ministère & Leadership</li><li>2.2 Dépt. des Ministères Prophétiques & de Délivrance</li></ul>
+          </li>
+          <li><strong>FACULTÉ DES MISSIONS & ÉVANGÉLISATION</strong><ul><li>3.1 Dépt. des Missions</li></ul></li>
+          <li><strong>FACULTÉ D’ÉDUCATION CHRÉTIENNE</strong><ul><li>4.1 Dépt. d’Éducation & Discipolat</li></ul></li>
+          <li><strong>FACULTÉ DE CONSEIL CHRÉTIEN & PSYCHOLOGIE</strong>
+            <ul><li>5.1 Dépt. de Conseil & Soins Familiaux</li><li>5.2 Dépt. de Psychologie du Traumatisme, Abus & Rétablissement</li><li>5.3 Dépt. d’Addictologie & Réhabilitation</li></ul>
+          </li>
+          <li><strong>FACULTÉ D’ADMINISTRATION & GESTION D’ÉGLISE</strong>
+            <ul><li>6.1 Dépt. d’Administration d’Église</li><li>6.2 Dépt. de Leadership & Gouvernance</li></ul>
+          </li>
+          <li><strong>FACULTÉ D’ADORATION & ARTS CRÉATIFS</strong>
+            <ul><li>7.1 Dépt. de Musique Gospel & Arts d’Adoration</li><li>7.2 Dépt. de Drame Chrétien & Arts Créatifs</li></ul>
+          </li>
+          <li><strong>FACULTÉ D’ÉTHIQUE & VIE CHRÉTIENNE</strong><ul><li>8.1 Dépt. d’Éthique Chrétienne & Justice</li></ul></li>
+          <li><strong>FACULTÉ DU MINISTÈRE BI‑VOCATIONNEL & MARCHÉ</strong>
+            <ul><li>9.1 Dépt. Études du Marché & Bi‑Vocation</li><li>9.2 Dépt. Études Juridiques & Politiques Chrétiennes</li></ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>FACULTÉS – ÉCOLE DE TRANSFORMATION & PLAIDOYER</h2>
+        <ul>
+          <li><strong>FACULTÉ DU RÉTABLISSEMENT DES ADDICTIONS</strong> – Dépt. Sensibilisation & Rétablissement en Toxicomanie
+            <ul><li>Certificat – Fondements de la sensibilisation</li><li>Diplôme – Techniques & prévention</li><li>Licence – Ministère avancé de réhabilitation</li><li>PGD – Rétablissement & délivrance avancés</li><li>Master – Leadership du rétablissement & délivrance</li><li>Doctorat – Recherche & leadership (addictions)</li></ul>
+          </li>
+          <li><strong>FACULTÉ D’INTERVENTION CONTRE LA TRAITE HUMAINE</strong> – Dépt. Plaidoyer Femmes & Enfants
+            <ul><li>Certificat – Introduction</li><li>Diplôme – Stratégies d’intervention</li><li>Licence – Plaidoyer & intervention</li><li>PGD – Leadership stratégique pour le sauvetage</li><li>Master – Plaidoyer, politique & secours</li><li>Doctorat – Théologie, politique & interventions stratégiques</li></ul>
+          </li>
+          <li><strong>FACULTÉ DE CONSEIL EN VIOLENCE DOMESTIQUE</strong> – Dépt. de Soutien
+            <ul><li>Certificat – Bases du soutien</li><li>Diplôme – Conseil & soutien</li><li>Licence – Leadership en prévention & soutien</li><li>PGD – Conseil clinique & soins pastoraux</li><li>Master – Intervention de crise, soins pastoraux & conseil</li><li>Doctorat – Réponse chrétienne, plaidoyer & guérison</li></ul>
+          </li>
+          <li><strong>FACULTÉ DES VEUVES & ORPHELINS</strong> – Dépt. Soins Pastoraux & Plaidoyer
+            <ul><li>Parcours complet du Certificat au Doctorat en soins et leadership holistique</li></ul>
+          </li>
+          <li><strong>FACULTÉ DE LUTTE CONTRE LA PAUVRETÉ & AUTONOMISATION</strong> – Dépt. Développement Économique Chrétien
+            <ul><li>Parcours complet en autonomisation économique & développement durable</li></ul>
+          </li>
+          <li><strong>FACULTÉ JEUNESSE & PRÉVENTION DU CRIME</strong> – Dépt. Leadership Jeunesse & Gestion des Risques
+            <ul><li>Parcours du Certificat au Doctorat en leadership, prévention & intervention</li></ul>
+          </li>
+          <li><strong>FACULTÉ DE LA PAIX & RÉCONCILIATION</strong> – Dépt. Résolution des Conflits & Justice Sociale
+            <ul><li>Parcours du Certificat au Doctorat en justice biblique & réconciliation</li></ul>
+          </li>
+          <li><strong>FACULTÉ FAMILLE & CONSEIL CONJUGAL</strong> – Dépt. Restauration Familiale & Thérapie
+            <ul><li>Parcours du Certificat au Doctorat en thérapie familiale & pastorale</li></ul>
+          </li>
+          <li><strong>FACULTÉ D’ÉTHIQUE NUMÉRIQUE & CYBER‑MINISTÈRE</strong> – Dépt. Prévention de la Fraude & Éthique
+            <ul><li>Parcours du Certificat au Doctorat en éthique numérique, cybersécurité & leadership</li></ul>
+          </li>
+          <li><strong>FACULTÉ DES POPULATIONS VULNÉRABLES</strong> – Dépt. Outreach & Réhabilitation (travailleuses du sexe)
+            <ul><li>Parcours du Certificat au Doctorat en engagement & transformation sociale</li></ul>
+          </li>
+          <li><strong>FACULTÉ PURETÉ SEXUELLE & RÉTABLISSEMENT</strong> – Dépt. Intégrité Sexuelle & Conseil
+            <ul><li>Parcours du Certificat au Doctorat en intégrité sexuelle & guérison intérieure</li></ul>
+          </li>
+        </ul>
+      </div>
+    </div></section>
+
+    <section id="instructors-fr" class="section"><div class="container grid cols-2">
+      <div class="card">
+        <h2>ENSEIGNANTS & FORMATEURS MONDIAUX</h2>
+        <p>Nous avons des enseignants partout dans le monde — exégètes, théologiens et Ministres de l’Évangile — pour enseigner, mentorer, examiner et superviser la recherche dans nos programmes.</p>
+      </div>
+      <div class="card">
+        <h2>POURQUOI HIBIAFRICA ?</h2>
+        <ul>
+          <li>Équilibré bibliquement & conduit par l’Esprit</li>
+          <li>Même contenu en anglais & français</li>
+          <li>Options d’études flexibles (Présentiel / En ligne)</li>
+          <li>Candidature directe par Email/WhatsApp</li>
+        </ul>
+      </div>
+    </div></section>
+
+    <section id="resources-fr" class="section"><div class="container"><div class="card">
+      <h2>RESSOURCES & TÉLÉCHARGEMENTS</h2>
+      <div class="res-list">
+        <a href="resources/book-catalogue/">1. Catalogue de livres</a>
+        <a href="resources/prospectus/">2. Dossier du Prospectus</a>
+        <a href="resources/handbook/">3. Manuel de l’Étudiant</a>
+        <a href="resources/admission-form/">4. Dossier du Formulaire d’Admission</a>
+        <a href="#" data-target="apply">5. Portail d’Admission en ligne (par email)</a>
+        <a href="resources/course-materials/">6. Supports de Cours</a>
+        <a href="resources/newsletters/">7. Bulletin mensuel</a>
+        <a href="resources/dafad/">8. DAFAD mensuel</a>
+        <a href="resources/gallery/">9. Galerie photos</a>
+        <a href="resources/convocation/">10. Convocation annuelle</a>
+        <a href="resources/registration/">11. Formulaire d’inscription semestrielle</a>
+        <a href="resources/journals/">12. Revues académiques</a>
+      </div>
+      <p class="note">Créez ces dossiers/pages sur votre hébergeur pour que chaque bouton ouvre la bonne page.</p>
+    </div></div></section>
 
     <section id="apply-fr" class="section">
       <div class="container grid cols-2">
         <div class="card">
-          <h2>ADMISSIONS & INSCRIPTION</h2>
-          <p>Postulez directement sur le site (formulaire) ou via le Portail d’Admission.</p>
+          <h2>ADMISSIONS & INSCRIPTION (Candidature Directe)</h2>
+          <p>Les candidats peuvent postuler via leur Directeur national ou directement auprès du Bureau Continental à Osogbo, Nigéria.</p>
           <p>📧 <a href="mailto:harvestimeafricadirectorate@gmail.com">harvestimeafricadirectorate@gmail.com</a><br>
-             💬 WhatsApp :
-             <a href="https://wa.me/2347039429826" target="_blank">+234 703 942 9826</a> ·
-             <a href="https://wa.me/2349158588901" target="_blank">+234 915 858 8901</a> ·
+             💬 WhatsApp : <a href="https://wa.me/2347039429826" target="_blank">+234 703 942 9826</a> •
+             <a href="https://wa.me/2349158588901" target="_blank">+234 915 858 8901</a> •
              <a href="https://wa.me/2348133399661" target="_blank">+234 813 339 9661</a></p>
-          <p><a class="btn btn-outline" href="apply.html" target="_blank">Ouvrir le Portail</a></p>
+          <p class="note">Remplissez le formulaire et soumettez — votre application email s’ouvrira pré‑remplie vers notre adresse officielle.</p>
         </div>
         <div class="card">
-          <h2>Formulaire rapide (Site web)</h2>
+          <h2>Formulaire Rapide de Candidature</h2>
           <form class="apply" id="apply-form-fr">
             <input type="text" id="fullNameFr" placeholder="Nom complet" required>
             <input type="email" id="emailFr" placeholder="Email" required>
@@ -757,63 +654,110 @@
               <option>École de Transformation Communautaire & Plaidoyer</option>
             </select>
             <textarea id="countryFr" rows="2" placeholder="Pays / Chapitre"></textarea>
-            <button type="submit" class="btn btn-primary">Soumettre la candidature</button>
-            <p class="note">L’envoi ouvre votre messagerie avec les détails pré-remplis pour HIBIAFRICA.</p>
+            <button type="submit" class="btn btn-primary">Soumettre par Email</button>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="pay-fr" class="section">
+      <div class="container">
+        <h2>Effectuer un Paiement (En ligne sécurisé)</h2>
+        <div class="card">
+          <p>Sélectionnez un frais et payez via des liens sécurisés. Conservez votre <strong>Référence de Transaction</strong> pour confirmation.</p>
+          <div class="paygrid">
+            <div class="card">
+              <h3>Frais de Formulaire d’Admission</h3>
+              <a class="btn btn-pay" href="https://paystack.com/pay/HIBIAFRICA-AdmissionForm" target="_blank">Payer via Paystack</a>
+              <a class="btn btn-alt" href="https://flutterwave.com/pay/HIBIAFRICA-AdmissionForm" target="_blank">Payer via Flutterwave</a>
+              <p class="note">Remplacez ces URL par vos liens de paiement réels.</p>
+            </div>
+            <div class="card">
+              <h3>Supports d’Étude (par semestre)</h3>
+              <a class="btn btn-pay" href="https://paystack.com/pay/HIBIAFRICA-StudyMaterials" target="_blank">Payer via Paystack</a>
+              <a class="btn btn-alt" href="https://flutterwave.com/pay/HIBIAFRICA-StudyMaterials" target="_blank">Payer via Flutterwave</a>
+            </div>
+            <div class="card">
+              <h3>Frais d’Acceptation</h3>
+              <a class="btn btn-pay" href="https://paystack.com/pay/HIBIAFRICA-Acceptance" target="_blank">Payer via Paystack</a>
+              <a class="btn btn-alt" href="https://flutterwave.com/pay/HIBIAFRICA-Acceptance" target="_blank">Payer via Flutterwave</a>
+            </div>
+          </div>
+          <p class="note" style="margin-top:1rem">Après paiement, envoyez votre <strong>Nom complet</strong>, <strong>Programme</strong> et <strong>Référence de Transaction</strong> à 
+          <a href="mailto:harvestimeafricadirectorate@gmail.com">harvestimeafricadirectorate@gmail.com</a> ou via WhatsApp.</p>
         </div>
       </div>
     </section>
   </main>
 
+  <footer>
+    <div class="container">
+      <p>© 2025 Harvestime International Bible Institute Africa (HIBIAFRICA). Continental Africa Directorate of Harvestime International Network (USA). All Rights Reserved.</p>
+    </div>
+  </footer>
+
 <script>
-// Language toggle
 const btnEn = document.getElementById('btn-en');
 const btnFr = document.getElementById('btn-fr');
 const mainEn = document.getElementById('lang-en');
 const mainFr = document.getElementById('lang-fr');
-function showLang(lang){
-  const isFr = lang==='fr';
-  mainEn.classList.toggle('hidden', isFr);
-  mainFr.classList.toggle('hidden', !isFr);
+let currentLang = 'en';
+
+function setLang(lang){
+  currentLang = lang;
+  const isFr = lang === 'fr';
+  mainEn.hidden = isFr;
+  mainFr.hidden = !isFr;
   btnEn.classList.toggle('active', !isFr);
   btnFr.classList.toggle('active', isFr);
   document.documentElement.lang = isFr ? 'fr' : 'en';
+  document.querySelectorAll('.t-en').forEach(el=>el.style.display = isFr ? 'none' : 'inline');
+  document.querySelectorAll('.t-fr').forEach(el=>el.style.display = isFr ? 'inline' : 'none');
 }
-(function mirrorResources(){
-  const enFolders = document.querySelector('#res-en');
-  const frMount = document.getElementById('res-mirror');
-  if(enFolders && frMount){ frMount.innerHTML = enFolders.innerHTML; }
-})();
-btnEn.addEventListener('click', ()=>showLang('en'));
-btnFr.addEventListener('click', ()=>showLang('fr'));
-showLang('en');
+btnEn.addEventListener('click', ()=>setLang('en'));
+btnFr.addEventListener('click', ()=>setLang('fr'));
+setLang('en');
 
-// Application forms -> compose email via mailto
-function wireForm(formId, fields){
+function scrollToTarget(base){
+  const id = `#${base}-${currentLang}`;
+  const el = document.querySelector(id);
+  if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
+}
+document.querySelectorAll('[data-target]').forEach(a=>{
+  a.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const base = a.getAttribute('data-target');
+    scrollToTarget(base);
+  });
+});
+
+function wireForm(formId, fields, labels){
   const f = document.getElementById(formId);
   if(!f) return;
   f.addEventListener('submit', (e)=>{
     e.preventDefault();
-    const data = {};
-    for(const id of fields){
-      const el = document.getElementById(id);
-      data[id] = el ? (el.value||'') : '';
-    }
+    const data = {}; fields.forEach(id=>{const el=document.getElementById(id); data[id]=el?el.value.trim():''});
     const subject = encodeURIComponent('New Application – HIBIAFRICA');
     const body = encodeURIComponent(
-`Full Name: ${data[fields[0]]}
-Email: ${data[fields[1]]}
-Phone/WhatsApp: ${data[fields[2]]}
-Programme: ${data[fields[3]]}
-School: ${data[fields[4]]}
-Country/Chapter: ${data[fields[5]]}
+`${labels.name}: ${data[fields[0]]}
+${labels.email}: ${data[fields[1]]}
+${labels.phone}: ${data[fields[2]]}
+${labels.programme}: ${data[fields[3]]}
+${labels.school}: ${data[fields[4]]}
+${labels.country}: ${data[fields[5]]}
 
 Submitted from HIBIAFRICA website.`);
     window.location.href = `mailto:harvestimeafricadirectorate@gmail.com?subject=${subject}&body=${body}`;
   });
 }
-wireForm('apply-form', ['fullName','email','phone','programme','school','country']);
-wireForm('apply-form-fr', ['fullNameFr','emailFr','phoneFr','programmeFr','schoolFr','countryFr']);
+wireForm('apply-form-en',
+  ['fullName','email','phone','programme','school','country'],
+  {name:'Full Name', email:'Email', phone:'Phone/WhatsApp', programme:'Programme', school:'School', country:'Country/Chapter'}
+);
+wireForm('apply-form-fr',
+  ['fullNameFr','emailFr','phoneFr','programmeFr','schoolFr','countryFr'],
+  {name:'Nom complet', email:'Email', phone:'Téléphone/WhatsApp', programme:'Programme', school:'École', country:'Pays/Chapitre'}
+);
 </script>
 </body>
 </html>
