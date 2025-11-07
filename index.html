@@ -1,700 +1,292 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HIBIAFRICA – Harvestime International Bible Institute Africa</title>
-  <meta name="description" content="Harvestime International Bible Institute Africa (HIBIAFRICA) – Training and Equipping Labourers for Worldwide Spiritual Harvest.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --primary:#0066ff;
-      --primary-2:#7a5cff;
-      --accent:#ff7a59;
-      --dark:#0b1220;
-      --muted:#6b7280;
-      --bg:#f7f8fc;
-      --card:#ffffff;
-      --ring:rgba(0,102,255,0.2);
-      --success:#15b887;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:#111}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.55}
-    a{color:var(--primary);text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{width:min(1200px,92vw);margin-inline:auto}
-    .topbar{display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:.4rem 0;color:#0b1324}
-    .topbar .contacts{display:flex;flex-wrap:wrap;gap:.75rem;font-size:.92rem}
-    .flag{font-size:1rem}
-    .nav{position:sticky;top:0;background:linear-gradient(90deg, #0b1220 0%, #111a33 30%, #152046 55%, #0b1220 100%);z-index:20;backdrop-filter:saturate(1.1) blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav .inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
-    .brand{display:flex;align-items:center;gap:.8rem;color:#fff;text-decoration:none}
-    .brand .logo{width:44px;height:44px;border-radius:12px;overflow:hidden;background:#fff;display:grid;place-items:center}
-    .brand .logo img{width:100%;height:100%;object-fit:cover}
-    .brand .title{display:flex;flex-direction:column}
-    .brand b{font-weight:800;letter-spacing:.2px}
-    .brand small{opacity:.8}
-    .menu{display:flex;gap:1rem;align-items:center}
-    .menu a{color:#e9eefc;padding:.55rem .8rem;border-radius:.7rem;font-weight:600;opacity:.95}
-    .menu a:hover{background:rgba(255,255,255,.08)}
-    .cta{background:linear-gradient(135deg,var(--accent),var(--primary));color:#fff !important;padding:.7rem 1rem;border-radius:.85rem;box-shadow:0 10px 20px -10px rgba(0,0,0,.5);}
-    .lang{display:flex;align-items:center;gap:.4rem;color:#fff}
-    .lang button{all:unset;cursor:pointer;padding:.3rem .55rem;border-radius:.5rem}
-    .lang button.active{background:rgba(255,255,255,.12)}
-    .hero{position:relative;isolation:isolate;color:#fff;padding:72px 0;background:
-      radial-gradient(1200px 500px at 0% 0%, #1b2a6b 0%, transparent 70%),
-      radial-gradient(900px 400px at 100% 0%, #3a1b6b 0%, transparent 70%),
-      linear-gradient(180deg,#0b1220 0%, #10172a 100%);
-      overflow:hidden;
-    }
-    .hero::after{
-      content:"";position:absolute;inset:auto -20% -30% -20%;height:60%;background:
-      radial-gradient(closest-side at 30% 10%, rgba(122,92,255,.35), transparent 70%),
-      radial-gradient(closest-side at 70% 20%, rgba(0,102,255,.30), transparent 70%);
-      filter:blur(70px);z-index:-1;
-    }
-    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
-    .tag{display:inline-flex;gap:.5rem;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(6px);padding:.35rem .7rem;border-radius:999px;margin-bottom:1rem}
-    h1{font-family:"Playfair Display",serif;font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;margin:.3rem 0 1rem}
-    .subtitle{color:#dbe7ff;font-size:1.05rem;max-width:60ch}
-    .actions{display:flex;gap:1rem;margin-top:1.3rem;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.9rem 1.05rem;border-radius:.9rem;font-weight:700;border:1px solid rgba(255,255,255,.14);color:#0b1220;background:#fff}
-    .btn.alt{background:transparent;color:#fff}
-    .btn.alt:hover{background:rgba(255,255,255,.08)}
-    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.18);padding:1.2rem;border-radius:1rem}
-    .hero-card ul{margin:0;padding-left:1rem;color:#e9eefc}
-    section{padding:68px 0}
-    .kicker{color:var(--primary)}
-    h2{font-size:clamp(1.6rem,2.8vw,2.1rem);margin:.2rem 0 1.1rem}
-    p.lead{color:#374151;max-width:70ch}
-    .grid{display:grid;gap:1.2rem}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-    @media (max-width:960px){.grid.cols-3,.grid.cols-2,.hero .wrap{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:14px;padding:1.1rem}
-    .card.shadow{box-shadow:0 15px 30px -20px rgba(11,18,32,.25)}
-    .accent{color:var(--accent)}
-    table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:12px;border:1px solid #e5e7eb;background:#fff}
-    th,td{padding:.75rem .9rem;text-align:left;border-bottom:1px solid #eef2f7}
-    th{background:#f9fafb;color:#0b1220}
-    tr:last-child td{border-bottom:none}
-    details{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1rem}
-    details summary{cursor:pointer;font-weight:700}
-    details[open]{box-shadow:0 16px 30px -22px rgba(11,18,32,.25)}
-    .resources{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
-    .resource-btn{display:flex;gap:.7rem;align-items:center;padding:1rem;border:1px solid #e5e7eb;border-radius:14px;background:#fff;font-weight:700;color:#0b1220}
-    .resource-btn:hover{border-color:var(--primary);box-shadow:0 10px 22px -18px var(--ring)}
-    .pay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-    @media (max-width:900px){.pay-grid{grid-template-columns:1fr}}
-    .pay-card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1rem}
-    .pay-card h4{margin:.4rem 0}
-    .pay-card .cta-row{display:flex;gap:.6rem;flex-wrap:wrap}
-    .pay{display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .85rem;border-radius:.7rem;border:1px solid #e5e7eb;font-weight:700}
-    .pay.primary{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;border:none}
-    .pay.success{background:linear-gradient(135deg,var(--success),#20d3a1);color:#fff;border:none}
-    footer{background:#0b1220;color:#c8d3ff;padding:42px 0;margin-top:40px}
-    footer a{color:#fff}
-    .footgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem}
-    @media (max-width:920px){.footgrid{grid-template-columns:1fr}}
-    .copyright{border-top:1px solid rgba(255,255,255,.14);margin-top:1rem;padding-top:1rem;color:#9fb1ff}
-    [data-i18n]{display:none}
-    html.lang-en [data-i18n="en"]{display:revert}
-    html.lang-fr [data-i18n="fr"]{display:revert}
-    .mb-0{margin-bottom:0}
-    .center{display:flex;align-items:center;justify-content:center}
-    .muted{color:var(--muted)}
-    .badge{display:inline-flex;gap:.4rem;align-items:center;background:#eef2ff;border:1px solid #dbe4ff;border-radius:999px;padding:.28rem .6rem;color:#243b7b;font-weight:700;font-size:.86rem}
-    form{display:grid;gap:.8rem}
-    input,select,textarea{width:100%;padding:.8rem;border:1px solid #dfe4ea;border-radius:.6rem;background:#fff}
-    input:focus,textarea:focus,select:focus{outline:2px solid var(--ring);border-color:var(--primary)}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
-    @media (max-width:720px){.form-row{grid-template-columns:1fr}}
-    .submit{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;border:none;padding:.9rem 1rem;border-radius:.8rem;font-weight:800}
-  </style>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HIBIAFRICA – Harvestime International Bible Institute Africa</title>
+<meta name="description" content="Bilingual (EN/FR) homepage for HIBIAFRICA with resources, applications, and payments.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1020;--card:#121a34;--muted:#94a3b8;--brand:#fbbf24;--text:#e5e7eb}
+*{box-sizing:border-box} html,body{margin:0;background:linear-gradient(180deg,#0b1020,#0f1836 70%,#0b1020);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif}
+.container{max-width:1200px;margin:0 auto;padding:0 1rem}
+nav{position:sticky;top:0;z-index:50;background:rgba(10,16,34,.85);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0}
+.brand{display:flex;align-items:center;gap:.65rem}
+.brand img{height:44px;width:auto;border-radius:6px;box-shadow:0 0 0 2px rgba(251,191,36,.15)}
+.brand .title{font-weight:800;letter-spacing:.2px;line-height:1}
+.brand .subtitle{font-size:.75rem;color:var(--muted)}
+.menu{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.menu a{padding:.45rem .65rem;border-radius:.5rem;color:var(--text);text-decoration:none}
+.menu a:hover{background:rgba(255,255,255,.07)}
+.lang-toggle button{background:#1f2937;color:var(--text);border:1px solid rgba(255,255,255,.15);border-radius:.6rem;padding:.35rem .6rem;cursor:pointer}
+.lang-toggle button.active{background:var(--brand);color:#111827;border-color:transparent}
+.section{padding:56px 0} .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:1rem;padding:1rem}
+.hero{padding:64px 0;background-image:radial-gradient(50% 50% at 50% 0, rgba(251,191,36,.14), transparent 60%)}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem} .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.badge{display:inline-block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:.35rem .6rem;border-radius:999px;font-size:.8rem;margin-right:.35rem}
+.btn{display:inline-flex;gap:.5rem;align-items:center;padding:.65rem 1rem;border-radius:.7rem;border:0;cursor:pointer;font-weight:700}
+.btn-primary{background:var(--brand);color:#111827} .btn-outline{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.25)}
+.resources a{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1rem;background:#0f1731;border:1px solid rgba(255,255,255,.08);border-radius:.8rem;text-decoration:none;color:var(--text)}
+.resources a:hover{background:#0d1328}
+table{width:100%;border-collapse:collapse;border-radius:.7rem;overflow:hidden}
+thead th{text-align:left;background:#0f1731;padding:.6rem} tbody td{padding:.6rem;border-top:1px solid rgba(255,255,255,.08)}
+footer{padding:36px 0;border-top:1px solid rgba(255,255,255,.08);background:rgba(10,16,34,.6)}
+@media (max-width: 960px){.grid-2,.grid-3{grid-template-columns:1fr} .brand .subtitle{display:none}}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const en = document.querySelectorAll('[data-lang="en"]');
+  const fr = document.querySelectorAll('[data-lang="fr"]');
+  const btnEN = document.getElementById('btn-en');
+  const btnFR = document.getElementById('btn-fr');
+  function show(lang){
+    (lang==='en'?en:fr).forEach(el=>el.style.display='');
+    (lang==='en'?fr:en).forEach(el=>el.style.display='none');
+    btnEN.classList.toggle('active', lang==='en');
+    btnFR.classList.toggle('active', lang==='fr');
+    localStorage.setItem('hibi_lang', lang);
+  }
+  show(localStorage.getItem('hibi_lang') || 'en');
+  btnEN.addEventListener('click', ()=>show('en'));
+  btnFR.addEventListener('click', ()=>show('fr'));
+});
+function sendMailto(form){
+  const params = new URLSearchParams();
+  params.set('subject','HIBIAFRICA Application — ' + (form.name.value||'')); 
+  const body = [
+    'Name: ' + form.name.value,
+    'Email: ' + form.email.value,
+    'Programme: ' + form.programme.value,
+    'Country: ' + form.country.value,
+    '', form.message.value
+  ].join('%0D%0A');
+  window.location.href = 'mailto:harvestimeafricadirectorate@gmail.com?'+params.toString()+'&body='+body;
+  const wa = document.getElementById('wa-link');
+  const waText = encodeURIComponent('Hello HIBIAFRICA, I would like to apply.\nName: '+form.name.value+'\nProgramme: '+form.programme.value+'\nCountry: '+form.country.value);
+  wa.href = 'https://wa.me/2347039429826?text='+waText;
+  return false;
+}
+</script>
 </head>
-<body class="lang-en">
-  <div class="container topbar">
-    <div class="contacts">
-      <span>📧 <a href="mailto:harvestimeafricadirectorate@gmail.com">harvestimeafricadirectorate@gmail.com</a></span>
-      <span>📍 Osogbo, Osun State, Nigeria</span>
-      <span>💬 WhatsApp: <a href="https://wa.me/2347039429826" target="_blank">+234 703 942 9826</a> •
-        <a href="https://wa.me/2349158588901" target="_blank">+234 915 858 8901</a> •
-        <a href="https://wa.me/2348133399661" target="_blank">+234 813 339 9661</a></span>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <div class="brand">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNjAnIGhlaWdodD0nNDQnPjxyZWN0IHdpZHRoPScxNjAnIGhlaWdodD0nNDQnIGZpbGw9JyMxMTE4MjcnLz48dGV4dCB4PSc4MCcgeT0nMjgnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZvbnQtZmFtaWx5PSdBcmlhbCcgZm9udC1zaXplPScxOCcgZmlsbD0nI0ZCQkYyNCc+SElCSUFGUklDQTwvdGV4dD48L3N2Zz4=" alt="HIBIAFRICA Logo"/>
+      <div>
+        <div class="title">HIBIAFRICA</div>
+        <div class="subtitle">Harvestime International Bible Institute – Africa</div>
+      </div>
     </div>
-    <div class="lang">
-      <button id="enBtn" class="active">English 🇬🇧</button>
-      <button id="frBtn">Français 🇫🇷</button>
+    <div class="menu">
+      <a href="#about">About</a><a href="#doctrine">Doctrine</a><a href="#visions">8 Visions</a>
+      <a href="#programmes">Programmes</a><a href="#schools">2 Schools</a><a href="#leadership">Leadership</a>
+      <a href="#chapters">Chapters</a><a href="#faculties">Faculties</a><a href="#resources">Resources</a>
+      <a href="#payments">Payments</a><a href="#apply">Apply</a>
+      <span class="lang-toggle"><button id="btn-en" class="active">English 🇬🇧</button> <button id="btn-fr">Français 🇫🇷</button></span>
     </div>
   </div>
-  <nav class="nav">
-    <div class="container inner">
-      <a href="#" class="brand">
-        <span class="logo" aria-label="HIBIAFRICA logo">
-          <img src="logo.png" alt="HIBIAFRICA Logo" onerror="this.outerHTML='<span style=&quot;font-weight:900;font-size:1.1rem;color:#0b1220&quot;>HIBI</span>'">
-        </span>
-        <span class="title">
-          <b>HIBIAFRICA</b>
-          <small data-i18n="en">Harvestime International Bible Institute – Africa</small>
-          <small data-i18n="fr">Institut Biblique International Harvestime – Afrique</small>
-        </span>
-      </a>
-      <div class="menu">
-        <a href="#about" data-i18n="en">About</a>
-        <a href="#about" data-i18n="fr">À propos</a>
-        <a href="#doctrine" data-i18n="en">Doctrinal Statement</a>
-        <a href="#doctrine" data-i18n="fr">Déclaration doctrinale</a>
-        <a href="#visions" data-i18n="en">8 Cardinal Visions</a>
-        <a href="#visions" data-i18n="fr">8 Visions cardinales</a>
-        <a href="#programmes" data-i18n="en">Programmes</a>
-        <a href="#programmes" data-i18n="fr">Programmes</a>
-        <a href="#schools" data-i18n="en">2 Major Schools</a>
-        <a href="#schools" data-i18n="fr">2 Grandes Écoles</a>
-        <a href="#leadership" data-i18n="en">Leadership</a>
-        <a href="#leadership" data-i18n="fr">Direction</a>
-        <a href="#chapters" data-i18n="en">Chapters</a>
-        <a href="#chapters" data-i18n="fr">Chapitres</a>
-        <a href="#faculties" data-i18n="en">Faculties</a>
-        <a href="#faculties" data-i18n="fr">Facultés</a>
-        <a href="#resources" data-i18n="en">Resources</a>
-        <a href="#resources" data-i18n="fr">Ressources</a>
-        <a href="#apply" class="cta" data-i18n="en">Admissions / Apply</a>
-        <a href="#apply" class="cta" data-i18n="fr">Admissions / Candidater</a>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <h1 data-lang="en">Raising biblically sound, Spirit‑led, mission‑oriented leaders for Africa and the nations.</h1>
+    <h1 data-lang="fr" style="display:none">Former des leaders bibliquement solides, conduits par l’Esprit et orientés vers la mission pour l’Afrique et les nations.</h1>
+    <div><span class="badge">Matthew 9:37–38</span> <span class="badge">HIBIAFRICA</span> <span class="badge">EN • FR</span></div>
+    <div style="margin-top:.8rem">
+      <a href="#apply" class="btn btn-primary" data-lang="en">Apply Now</a>
+      <a href="#apply" class="btn btn-primary" data-lang="fr" style="display:none">Postuler maintenant</a>
+      <a href="#resources" class="btn btn-outline" data-lang="en">Download Resources</a>
+      <a href="#resources" class="btn btn-outline" data-lang="fr" style="display:none">Télécharger les ressources</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="about" class="section">
+    <div class="container card">
+      <h2 data-lang="en">ABOUT HIBIAFRICA — Identity & Mandate</h2>
+      <h2 data-lang="fr" style="display:none">À PROPOS DE HIBIAFRICA — Identité & Mandat</h2>
+      <p data-lang="en">Harvestime International Bible Institute (HIBI) was introduced to Africa (Nigeria) by Dr. Samuel Abiodun Oladimeji in 2007/2008... With full authorization from the USA Headquarters, HIBIAFRICA serves Anglophone and Francophone nations.</p>
+      <p data-lang="fr" style="display:none">Harvestime International Bible Institute (HIBI) a été introduit en Afrique (Nigéria) par le Dr Samuel Abiodun Oladimeji en 2007/2008... Avec l’autorisation du Siège USA, HIBIAFRICA sert les nations anglophones et francophones.</p>
+    </div>
+  </section>
+
+  <section id="doctrine" class="section">
+    <div class="container card">
+      <h2 data-lang="en">What We Believe (Doctrinal Statement)</h2>
+      <h2 data-lang="fr" style="display:none">Ce que nous croyons (Déclaration doctrinale)</h2>
+      <ul>
+        <li data-lang="en"><strong>The Word of God – The Seed (Luke 8:11):</strong> The Bible is inspired and final authority.</li>
+        <li data-lang="fr" style="display:none"><strong>La Parole de Dieu – La Semence (Luc 8:11):</strong> La Bible est inspirée et l’autorité finale.</li>
+        <li data-lang="en"><strong>The Triune God – Lord of the Harvest (Matt. 9:38):</strong> One God in three Persons.</li>
+        <li data-lang="fr" style="display:none"><strong>Le Dieu Trinitaire – Maître de la moisson (Matt. 9:38):</strong> Un seul Dieu en trois Personnes.</li>
+        <li data-lang="en"><strong>Man – The Sower (Mark 4:3):</strong> Created in God's image, restored through Christ.</li>
+        <li data-lang="fr" style="display:none"><strong>L’Homme – Le Semeur (Marc 4:3):</strong> Créé à l’image de Dieu, restauré en Christ.</li>
+        <li data-lang="en"><strong>Salvation – The Harvest (Matt. 13:23):</strong> By grace through faith in Christ alone.</li>
+        <li data-lang="fr" style="display:none"><strong>Le Salut – La Moisson (Matt. 13:23):</strong> Par la grâce au moyen de la foi en Christ.</li>
+        <li data-lang="en"><strong>The Church – The Labourers (Matt. 9:38):</strong> Preach, teach, disciple, demonstrate God’s power.</li>
+        <li data-lang="fr" style="display:none"><strong>L’Église – Les Ouvriers (Matt. 9:38):</strong> Prêcher, enseigner, faire des disciples, démontrer la puissance de Dieu.</li>
+        <li data-lang="en"><strong>Consummation – Final Harvest (Rev. 14:15):</strong> Visible return of Christ; resurrection & judgment.</li>
+        <li data-lang="fr" style="display:none"><strong>Consommation – Moisson Finale (Apoc. 14:15):</strong> Retour de Christ, résurrection et jugement.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="programmes" class="section">
+    <div class="container grid-2">
+      <div class="card">
+        <h2 data-lang="en">Programmes & Duration</h2>
+        <h2 data-lang="fr" style="display:none">Programmes & Durée</h2>
+        <table><thead><tr>
+          <th data-lang="en">Programme</th><th data-lang="en">Duration</th><th data-lang="en">Mode</th>
+          <th data-lang="fr" style="display:none">Programme</th><th data-lang="fr" style="display:none">Durée</th><th data-lang="fr" style="display:none">Modalité</th>
+        </tr></thead><tbody>
+          <tr><td>Certificate</td><td>1 Year</td><td>On-site / Online</td></tr>
+          <tr><td>Diploma</td><td>2 Years</td><td>On-site / Online</td></tr>
+          <tr><td>Bachelor</td><td>3–4 Years</td><td>On-site / Online</td></tr>
+          <tr><td>PGD</td><td>1 Year</td><td>On-site / Online</td></tr>
+          <tr><td>Master</td><td>18 Months</td><td>On-site / Online</td></tr>
+          <tr><td>PhD</td><td>3 Years</td><td>On-site / Online</td></tr>
+        </tbody></table>
+      </div>
+      <div class="card" id="schools">
+        <h2 data-lang="en">Two Major Schools</h2>
+        <h2 data-lang="fr" style="display:none">Deux grandes écoles</h2>
+        <p data-lang="en"><strong>1) School of Theology Education</strong> — Comprehensive biblical and theological studies (Certificate to PhD).</p>
+        <p data-lang="fr" style="display:none"><strong>1) École de formation théologique</strong> — Études bibliques et théologiques (Certificat au Doctorat).</p>
+        <p data-lang="en"><strong>2) School of Community Transformation & Advocacy Ministries</strong> — Training for community engagement, social justice and transformation.</p>
+        <p data-lang="fr" style="display:none"><strong>2) École de transformation communautaire & ministères d’advocacy</strong> — Formation pour l’engagement communautaire, la justice sociale et la transformation.</p>
+        <p data-lang="en"><em>Global Instructors:</em> Bible scholars and ministers of the Gospel serving worldwide.</p>
+        <p data-lang="fr" style="display:none"><em>Formateurs mondiaux :</em> des biblistes et des ministres de l’Évangile au service partout dans le monde.</p>
       </div>
     </div>
-  </nav>
-  <header class="hero">
-    <div class="container wrap">
-      <div>
-        <span class="tag" data-i18n="en">Continental Africa Directorate of Harvestime International Network (USA)</span>
-        <span class="tag" data-i18n="fr">Direction Africaine du Harvestime International Network (États‑Unis)</span>
-        <h1 data-i18n="en">Raising biblically sound, Spirit‑led, mission‑oriented leaders for Africa and the nations.</h1>
-        <h1 data-i18n="fr">Former des leaders bibliquement solides, conduits par l’Esprit et orientés vers la mission pour l’Afrique et les nations.</h1>
-        <p class="subtitle" data-i18n="en"><b>Motto:</b> “Training and Equipping Labourers for Worldwide Spiritual Harvest.” — Matthew 9:37–38</p>
-        <p class="subtitle" data-i18n="fr"><b>Devise :</b> « Former et équiper des ouvriers pour la moisson spirituelle mondiale. » — Matthieu 9:37–38</p>
-        <div class="actions">
-          <a class="btn" href="#apply" data-i18n="en">Apply Now</a>
-          <a class="btn" href="#apply" data-i18n="fr">Postuler maintenant</a>
-          <a class="btn alt" href="#resources" data-i18n="en">View Resources</a>
-          <a class="btn alt" href="#resources" data-i18n="fr">Voir les ressources</a>
-        </div>
-      </div>
-      <div class="hero-card">
-        <h3 class="mb-0" data-i18n="en">Quick Contacts</h3>
-        <h3 class="mb-0" data-i18n="fr">Contacts rapides</h3>
-        <p class="muted">📧 <a href="mailto:harvestimeafricadirectorate@gmail.com">harvestimeafricadirectorate@gmail.com</a></p>
-        <p class="muted">💬 WhatsApp: <a href="https://wa.me/2347039429826" target="_blank">+234 703 942 9826</a> • <a href="https://wa.me/2349158588901" target="_blank">+234 915 858 8901</a> • <a href="https://wa.me/2348133399661" target="_blank">+234 813 339 9661</a></p>
-        <p class="muted">📍 Osogbo, Osun State, Nigeria</p>
+  </section>
+
+  <section id="leadership" class="section">
+    <div class="container card">
+      <h2>Continental Leadership — African Directorate</h2>
+      <table><thead><tr><th>Name & Title</th><th>Position</th><th>Portfolio</th></tr></thead><tbody>
+        <tr><td>Dr. Samuel Abiodun Oladimeji</td><td>Provost & Continental Africa Director</td><td>Overall leadership, strategic vision</td></tr>
+        <tr><td>Dr. (Mrs.) Oluwafemi Kenny Oladimeji</td><td>Deputy Provost & Continental Administrator</td><td>Administration & coordination</td></tr>
+        <tr><td>Dr. Oluwole Caleb Ojerinde</td><td>Continental Registrar</td><td>Admissions, records, certificates</td></tr>
+        <tr><td>Dr. Tosin Awoyinka</td><td>Continental Dean of Academics</td><td>Curriculum & quality</td></tr>
+        <tr><td>Dr. Olayinka Ojo</td><td>Continental Legal Advisor</td><td>Legal & compliance</td></tr>
+        <tr><td>Rev. Dr. Agani Pierre Adeyemi</td><td>General Francophone Coordinator / Benin Director</td><td>Francophone oversight</td></tr>
+        <tr><td>Apostle Dr. David Living Stone Aganano</td><td>General Anglophone Coordinator / RSA Director</td><td>Anglophone oversight</td></tr>
+      </tbody></table>
+    </div>
+  </section>
+
+  <section id="chapters" class="section">
+    <div class="container card">
+      <h2>National Chapter Directors — Africa</h2>
+      <table><thead><tr><th>Country</th><th>Director / Representative</th></tr></thead><tbody>
+        <tr><td>Benin Republic</td><td>Rev. Dr. Agani Pierre Adeyemi</td></tr>
+        <tr><td>Niger Republic</td><td>Pastor Maazou Judith</td></tr>
+        <tr><td>Mali</td><td>Pastor Seidou</td></tr>
+        <tr><td>Burkina Faso</td><td>Apostle Badolo</td></tr>
+        <tr><td>Republic of Chad</td><td>Pastor Semion</td></tr>
+        <tr><td>Togo</td><td>Pastor Kemakpo Ablamvi</td></tr>
+        <tr><td>Côte d’Ivoire</td><td>Pastor SANHIN (Kouassi Narcisse)</td></tr>
+        <tr><td>Ghana</td><td>Sis. Kehinde Bukoye</td></tr>
+        <tr><td>Cameroon</td><td>Pastor Mongui Dibebe Thomas</td></tr>
+        <tr><td>Central African Republic</td><td>Pastor Dr. Kawa Omer</td></tr>
+        <tr><td>Republic of South Africa</td><td>Apostle Dr. Living Stone Aganano & Rev. Mrs. Bulelwa Aganano</td></tr>
+        <tr><td>Zimbabwe</td><td>Sis. Shamiso Madzorera</td></tr>
+        <tr><td>Nigeria</td><td>Dr. (Mrs.) Oluwafemi Kenny Oladimeji</td></tr>
+      </tbody></table>
+    </div>
+  </section>
+
+  <section id="faculties" class="section">
+    <div class="container grid-2">
+      <div class="card"><h2>Faculties — School of Theology Education</h2>
         <ul>
-          <li data-i18n="en">Instructors worldwide: Bible scholars and Gospel ministers across disciplines.</li>
-          <li data-i18n="fr">Formateurs dans le monde entier : exégètes, théologiens et ministres de l’Évangile dans diverses capacités.</li>
+          <li>Biblical & Theological Studies (Biblical Studies, Theology, Hermeneutics & Exegesis, Apologetics & Prophecy)</li>
+          <li>Pastoral & Ministerial Leadership</li>
+          <li>Missions & Evangelism</li><li>Christian Education</li>
+          <li>Christian Counseling & Psychology</li>
+          <li>Church Administration & Management</li>
+          <li>Worship & Creative Arts</li>
+          <li>Ethics & Christian Living</li>
+          <li>Marketplace & Bi‑Vocational Ministry</li>
+        </ul>
+      </div>
+      <div class="card"><h2>Faculties — Transformation & Community Advocacy</h2>
+        <ul>
+          <li>Addiction Recovery Ministry</li><li>Human Trafficking Intervention</li><li>Domestic Violence Counseling</li>
+          <li>Widows & Orphans Care</li><li>Poverty Alleviation & Economic Empowerment</li><li>Youth Ministry & Crime Prevention</li>
+          <li>Peacebuilding & Reconciliation</li><li>Family & Marriage Counseling</li><li>Digital Ethics & Cyber Ministry</li>
+          <li>Vulnerable Populations Ministry</li><li>Sexual Purity & Addiction Recovery</li>
         </ul>
       </div>
     </div>
-  </header>
-  <section id="about">
+  </section>
+
+  <section id="resources" class="section">
     <div class="container">
-      <span class="kicker" data-i18n="en">ABOUT HIBIAFRICA</span>
-      <span class="kicker" data-i18n="fr">À PROPOS DE HIBIAFRICA</span>
-      <h2 data-i18n="en">Identity & Mandate</h2>
-      <h2 data-i18n="fr">Identité & Mandat</h2>
-      <p class="lead" data-i18n="en">
-        Harvestime International Bible Institute (HIBI) was introduced to Africa (Nigeria) by Dr. Samuel Abiodun Oladimeji in 2007/2008. A few years later, he received a divine mandate to extend the vision across the African continent. With full authorization and support from the Headquarters in the United States of America, the Harvestime International Bible Institute African Directorate (HIBIAFRICA) was established as the continental arm of Harvestime International Network (USA). Head Office (Africa): Osogbo, Osun State, Nigeria. HIBIAFRICA oversees national chapters, partner ministries, faculty, and students across Anglophone and Francophone African nations.
-      </p>
-      <p class="lead" data-i18n="fr">
-        Harvestime International Bible Institute (HIBI) a été introduit en Afrique (Nigéria) par le Dr Samuel Abiodun Oladimeji en 2007/2008. Quelques années plus tard, il a reçu un mandat divin pour étendre la vision au continent africain. Avec l’appui et l’autorisation du Siège aux États‑Unis d’Amérique, la Direction Africaine (HIBIAFRICA) a été établie comme bras continental de Harvestime International Network (USA). Siège (Afrique) : Osogbo, État d’Osun, Nigéria. HIBIAFRICA supervise les chapitres nationaux, ministères partenaires, enseignants et étudiants des nations anglophones et francophones.
-      </p>
-      <div class="grid cols-3">
-        <div class="card shadow">
-          <h3 data-i18n="en">Under the Auspices of HIN (USA)</h3>
-          <h3 data-i18n="fr">Sous l’égide de HIN (USA)</h3>
-          <ul>
-            <li data-i18n="en">Founder (Late): Argis Hulsey</li>
-            <li data-i18n="fr">Fondateur (décédé) : Argis Hulsey</li>
-            <li data-i18n="en">President (USA): Dr. Patricia Hulsey</li>
-            <li data-i18n="fr">Présidente (USA) : Dr Patricia Hulsey</li>
-            <li data-i18n="en">Africa Directorate: Dr. Samuel Abiodun Oladimeji</li>
-            <li data-i18n="fr">Direction Afrique : Dr Samuel Abiodun Oladimeji</li>
-          </ul>
-        </div>
-        <div class="card shadow">
-          <h3 data-i18n="en">The Meaning of “Harvestime”</h3>
-          <h3 data-i18n="fr">Signification de « Harvestime »</h3>
-          <p data-i18n="en">The name combines <em>harvest</em> and <em>time</em>, emphasizing the urgency of Christ’s call: “Lift up your eyes, and look on the fields; for they are white already to harvest.” — John 4:35</p>
-          <p data-i18n="fr">Le nom unit <em>moisson</em> et <em>temps</em>, soulignant l’urgence de l’appel du Christ : « Levez vos yeux, et regardez les champs qui déjà blanchissent pour la moisson. » — Jean 4:35</p>
-        </div>
-        <div class="card shadow">
-          <h3 data-i18n="en">Vision</h3>
-          <h3 data-i18n="fr">Vision</h3>
-          <ul>
-            <li data-i18n="en"><b>International:</b> focus on unreached peoples.</li>
-            <li data-i18n="fr"><b>International :</b> accent sur les peuples non atteints.</li>
-            <li data-i18n="en"><b>Network:</b> uniting churches and ministries to advance the Kingdom.</li>
-            <li data-i18n="fr"><b>Réseau :</b> unir les Églises et ministères pour faire avancer le Royaume.</li>
-          </ul>
-        </div>
+      <h2 data-lang="en">Downloadable / Navigation Resources</h2>
+      <h2 data-lang="fr" style="display:none">Ressources téléchargeables / Navigation</h2>
+      <div class="grid-3 resources">
+        <a href="resources/book-catalogue/index.html" target="_blank"><span data-lang="en">Book Catalogue</span><span data-lang="fr" style="display:none">Catalogue de livres</span> ➜</a>
+        <a href="resources/prospectus/index.html" target="_blank"><span>Prospectus</span> ➜</a>
+        <a href="resources/student-handbook/index.html" target="_blank"><span data-lang="en">Students’ Handbook</span><span data-lang="fr" style="display:none">Guide de l’étudiant</span> ➜</a>
+        <a href="resources/admission-form/index.html" target="_blank"><span data-lang="en">Admission Form Folder</span><span data-lang="fr" style="display:none">Formulaire d’admission</span> ➜</a>
+        <a href="resources/course-materials/index.html" target="_blank"><span data-lang="en">Course Materials</span><span data-lang="fr" style="display:none">Supports de cours</span> ➜</a>
+        <a href="resources/newsletter/index.html" target="_blank"><span data-lang="en">Monthly Newsletter</span><span data-lang="fr" style="display:none">Bulletin mensuel</span> ➜</a>
+        <a href="resources/dafad/index.html" target="_blank"><span>DAFAD</span> ➜</a>
+        <a href="resources/gallery/index.html" target="_blank"><span data-lang="en">Photo Gallery</span><span data-lang="fr" style="display:none">Galerie photo</span> ➜</a>
+        <a href="resources/convocation/index.html" target="_blank"><span data-lang="en">Annual Convocation</span><span data-lang="fr" style="display:none">Convocation annuelle</span> ➜</a>
+        <a href="resources/semester-registration/index.html" target="_blank"><span data-lang="en">Semester Registration Form</span><span data-lang="fr" style="display:none">Inscription semestrielle</span> ➜</a>
+        <a href="resources/academic-journals/index.html" target="_blank"><span data-lang="en">Academic Journals</span><span data-lang="fr" style="display:none">Revues académiques</span> ➜</a>
       </div>
+      <p class="small" data-lang="en" style="margin-top:.6rem">Tip: Create these folders on your host (e.g., /resources/book-catalogue/) and place PDFs there.</p>
+      <p class="small" data-lang="fr" style="margin-top:.6rem;display:none">Astuce : Créez ces dossiers sur votre hébergeur (ex. /resources/book-catalogue/) et placez-y les PDF.</p>
     </div>
   </section>
-  <section id="doctrine">
-    <div class="container">
-      <span class="kicker" data-i18n="en">WHAT WE BELIEVE</span>
-      <span class="kicker" data-i18n="fr">CE QUE NOUS CROYONS</span>
-      <h2 data-i18n="en">Christ-centered • Bible-based • Mission-focused</h2>
-      <h2 data-i18n="fr">Christocentrique • Biblique • Orienté mission</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <ul>
-            <li data-i18n="en"><b>The Word of God – The Seed (Luke 8:11):</b> The Bible (Old & New Testaments) is inspired, infallible, and final authority (Psalm 119:89).</li>
-            <li data-i18n="fr"><b>La Parole de Dieu – La Semence (Luc 8:11) :</b> La Bible (AT & NT) est inspirée, infaillible et l’autorité finale (Psaume 119:89).</li>
-            <li data-i18n="en"><b>The Triune God – Lord of the Harvest (Matt. 9:38):</b> One God in three Persons: Father, Son, Holy Spirit (1 John 5:8).</li>
-            <li data-i18n="fr"><b>Le Dieu Trinitaire – Maître de la moisson (Mat. 9:38) :</b> Un seul Dieu en trois Personnes : Père, Fils, Saint‑Esprit (1 Jean 5:8).</li>
-            <li data-i18n="en"><b>Man – The Sower (Mark 4:3):</b> Created in God’s image, fallen, restored only through Christ (1 Cor. 15:45–47).</li>
-            <li data-i18n="fr"><b>L’Homme – Le Semeur (Marc 4:3) :</b> Créé à l’image de Dieu, déchu, restauré en Christ seul (1 Cor 15:45–47).</li>
-          </ul>
-        </div>
-        <div class="card">
-          <ul>
-            <li data-i18n="en"><b>Salvation – The Harvest (Matt. 13:23):</b> by grace through faith in Christ alone (Eph. 2:8–9).</li>
-            <li data-i18n="fr"><b>Le Salut – La Moisson (Mat. 13:23) :</b> par grâce au moyen de la foi en Christ seul (Éph 2:8–9).</li>
-            <li data-i18n="en"><b>The Church – The Labourers (Matt. 9:38):</b> called to preach, teach, disciple and demonstrate God’s power (Mark 16:15–18).</li>
-            <li data-i18n="fr"><b>L’Église – Les Ouvriers (Mat. 9:38) :</b> prêcher, enseigner, faire des disciples et manifester la puissance de Dieu (Marc 16:15–18).</li>
-            <li data-i18n="en"><b>The Consummation – Final Harvest (Rev. 14:15):</b> visible return of Christ, resurrection, judgment, eternal destinies (1 Thes. 4:13–17; Rev. 20:12).</li>
-            <li data-i18n="fr"><b>La Consommation – Moisson finale (Apoc. 14:15) :</b> retour visible de Christ, résurrection, jugement, destinées éternelles (1 Th 4:13–17 ; Apoc 20:12).</li>
-          </ul>
-          <p class="muted" data-i18n="en"><b>Legal Status:</b> Harvestime International Network (USA) is a registered non‑profit religious organization.</p>
-          <p class="muted" data-i18n="fr"><b>Statut juridique :</b> Harvestime International Network (USA) est une organisation religieuse à but non lucratif dûment enregistrée.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="visions">
-    <div class="container">
-      <span class="kicker" data-i18n="en">THE EIGHT CARDINAL VISIONS</span>
-      <span class="kicker" data-i18n="fr">LES HUIT VISIONS CARDINALES</span>
-      <div class="grid cols-2">
-        <div class="card">
-          <ul>
-            <li data-i18n="en"><b>School of Theology Education:</b> Biblically sound, Spirit‑led, rigorous training; exegesis, seminars, publications.</li>
-            <li data-i18n="fr"><b>École de Formation Théologique :</b> Formation biblique solide et rigoureuse ; exégèse, séminaires, publications.</li>
-            <li data-i18n="en"><b>School of Community Transformation Ministry:</b> Marginalized groups; holistic and missional.</li>
-            <li data-i18n="fr"><b>École de Transformation Communautaire :</b> Groupes marginalisés ; approche holistique et missionnelle.</li>
-            <li data-i18n="en"><b>School of Discipleship Training:</b> Three‑level discipleship (2 Tim. 2:2).</li>
-            <li data-i18n="fr"><b>École de Discipolat :</b> Discipolat en trois niveaux (2 Tim 2:2).</li>
-            <li data-i18n="en"><b>Pre‑ & Post‑Marital Courses:</b> Godly, crisis‑free homes.</li>
-            <li data-i18n="fr"><b>Cours Pré/Post‑Matrimoniaux :</b> Foyers pieux et sans crise.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <ul>
-            <li data-i18n="en"><b>Daily Exegesis Lecture Series</b></li>
-            <li data-i18n="fr"><b>Série Quotidienne d’Exégèse</b></li>
-            <li data-i18n="en"><b>Daily Family Altar Devotion (DAFAD)</b></li>
-            <li data-i18n="fr"><b>Dévotion Quotidienne à l’Autel Familial (DAFAD)</b></li>
-            <li data-i18n="en"><b>Ministerial Leadership Refresher Course</b></li>
-            <li data-i18n="fr"><b>Mise à niveau en leadership ministériel</b></li>
-            <li data-i18n="en"><b>Intercessory Network – 24/7 Prayer Watches</b></li>
-            <li data-i18n="fr"><b>Réseau d’Intercession – Veilles 24/7</b></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="programmes">
-    <div class="container">
-      <span class="kicker" data-i18n="en">ACADEMIC PROGRAMMES & DURATION</span>
-      <span class="kicker" data-i18n="fr">PROGRAMMES ACADÉMIQUES & DURÉE</span>
-      <div class="card shadow">
-        <table>
-          <thead>
-            <tr>
-              <th data-i18n="en">Programme Level</th>
-              <th data-i18n="fr">Niveau</th>
-              <th data-i18n="en">Duration</th>
-              <th data-i18n="fr">Durée</th>
-              <th data-i18n="en">Mode</th>
-              <th data-i18n="fr">Modalité</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Certificate</td><td>Certificat</td><td>1 Year</td><td>1 an</td><td>On-site / Online</td><td>Présentiel / En ligne</td></tr>
-            <tr><td>Diploma</td><td>Diplôme</td><td>2 Years</td><td>2 ans</td><td>On-site / Online</td><td>Présentiel / En ligne</td></tr>
-            <tr><td>Bachelor</td><td>Licence (B.A.)</td><td>3–4 Years</td><td>3–4 ans</td><td>On-site / Online</td><td>Présentiel / En ligne</td></tr>
-            <tr><td>Postgraduate Diploma (PGD)</td><td>Diplôme de 3e cycle (PGD)</td><td>1 Year</td><td>1 an</td><td>On-site / Online</td><td>Présentiel / En ligne</td></tr>
-            <tr><td>Master’s</td><td>Master</td><td>18 Months (3 Semesters)</td><td>18 mois (3 semestres)</td><td>On-site / Online</td><td>Présentiel / En ligne</td></tr>
-            <tr><td>Doctor of Philosophy (PhD)</td><td>Doctorat (PhD)</td><td>3 Years</td><td>3 ans</td><td>On-site / Online</td><td>Présentiel / En ligne</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-  <section id="schools">
-    <div class="container">
-      <span class="kicker" data-i18n="en">TWO MAJOR SCHOOLS</span>
-      <span class="kicker" data-i18n="fr">DEUX GRANDES ÉCOLES</span>
-      <div class="grid cols-2">
-        <div class="card shadow">
-          <h3 data-i18n="en">School of Theology Education</h3>
-          <h3 data-i18n="fr">École de Formation Théologique</h3>
-          <p data-i18n="en">Comprehensive biblical and theological studies from Certificate to PhD — emphasis on exegesis, doctrine, ministry skills, and African contextual theology.</p>
-          <p data-i18n="fr">Études bibliques et théologiques du Certificat au Doctorat — avec accent sur l’exégèse, la doctrine, les compétences ministérielles et la théologie contextuelle africaine.</p>
-        </div>
-        <div class="card shadow">
-          <h3 data-i18n="en">School of Community Transformation & Advocacy Ministries</h3>
-          <h3 data-i18n="fr">École de Transformation Communautaire & Ministères d’Advocacy</h3>
-          <p data-i18n="en">Training leaders for community engagement, social justice, anti‑vice ministry, and transformational projects — from Certificate to PhD.</p>
-          <p data-i18n="fr">Former des leaders pour l’engagement communautaire, la justice sociale, la lutte contre les vices et les projets de transformation — du Certificat au Doctorat.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="leadership">
-    <div class="container">
-      <span class="kicker" data-i18n="en">CONTINENTAL LEADERSHIP – AFRICAN DIRECTORATE</span>
-      <span class="kicker" data-i18n="fr">DIRECTION CONTINENTALE – DIRECTORAT AFRICAIN</span>
-      <div class="card shadow">
-        <table>
-          <thead>
-            <tr>
-              <th data-i18n="en">Name & Title</th><th data-i18n="fr">Nom & Titre</th>
-              <th data-i18n="en">Position</th><th data-i18n="fr">Poste</th>
-              <th data-i18n="en">Responsibilities</th><th data-i18n="fr">Responsabilités</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Dr. Samuel Abiodun Oladimeji</td><td>Dr Samuel Abiodun Oladimeji</td><td data-i18n="en">Provost & Continental Africa Director</td><td data-i18n="fr">Recteur & Directeur Continental Afrique</td><td data-i18n="en">Overall leadership, strategic vision, continental coordination.</td><td data-i18n="fr">Direction générale, vision stratégique, coordination continentale.</td></tr>
-            <tr><td>Dr. (Mrs.) Oluwafemi Kenny Oladimeji</td><td>Dr (Mme) Oluwafemi Kenny Oladimeji</td><td data-i18n="en">Deputy Provost & Continental Administrator</td><td data-i18n="fr">Vice‑Recteur & Administratrice Continentale</td><td data-i18n="en">Administration, supervision, inter‑chapter coordination.</td><td data-i18n="fr">Administration, supervision, coordination des chapitres.</td></tr>
-            <tr><td>Dr. Oluwole Caleb Ojerinde</td><td>Dr Oluwole Caleb Ojerinde</td><td data-i18n="en">Continental Registrar</td><td data-i18n="fr">Registraire Continental</td><td data-i18n="en">Admissions, records, results, certificates.</td><td data-i18n="fr">Admissions, dossiers, résultats, certificats.</td></tr>
-            <tr><td>Dr. Tosin Awoyinka</td><td>Dr Tosin Awoyinka</td><td data-i18n="en">Continental Dean of Academics</td><td data-i18n="fr">Doyen Académique Continental</td><td data-i18n="en">Curriculum, quality control, academic affairs.</td><td data-i18n="fr">Curriculum, assurance qualité, affaires académiques.</td></tr>
-            <tr><td>Dr. Olayinka Ojo</td><td>Dr Olayinka Ojo</td><td data-i18n="en">Continental Legal Advisor</td><td data-i18n="fr">Conseiller Juridique Continental</td><td data-i18n="en">Legal, policy, institutional compliance.</td><td data-i18n="fr">Légal, politiques, conformité institutionnelle.</td></tr>
-            <tr><td>Rev. Dr. Agani Pierre Adeyemi</td><td>Rév. Dr Agani Pierre Adeyemi</td><td data-i18n="en">General Francophone Coordinator / Benin Director</td><td data-i18n="fr">Coordinateur Général Francophone / Directeur Bénin</td><td data-i18n="en">Francophone oversight and Benin chapter.</td><td data-i18n="fr">Suivi francophone et chapitre du Bénin.</td></tr>
-            <tr><td>Apostle Dr. David Living Stone Aganano</td><td>Apôtre Dr David Living Stone Aganano</td><td data-i18n="en">General Anglophone Coordinator / Republic of South Africa Director</td><td data-i18n="fr">Coordonnateur Général Anglophone / Directeur République d’Afrique du Sud</td><td data-i18n="en">Anglophone oversight and South Africa chapter.</td><td data-i18n="fr">Supervision anglophone et chapitre d’Afrique du Sud.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-  <section id="chapters">
-    <div class="container">
-      <span class="kicker" data-i18n="en">NATIONAL CHAPTER DIRECTORS – AFRICA</span>
-      <span class="kicker" data-i18n="fr">DIRECTEURS DE CHAPITRES NATIONAUX – AFRIQUE</span>
-      <div class="card shadow">
-        <table>
-          <thead>
-            <tr><th data-i18n="en">Country</th><th data-i18n="fr">Pays</th><th data-i18n="en">Director / Representative</th><th data-i18n="fr">Directeur / Représentant</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Benin Republic</td><td>République du Bénin</td><td>Rev. Dr. Agani Pierre Adeyemi</td><td>Rév. Dr Agani Pierre Adeyemi</td></tr>
-            <tr><td>Niger Republic</td><td>République du Niger</td><td>Pastor Maazou Judith</td><td>Pasteur Maazou Judith</td></tr>
-            <tr><td>Mali</td><td>Mali</td><td>Pastor Seidou</td><td>Pasteur Seidou</td></tr>
-            <tr><td>Burkina Faso</td><td>Burkina Faso</td><td>Apostle Badolo</td><td>Apôtre Badolo</td></tr>
-            <tr><td>Republic of Chad</td><td>République du Tchad</td><td>Pastor Semion</td><td>Pasteur Semion</td></tr>
-            <tr><td>Togo</td><td>Togo</td><td>Pastor Kemakpo Ablamvi</td><td>Pasteur Kemakpo Ablamvi</td></tr>
-            <tr><td>Côte d’Ivoire</td><td>Côte d’Ivoire</td><td>Pastor SANHIN (Kouassi Narcisse)</td><td>Pasteur SANHIN (Kouassi Narcisse)</td></tr>
-            <tr><td>Ghana</td><td>Ghana</td><td>Sis. Kehinde Bukoye</td><td>Sœur Kehinde Bukoye</td></tr>
-            <tr><td>Cameroon</td><td>Cameroun</td><td>Pastor Mongui Dibebe Thomas</td><td>Pasteur Mongui Dibebe Thomas</td></tr>
-            <tr><td>Central African Republic</td><td>République Centrafricaine</td><td>Pastor Dr. Kawa Omer</td><td>Pasteur Dr Kawa Omer</td></tr>
-            <tr><td>Republic of South Africa</td><td>République d’Afrique du Sud</td><td>Apostle Dr. Living Stone Aganano & Rev. Mrs. Bulelwa Aganano</td><td>Apôtre Dr Living Stone Aganano & Rév. Mme Bulelwa Aganano</td></tr>
-            <tr><td>Zimbabwe</td><td>Zimbabwe</td><td>Sis. Shamiso Madzorera</td><td>Sœur Shamiso Madzorera</td></tr>
-            <tr><td>Nigeria</td><td>Nigéria</td><td>Dr. (Mrs.) Oluwafemi Kenny Oladimeji</td><td>Dr (Mme) Oluwafemi Kenny Oladimeji</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-  <section id="faculties">
-    <div class="container">
-      <span class="kicker" data-i18n="en">FACULTIES & DEPARTMENTS</span>
-      <span class="kicker" data-i18n="fr">FACULTÉS & DÉPARTEMENTS</span>
-      <details>
-        <summary><b data-i18n="en">School of Theology Education – Faculties</b><b data-i18n="fr">École de Formation Théologique – Facultés</b></summary>
-        <div class="grid cols-3" style="margin-top:1rem">
-          <div class="card">
-            <h4 data-i18n="en">Biblical & Theological Studies</h4><h4 data-i18n="fr">Études Bibliques & Théologiques</h4>
-            <ul>
-              <li data-i18n="en">Biblical Studies • Theology • Hermeneutics & Exegesis • Apologetics & Prophecy</li>
-              <li data-i18n="fr">Études bibliques • Théologie • Herméneutique & Exégèse • Apologétique & Prophétie</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4 data-i18n="en">Pastoral & Ministerial Leadership</h4><h4 data-i18n="fr">Leadership Pastoral & Ministériel</h4>
-            <ul>
-              <li data-i18n="en">Ministry & Leadership • Prophetic & Deliverance</li>
-              <li data-i18n="fr">Ministère & Leadership • Ministères Prophétiques & Délivrance</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4 data-i18n="en">Missions & Evangelism</h4><h4 data-i18n="fr">Missions & Évangélisation</h4>
-          </div>
-          <div class="card">
-            <h4 data-i18n="en">Christian Education</h4><h4 data-i18n="fr">Éducation Chrétienne</h4>
-            <ul><li data-i18n="en">Education & Discipleship</li><li data-i18n="fr">Éducation & Discipolat</li></ul>
-          </div>
-          <div class="card">
-            <h4 data-i18n="en">Christian Counseling & Psychology</h4><h4 data-i18n="fr">Conseil Chrétien & Psychologie</h4>
-            <ul>
-              <li data-i18n="en">Family Care • Trauma/Abuse Recovery • Addiction & Rehabilitation</li>
-              <li data-i18n="fr">Soins familiaux • Traumatisme/Abus & Rétablissement • Addictions & Réhabilitation</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4 data-i18n="en">Church Administration & Management</h4><h4 data-i18n="fr">Administration & Gestion d’Église</h4>
-            <ul>
-              <li data-i18n="en">Church Administration • Leadership & Governance</li>
-              <li data-i18n="fr">Administration d’Église • Leadership & Gouvernance</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4 data-i18n="en">Worship & Creative Arts</h4><h4 data-i18n="fr">Adoration & Arts Créatifs</h4>
-            <ul><li data-i18n="en">Gospel Music • Christian Drama</li><li data-i18n="fr">Musique Gospel • Drame Chrétien</li></ul>
-          </div>
-          <div class="card">
-            <h4 data-i18n="en">Ethics & Christian Living</h4><h4 data-i18n="fr">Éthique & Vie Chrétienne</h4>
-          </div>
-          <div class="card">
-            <h4 data-i18n="en">Marketplace & Bi‑vocational Ministry</h4><h4 data-i18n="fr">Ministère en Milieu Pro & Bi‑vocationnel</h4>
-            <ul><li data-i18n="en">Marketplace • Christian Legal & Policy Studies</li><li data-i18n="fr">Milieu professionnel • Études juridiques & politiques chrétiennes</li></ul>
-          </div>
-        </div>
-      </details>
-      <details style="margin-top:1rem">
-        <summary><b data-i18n="en">School of Transformation & Community Advocacy Ministry – Faculties</b><b data-i18n="fr">École de Transformation & Ministère d’Advocacy – Facultés</b></summary>
-        <div class="grid cols-3" style="margin-top:1rem">
-          <div class="card"><h4 data-i18n="en">Addiction Recovery Ministry</h4><h4 data-i18n="fr">Ministère de Rétablissement des Addictions</h4></div>
-          <div class="card"><h4 data-i18n="en">Human Trafficking Intervention</h4><h4 data-i18n="fr">Intervention contre la Traite Humaine</h4></div>
-          <div class="card"><h4 data-i18n="en">Domestic Violence Counseling</h4><h4 data-i18n="fr">Conseil en Violence Domestique</h4></div>
-          <div class="card"><h4 data-i18n="en">Widows & Orphans Care</h4><h4 data-i18n="fr">Soins aux Veuf(ve)s & Orphelins</h4></div>
-          <div class="card"><h4 data-i18n="en">Poverty Alleviation & Empowerment</h4><h4 data-i18n="fr">Réduction de la Pauvreté & Autonomisation</h4></div>
-          <div class="card"><h4 data-i18n="en">Youth Ministry & Crime Prevention</h4><h4 data-i18n="fr">Ministère Jeunesse & Prévention du Crime</h4></div>
-          <div class="card"><h4 data-i18n="en">Peacebuilding & Reconciliation</h4><h4 data-i18n="fr">Construction de la Paix & Réconciliation</h4></div>
-          <div class="card"><h4 data-i18n="en">Family & Marriage Counseling</h4><h4 data-i18n="fr">Conseil Familial & Mariage</h4></div>
-          <div class="card"><h4 data-i18n="en">Digital Ethics & Cyber Ministry</h4><h4 data-i18n="fr">Éthique Numérique & Cyber‑Ministère</h4></div>
-          <div class="card"><h4 data-i18n="en">Vulnerable Populations Ministry</h4><h4 data-i18n="fr">Ministère auprès des Populations Vulnérables</h4></div>
-          <div class="card"><h4 data-i18n="en">Sexual Purity & Addiction Recovery</h4><h4 data-i18n="fr">Pureté Sexuelle & Rétablissement</h4></div>
-        </div>
-      </details>
-    </div>
-  </section>
-  <section id="resources">
-    <div class="container">
-      <span class="kicker" data-i18n="en">HIBIAFRICA DOWNLOADABLE / NAVIGATION RESOURCES</span>
-      <span class="kicker" data-i18n="fr">RESSOURCES TÉLÉCHARGEABLES / NAVIGATION</span>
-      <div class="resources">
-        <a class="resource-btn" href="resources/book-catalogue/" target="_self">📘 <span data-i18n="en">Book Catalogue</span><span data-i18n="fr">Catalogue de livres</span></a>
-        <a class="resource-btn" href="resources/prospectus/">📂 <span data-i18n="en">Prospectus</span><span data-i18n="fr">Prospectus</span></a>
-        <a class="resource-btn" href="resources/handbook/">📗 <span data-i18n="en">Students’ Handbook</span><span data-i18n="fr">Guide de l’étudiant</span></a>
-        <a class="resource-btn" href="resources/admission-form/">📝 <span data-i18n="en">Admission Form</span><span data-i18n="fr">Formulaire d’admission</span></a>
-        <a class="resource-btn" href="#apply">🌐 <span data-i18n="en">Online Admission Portal</span><span data-i18n="fr">Portail d’admission en ligne</span></a>
-        <a class="resource-btn" href="resources/course-materials/">📚 <span data-i18n="en">Course Materials</span><span data-i18n="fr">Supports de cours</span></a>
-        <a class="resource-btn" href="resources/newsletters/">📰 <span data-i18n="en">Monthly Newsletter</span><span data-i18n="fr">Bulletin mensuel</span></a>
-        <a class="resource-btn" href="resources/dafad/">⛪ <span data-i18n="en">Monthly DAFAD</span><span data-i18n="fr">DAFAD mensuel</span></a>
-        <a class="resource-btn" href="resources/gallery/">🖼️ <span data-i18n="en">Photo Gallery</span><span data-i18n="fr">Galerie photo</span></a>
-        <a class="resource-btn" href="resources/convocation/">🎓 <span data-i18n="en">Annual Convocation</span><span data-i18n="fr">Convocation annuelle</span></a>
-        <a class="resource-btn" href="resources/registration/">🧾 <span data-i18n="en">Semester Registration Form</span><span data-i18n="fr">Formulaire d’inscription semestrielle</span></a>
-        <a class="resource-btn" href="resources/journals/">📑 <span data-i18n="en">Academic Journals</span><span data-i18n="fr">Revues académiques</span></a>
-      </div>
-      <p class="muted" style="margin-top:.6rem" data-i18n="en">Tip: upload PDF/Word files into each folder above on your hosting so every button opens its content.</p>
-      <p class="muted" style="margin-top:.6rem" data-i18n="fr">Astuce : téléchargez vos fichiers PDF/Word dans chaque dossier ci‑dessus pour que chaque bouton ouvre son contenu.</p>
-    </div>
-  </section>
-  <section id="payments">
-    <div class="container">
-      <span class="kicker" data-i18n="en">PAYMENTS</span>
-      <span class="kicker" data-i18n="fr">PAIEMENTS</span>
-      <p class="lead" data-i18n="en">Make secure payments via our trusted processors. (Update the links below to your live checkout pages.)</p>
-      <p class="lead" data-i18n="fr">Effectuez des paiements sécurisés via nos processeurs de confiance. (Mettez à jour les liens ci‑dessous.)</p>
-      <div class="pay-grid">
-        <div class="pay-card">
-          <h4 data-i18n="en">Application / Admission Fees</h4><h4 data-i18n="fr">Frais de candidature / admission</h4>
-          <div class="cta-row">
-            <a class="pay primary" href="#" target="_blank">Pay via Paystack</a>
-            <a class="pay success" href="#" target="_blank">Pay via Flutterwave</a>
-          </div>
-        </div>
-        <div class="pay-card">
-          <h4 data-i18n="en">Tuition & Materials</h4><h4 data-i18n="fr">Frais de scolarité & matériels</h4>
-          <div class="cta-row">
-            <a class="pay primary" href="#" target="_blank">Pay via Paystack</a>
-            <a class="pay success" href="#" target="_blank">Pay via Flutterwave</a>
-          </div>
-        </div>
-        <div class="pay-card">
-          <h4 data-i18n="en">Convocation & Others</h4><h4 data-i18n="fr">Convocation & autres</h4>
-          <div class="cta-row">
-            <a class="pay primary" href="#" target="_blank">Pay via Paystack</a>
-            <a class="pay success" href="#" target="_blank">Pay via Flutterwave</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="apply">
-    <div class="container">
-      <span class="kicker" data-i18n="en">ADMISSIONS & ENROLLMENT</span>
-      <span class="kicker" data-i18n="fr">ADMISSIONS & INSCRIPTIONS</span>
-      <div class="grid cols-2">
-        <div class="card shadow">
-          <h3 data-i18n="en">Apply Directly from the Website</h3>
-          <h3 data-i18n="fr">Postuler directement depuis le site</h3>
-          <p data-i18n="en">Fill the form and submit. A draft email will open addressed to <b>harvestimeafricadirectorate@gmail.com</b> with your details.</p>
-          <p data-i18n="fr">Remplissez le formulaire et envoyez. Un email brouillon s’ouvrira adressé à <b>harvestimeafricadirectorate@gmail.com</b> avec vos informations.</p>
-          <form id="applyForm" onsubmit="return buildEmail(event)">
-            <div class="form-row">
-              <div>
-                <label data-i18n="en">First Name</label><label data-i18n="fr">Prénom</label>
-                <input required name="firstName" />
-              </div>
-              <div>
-                <label data-i18n="en">Last Name</label><label data-i18n="fr">Nom</label>
-                <input required name="lastName" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div>
-                <label>Email</label>
-                <input required name="email" type="email" />
-              </div>
-              <div>
-                <label data-i18n="en">Phone / WhatsApp</label><label data-i18n="fr">Téléphone / WhatsApp</label>
-                <input required name="phone" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div>
-                <label data-i18n="en">Country</label><label data-i18n="fr">Pays</label>
-                <input required name="country" />
-              </div>
-              <div>
-                <label data-i18n="en">Programme Level</label><label data-i18n="fr">Niveau du programme</label>
-                <select name="level" required>
-                  <option>Certificate</option>
-                  <option>Diploma</option>
-                  <option>Bachelor</option>
-                  <option>PGD</option>
-                  <option>Master</option>
-                  <option>PhD</option>
-                </select>
-              </div>
-            </div>
-            <div>
-              <label data-i18n="en">Preferred Mode (On-site / Online)</label><label data-i18n="fr">Modalité souhaitée (Présentiel / En ligne)</label>
-              <select name="mode" required>
-                <option>On-site</option>
-                <option>Online</option>
-              </select>
-            </div>
-            <div>
-              <label data-i18n="en">Message</label><label data-i18n="fr">Message</label>
-              <textarea name="message" rows="4" placeholder="Briefly introduce yourself and your calling."></textarea>
-            </div>
-            <button class="submit" type="submit" data-i18n="en">Submit Application via Email</button>
-            <button class="submit" type="button" onclick="openWhatsApp()" data-i18n="fr">Envoyer via WhatsApp</button>
-          </form>
-        </div>
-        <div class="card">
-          <h3 data-i18n="en">Alternative: Apply through your National Chapter</h3>
-          <h3 data-i18n="fr">Alternative : Postuler via votre chapitre national</h3>
-          <p data-i18n="en">Contact your National Chapter Director (see list above) or reach us directly at the Africa Directorate Office in Osogbo, Nigeria.</p>
-          <p data-i18n="fr">Contactez votre Directeur de Chapitre national (voir la liste ci‑dessus) ou contactez directement la Direction Africaine à Osogbo, Nigéria.</p>
-          <div class="badge">📞 +234 703 942 9826 • +234 915 858 8901 • +234 813 339 9661</div>
-          <p class="muted">📧 harvestimeafricadirectorate@gmail.com</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <div class="container footgrid">
+
+  <section id="payments" class="section">
+    <div class="container card">
+      <h2 data-lang="en">Payments</h2><h2 data-lang="fr" style="display:none">Paiements</h2>
+      <p data-lang="en">You can make payments online via your national chapter or through the Africa Directorate. Use the buttons below (replace with live links).</p>
+      <p data-lang="fr" style="display:none">Vous pouvez effectuer vos paiements en ligne via votre chapitre national ou via la Direction Afrique. Utilisez les boutons ci‑dessous (remplacez par vos liens actifs).</p>
       <div>
-        <div class="brand" style="color:#fff">
-          <span class="logo" aria-label="HIBIAFRICA logo">
-            <img src="logo.png" alt="HIBIAFRICA Logo" onerror="this.outerHTML='<span style=&quot;font-weight:900;font-size:1.1rem;color:#0b1220&quot;>HIBI</span>'">
-          </span>
-          <div>
-            <b>HIBIAFRICA</b><br>
-            <small data-i18n="en">Training and Equipping Labourers for Worldwide Spiritual Harvest.</small>
-            <small data-i18n="fr">Former et équiper des ouvriers pour la moisson spirituelle mondiale.</small>
+        <a class="btn btn-primary" href="#" target="_blank">Pay with Paystack</a>
+        <a class="btn btn-outline" href="#" target="_blank">Pay with Flutterwave</a>
+        <a class="btn btn-outline" href="#" target="_blank">Bank Transfer Details (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="apply" class="section">
+    <div class="container grid-2">
+      <div class="card">
+        <h2 data-lang="en">Apply / Enroll Now</h2><h2 data-lang="fr" style="display:none">Postuler / S’inscrire</h2>
+        <form onsubmit="return sendMailto(this)">
+          <div class="grid-2">
+            <div><label>Full Name<input name="name" required style="width:100%;padding:.6rem;border-radius:.5rem;border:1px solid rgba(255,255,255,.2);background:#0f1731;color:white"></label></div>
+            <div><label>Email<input name="email" type="email" required style="width:100%;padding:.6rem;border-radius:.5rem;border:1px solid rgba(255,255,255,.2);background:#0f1731;color:white"></label></div>
           </div>
-        </div>
-        <p class="muted" style="margin-top:.6rem">📍 Osogbo, Osun State, Nigeria</p>
+          <div class="grid-2" style="margin-top:.6rem">
+            <div><label>Programme<input name="programme" required style="width:100%;padding:.6rem;border-radius:.5rem;border:1px solid rgba(255,255,255,.2);background:#0f1731;color:white"></label></div>
+            <div><label>Country<input name="country" required style="width:100%;padding:.6rem;border-radius:.5rem;border:1px solid rgba(255,255,255,.2);background:#0f1731;color:white"></label></div>
+          </div>
+          <div style="margin-top:.6rem"><label>Message<textarea name="message" rows="4" style="width:100%;padding:.6rem;border-radius:.5rem;border:1px solid rgba(255,255,255,.2);background:#0f1731;color:white"></textarea></label></div>
+          <div style="margin-top:.8rem">
+            <button class="btn btn-primary" type="submit">Send Application Email</button>
+            <a class="btn btn-outline" target="_blank" id="wa-link" href="https://wa.me/2347039429826?text=Hello%20HIBIAFRICA%2C%20I%20would%20like%20to%20apply.">Chat on WhatsApp</a>
+          </div>
+        </form>
       </div>
-      <div>
-        <h4 data-i18n="en">Quick Links</h4><h4 data-i18n="fr">Liens rapides</h4>
-        <p><a href="#about" data-i18n="en">About</a><a href="#about" data-i18n="fr">À propos</a></p>
-        <p><a href="#doctrine" data-i18n="en">Doctrinal Statement</a><a href="#doctrine" data-i18n="fr">Déclaration doctrinale</a></p>
-        <p><a href="#resources" data-i18n="en">Resources</a><a href="#resources" data-i18n="fr">Ressources</a></p>
-        <p><a href="#apply" data-i18n="en">Admissions / Apply</a><a href="#apply" data-i18n="fr">Admissions / Candidater</a></p>
-      </div>
-      <div>
-        <h4 data-i18n="en">Contact</h4><h4 data-i18n="fr">Contact</h4>
-        <p>📧 <a href="mailto:harvestimeafricadirectorate@gmail.com">harvestimeafricadirectorate@gmail.com</a></p>
-        <p>💬 WhatsApp: <a href="https://wa.me/2347039429826" target="_blank">+234 703 942 9826</a></p>
-        <p>💬 WhatsApp: <a href="https://wa.me/2349158588901" target="_blank">+234 915 858 8901</a></p>
-        <p>💬 WhatsApp: <a href="https://wa.me/2348133399661" target="_blank">+234 813 339 9661</a></p>
+      <div class="card">
+        <h3 data-lang="en">Admissions & Enquiries</h3><h3 data-lang="fr" style="display:none">Admissions & Renseignements</h3>
+        <p>Email: harvestimeafricadirectorate@gmail.com</p>
+        <p>WhatsApp: +234 703 942 9826 · +234 915 858 8901 · +234 813 339 9661</p>
+        <p data-lang="en">Head Office (Africa): Osogbo, Osun State, Nigeria.</p>
+        <p data-lang="fr" style="display:none">Siège (Afrique) : Osogbo, État d’Osun, Nigéria.</p>
       </div>
     </div>
-    <div class="container copyright">
-      © 2025 Harvestime International Bible Institute Africa (HIBIAFRICA). Continental Africa Directorate of Harvestime International Network (USA). All Rights Reserved.
-    </div>
-  </footer>
-  <script>
-    const enBtn = document.getElementById('enBtn');
-    const frBtn = document.getElementById('frBtn');
-    const setLang = (lang) => {
-      document.documentElement.classList.remove('lang-en','lang-fr');
-      document.documentElement.classList.add('lang-' + lang);
-      enBtn.classList.toggle('active', lang==='en');
-      frBtn.classList.toggle('active', lang==='fr');
-      try{ localStorage.setItem('hibi-lang', lang); }catch(e){}
-    };
-    enBtn.addEventListener('click', ()=>setLang('en'));
-    frBtn.addEventListener('click', ()=>setLang('fr'));
-    (function initLang(){
-      const saved = (localStorage.getItem('hibi-lang')||'en');
-      setLang(saved);
-    })();
-    function buildEmail(e){
-      e.preventDefault();
-      const f = e.target;
-      const data = {
-        firstName: f.firstName.value.trim(),
-        lastName: f.lastName.value.trim(),
-        email: f.email.value.trim(),
-        phone: f.phone.value.trim(),
-        country: f.country.value.trim(),
-        level: f.level.value,
-        mode: f.mode.value,
-        message: f.message.value.trim()
-      };
-      const subject = encodeURIComponent('HIBIAFRICA Application: ' + data.firstName + ' ' + data.lastName);
-      const body =
-        'Name: ' + data.firstName + ' ' + data.lastName + '%0D%0A' +
-        'Email: ' + data.email + '%0D%0A' +
-        'Phone/WhatsApp: ' + data.phone + '%0D%0A' +
-        'Country: ' + data.country + '%0D%0A' +
-        'Programme Level: ' + data.level + '%0D%0A' +
-        'Preferred Mode: ' + data.mode + '%0D%0A%0D%0A' +
-        'Message:%0D%0A' + encodeURIComponent(data.message||'');
-      window.location.href = 'mailto:harvestimeafricadirectorate@gmail.com?subject='+subject+'&body='+body;
-      return false;
-    }
-    function openWhatsApp(){
-      const num = '2347039429826';
-      const text = encodeURIComponent('Hello HIBIAFRICA Admissions, I would like to apply.');
-      window.open('https://wa.me/' + num + '?text=' + text, '_blank');
-    }
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        const id = a.getAttribute('href').slice(1);
-        if(!id) return;
-        const el = document.getElementById(id);
-        if(el){
-          e.preventDefault();
-          el.scrollIntoView({behavior:'smooth',block:'start'});
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+  </section>
+</main>
+
+<footer><div class="container">© 2025 HIBIAFRICA · Built 2025-11-07T05:27:33.495849Z. Logo source: svg_fallback</div></footer>
+</body></html>
